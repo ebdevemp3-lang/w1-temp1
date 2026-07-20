@@ -21,9 +21,9 @@
   --ebhro20-stats-label-color: #6e5a4f;
   --ebhro20-stats-divider-color: rgba(194, 65, 12, 0.15);
 
-  --ebhro20-visual-circle-border-color: rgba(194, 65, 12, 0.15);
-  --ebhro20-visual-circle-glow-1: rgba(194, 65, 12, 0.04);
-  --ebhro20-visual-circle-glow-2: rgba(194, 65, 12, 0.12);
+  --ebhro20-visual-circle-border-color: rgba(194, 65, 12, 0.3);
+  --ebhro20-visual-circle-glow-1: rgba(194, 65, 12, 0.15);
+  --ebhro20-visual-circle-glow-2: rgba(194, 65, 12, 0.25);
   --ebhro20-orbit-dot-1-color: #c2410c;
   --ebhro20-orbit-dot-2-color: #e85d04;
   --ebhro20-orbit-dot-3-color: #b45309;
@@ -327,7 +327,8 @@
 }
 
 /* Radar orbits */
-.ebhro20-radar-container {
+.ebhro20-radar-container,
+.ebhro20-main-visual {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -336,17 +337,23 @@
   align-items: center;
 }
 
-.ebhro20-radar-circle {
+.ebhro20-radar-circle,
+.ebhro20-visual-ring {
   position: absolute;
   border: 2px dashed var(--ebhro20-visual-circle-border-color);
   border-radius: 50%;
+  box-shadow: 0 0 15px var(--ebhro20-visual-circle-glow-1);
 }
 
-.ebhro20-rc-1 { width: var(--ebhro20-ring-size); height: var(--ebhro20-ring-size); }
-.ebhro20-rc-2 { width: calc(var(--ebhro20-ring-size) * 0.7); height: calc(var(--ebhro20-ring-size) * 0.7); }
-.ebhro20-rc-3 { width: calc(var(--ebhro20-ring-size) * 0.4); height: calc(var(--ebhro20-ring-size) * 0.4); }
+.ebhro20-rc-1,
+.ebhro20-ring-outer { width: var(--ebhro20-ring-size); height: var(--ebhro20-ring-size); }
+.ebhro20-rc-2,
+.ebhro20-ring-mid { width: calc(var(--ebhro20-ring-size) * 0.7); height: calc(var(--ebhro20-ring-size) * 0.7); }
+.ebhro20-rc-3,
+.ebhro20-ring-inner { width: calc(var(--ebhro20-ring-size) * 0.4); height: calc(var(--ebhro20-ring-size) * 0.4); }
 
-.ebhro20-radar-core {
+.ebhro20-radar-core,
+.ebhro20-visual-core {
   position: absolute;
   width: var(--ebhro20-core-size);
   height: var(--ebhro20-core-size);
