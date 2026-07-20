@@ -213,44 +213,6 @@
 .ebhro20-stat-label { font-size: 0.78rem; color: var(--ebhro20-text-secondary); font-weight: 500; white-space: nowrap; }
 .ebhro20-stat-divider { width: 1px; height: 40px; background: var(--ebhro20-border); }
 
-/* ============== BUTTONS ============== */
-.ebhro20-buttons-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-.ebhro20-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.8rem 1.75rem;
-  border-radius: var(--ebhro20-btn-radius);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.ebhro20-btn-primary {
-  background: var(--ebhro20-accent);
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(var(--ebhro20-accent-rgb), 0.2);
-}
-.ebhro20-btn-primary:hover {
-  transform: translateY(-3px);
-  background: #d65a3d;
-  box-shadow: 0 8px 25px rgba(var(--ebhro20-accent-rgb), 0.35);
-}
-
-.ebhro20-btn-outline {
-  background: transparent;
-  color: var(--ebhro20-primary);
-  border: 2px solid var(--ebhro20-primary);
-}
-.ebhro20-btn-outline:hover {
-  background: var(--ebhro20-primary);
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(var(--ebhro20-primary-rgb), 0.15);
-}
-
 /* ============== VISUAL BLOCK ============== */
 .ebhro20-visual-block {
   flex: 1;

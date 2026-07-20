@@ -1,0 +1,73 @@
+/* ============================================
+   CALL TO ACTION — THEME 3: WARM SAND
+   ============================================ */
+
+:root {
+  --ebctaf20-primary: #c2410c;
+  --ebctaf20-primary-rgb: 194, 65, 12;
+  --ebctaf20-accent: #e85d04;
+  --ebctaf20-text: #2d2219;
+  --ebctaf20-border: #ecdcc8;
+  --ebctaf20-radius: 50px;
+  --ebctaf20-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ebctaf20-buttons-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Base button style */
+.ebctaf20-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--ebctaf20-radius);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s var(--ebctaf20-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.ebctaf20-btn-primary {
+  background: var(--ebctaf20-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(var(--ebctaf20-primary-rgb), 0.2);
+}
+
+.ebctaf20-btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: var(--ebctaf20-accent);
+  box-shadow: 0 8px 20px rgba(var(--ebctaf20-primary-rgb), 0.35);
+}
+
+.ebctaf20-btn-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: ebctafShimmer 3s ease-in-out infinite;
+}
+
+@keyframes ebctafShimmer {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+.ebctaf20-btn-outline {
+  background: transparent;
+  color: var(--ebctaf20-primary);
+  border: 2px dashed var(--ebctaf20-border);
+}
+
+.ebctaf20-btn-outline:hover {
+  border-color: var(--ebctaf20-primary);
+  background-color: rgba(var(--ebctaf20-primary-rgb), 0.03);
+  transform: translateY(-3px) scale(1.02);
+}

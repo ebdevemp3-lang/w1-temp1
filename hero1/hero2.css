@@ -179,38 +179,6 @@
 .ebhro20-stat-label { font-size: 0.78rem; color: var(--ebhro20-text-muted); font-weight: 500; white-space: nowrap; }
 .ebhro20-stat-divider { width: 1px; height: 40px; background: var(--ebhro20-border); }
 
-/* ============== BUTTONS ============== */
-.ebhro20-buttons-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-.ebhro20-btn {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  padding: 0.8rem 1.75rem; border-radius: var(--ebhro20-btn-radius);
-  font-size: 0.95rem; font-weight: 700; text-decoration: none;
-  transition: all 0.4s ease; position: relative; overflow: hidden;
-  letter-spacing: 0.03em;
-}
-.ebhro20-btn-primary {
-  background: linear-gradient(135deg, var(--ebhro20-primary), var(--ebhro20-accent));
-  color: #ffffff; box-shadow: 0 4px 20px rgba(var(--ebhro20-primary-rgb), 0.2);
-}
-.ebhro20-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(var(--ebhro20-primary-rgb), 0.35); }
-
-.ebhro20-btn-shimmer {
-  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-  animation: ebhroShimmer 4s ease-in-out infinite;
-}
-@keyframes ebhroShimmer { 0% { left: -100%; } 50%, 100% { left: 100%; } }
-
-.ebhro20-btn-outline {
-  background: transparent; color: var(--ebhro20-text);
-  border: 1px solid var(--ebhro20-border);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-}
-.ebhro20-btn-outline:hover {
-  border-color: var(--ebhro20-primary); color: var(--ebhro20-primary);
-  transform: translateY(-3px); box-shadow: var(--ebhro20-card-shadow);
-}
-
 /* ============== VISUAL ============== */
 .ebhro20-visual-block {
   flex: 1; position: relative; width: var(--ebhro20-visual-size); height: var(--ebhro20-visual-size);
