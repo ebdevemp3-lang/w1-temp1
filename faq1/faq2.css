@@ -3,24 +3,36 @@
    ============================================ */
 
 :root {
-  --ebfq20-primary: #b89020;
-  --ebfq20-primary-rgb: 184, 144, 32;
-  --ebfq20-secondary: #8c6d1d;
-  --ebfq20-accent: #c5a059;
-  
-  --ebfq20-bg: #faf9f5;
-  --ebfq20-surface: #ffffff;
-  --ebfq20-text: #1c1917;
-  --ebfq20-text-muted: #57534e;
-  --ebfq20-border: #e7e2d8;
+  /* ===============================
+     FAQ COLORS (OBSIDIAN GOLD)
+  =============================== */
+  --ebfq20-section-background-color: #faf9f5;
 
+  --ebfq20-badge-border-color: #b89020;
+  --ebfq20-badge-text-color: #b89020;
+  
+  --ebfq20-title-text-color: #1c1917;
+  --ebfq20-title-highlight-text-color: #b89020;
+  --ebfq20-subtitle-text-color: #57534e;
+
+  --ebfq20-item-border-color: #e7e2d8;
+  --ebfq20-item-question-text-color: #1c1917;
+  --ebfq20-item-question-hover-text-color: #b89020;
+  --ebfq20-item-question-active-text-color: #b89020;
+  --ebfq20-item-answer-text-color: #57534e;
+
+  --ebfq20-toggle-icon-color: #b89020;
+
+  /* ===============================
+     FAQ LAYOUT & TIMINGS
+  =============================== */
   --ebfq20-radius: 0px;
   --ebfq20-ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .ebfq20-section {
   position: relative;
-  background-color: var(--ebfq20-bg);
+  background-color: var(--ebfq20-section-background-color);
   padding: 8rem 0;
   overflow: hidden;
 }
@@ -48,8 +60,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border-bottom: 1px solid var(--ebfq20-primary);
-  color: var(--ebfq20-primary);
+  border-bottom: 1px solid var(--ebfq20-badge-border-color);
+  color: var(--ebfq20-badge-text-color);
   padding: 0.25rem 0.5rem;
   font-size: 0.8rem;
   font-weight: 700;
@@ -59,18 +71,19 @@
 .ebfq20-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: var(--ebfq20-text);
+  color: var(--ebfq20-title-text-color);
   line-height: 1.2;
+  font-family: serif;
 }
 
 .ebfq20-title-highlight {
-  color: var(--ebfq20-primary);
+  color: var(--ebfq20-title-highlight-text-color);
   font-style: italic;
 }
 
 .ebfq20-subtitle {
   font-size: 1rem;
-  color: var(--ebfq20-text-muted);
+  color: var(--ebfq20-subtitle-text-color);
   line-height: 1.8;
 }
 
@@ -82,14 +95,14 @@
 
 .ebfq20-item {
   background: transparent;
-  border-bottom: 1px solid var(--ebfq20-border);
+  border-bottom: 1px solid var(--ebfq20-item-border-color);
   padding: 2rem 0;
   transition: all 0.4s var(--ebfq20-ease);
 }
 
 /* Top border for first item */
 .ebfq20-list > div:first-child {
-  border-top: 1px solid var(--ebfq20-border);
+  border-top: 1px solid var(--ebfq20-item-border-color);
 }
 
 /* Question Row */
@@ -104,17 +117,17 @@
 .ebfq20-question {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--ebfq20-text);
+  color: var(--ebfq20-item-question-text-color);
   line-height: 1.4;
   transition: all 0.3s var(--ebfq20-ease);
 }
 
 .ebfq20-item:hover .ebfq20-question {
-  color: var(--ebfq20-primary);
+  color: var(--ebfq20-item-question-hover-text-color);
 }
 
 .ebfq20-item.ebfq20-active .ebfq20-question {
-  color: var(--ebfq20-primary);
+  color: var(--ebfq20-item-question-active-text-color);
   font-style: italic;
 }
 
@@ -127,7 +140,7 @@
   align-items: center;
   background: transparent;
   border: none;
-  color: var(--ebfq20-primary);
+  color: var(--ebfq20-toggle-icon-color);
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s var(--ebfq20-ease);
@@ -155,7 +168,7 @@
 
 .ebfq20-answer {
   font-size: 0.95rem;
-  color: var(--ebfq20-text-muted);
+  color: var(--ebfq20-item-answer-text-color);
   line-height: 1.8;
   padding: 1.25rem 0 0 0;
 }

@@ -1,237 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ============================================
+   TOPBAR — THEME 1: TECH LIGHT
+   ============================================ */
 
 :root {
-  /* Colors - Modern Tech Dark (Navy & Neon Blue) */
-  --ebtb20-primary: #00f0ff; /* Neon Electric Blue */
-  --ebtb20-secondary: #3b82f6; /* Tech Blue */
-  --ebtb20-bg: #0b0f19; /* Deep Space Navy */
-  --ebtb20-surface: #131b2e; /* Slate navy surface */
-  --ebtb20-text: #f1f5f9; /* Off-white */
-  --ebtb20-text-secondary: #94a3b8; /* Muted blue-grey */
-  --ebtb20-border: rgba(0, 240, 255, 0.15); /* Translucent electric border */
-  --ebtb20-border-width: 1px;
-  --ebtb20-border-style: solid;
-  
-  /* Shadows - Soft cybernetic blue glow */
-  --ebtb20-shadow: 0 4px 20px rgba(0, 240, 255, 0.08), 0 0 1px rgba(0, 240, 255, 0.2);
-  
-  /* Typography & Layout */
-  --ebtb20-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --ebtb20-link-size: 0.92rem;
-  --ebtb20-link-weight: 600;
-  --ebtb20-link-color: #f1f5f9;
-  --ebtb20-link-opacity: 0.85;
-  
-  /* Global Properties - Adjusted for full width (edge-to-edge) */
-  --ebtb20-radius: 0px; 
-  --ebtb20-padding: 0.8rem 2rem;
-  --ebtb20-margin: 0px;
-  --ebtb20-max-width: 100%;
-  --ebtb20-backdrop-blur: none;
-  --ebtb20-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* ===============================
+     TOPBAR COLORS (TECH LIGHT)
+  =============================== */
+  --ebtb20-topbar-background-color: #f8fafc;
+  --ebtb20-topbar-border-color: rgba(0, 180, 216, 0.1);
+  --ebtb20-topbar-social-icon-color: #64748b;
+  --ebtb20-topbar-social-icon-hover-color: #00b4d8;
+  --ebtb20-topbar-contact-text-color: #64748b;
+  --ebtb20-topbar-contact-icon-color: #00b4d8;
+  --ebtb20-topbar-contact-hover-text-color: #00b4d8;
 
-  /* Layout Specific Variables (100% Parameterized) */
-  --ebtb20-display: flex;
-  --ebtb20-justify: center;
-  --ebtb20-align: center;
-  --ebtb20-width: 100%;
-  --ebtb20-container-display: flex;
-  --ebtb20-container-justify: space-between;
-  --ebtb20-container-align: center;
-  --ebtb20-container-width: 100%;
-  --ebtb20-container-max-width: 100%;
-  --ebtb20-container-gap: 1.5rem;
-  --ebtb20-container-flex-dir: row;
-  
-  --ebtb20-group-display: flex;
-  --ebtb20-group-align: center;
-  --ebtb20-group-gap: 1rem;
-  
-  --ebtb20-icon-display: inline-flex;
-  --ebtb20-icon-align: center;
-  --ebtb20-icon-justify: center;
-  --ebtb20-icon-width: 32px;
-  --ebtb20-icon-height: 32px;
-  --ebtb20-icon-radius: 6px; 
-  --ebtb20-icon-bg: rgba(0, 240, 255, 0.05);
-  --ebtb20-icon-hover-bg: linear-gradient(135deg, #00f0ff 0%, #3b82f6 100%);
-  --ebtb20-icon-hover-color: #0b0f19; 
-  --ebtb20-icon-hover-transform: translateY(-2px);
-  --ebtb20-icon-hover-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
-  
-  --ebtb20-watch-hide: flex;
+  /* ===============================
+     TOPBAR LAYOUT & TIMINGS
+  =============================== */
+  --ebtb20-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==========================================================================
-   Responsive Breakpoints - Media Queries overrides (Variables Only)
-   ========================================================================== */
-
-/* 1. (0 px => 320 px) (mini screen [Watches]) */
-@media (max-width: 320px) {
-  :root {
-    --ebtb20-padding: 0.4rem 0.75rem;
-    --ebtb20-container-flex-dir: column;
-    --ebtb20-container-gap: 0.4rem;
-    --ebtb20-group-gap: 0.4rem;
-    --ebtb20-icon-width: 24px;
-    --ebtb20-icon-height: 24px;
-    --ebtb20-link-size: 0.75rem;
-    --ebtb20-watch-hide: none; /* Hide contacts to fit on watches */
-  }
-}
-
-/* 2. (321 px => 480 px) (small, medium, large phone screen) */
-@media (min-width: 321px) and (max-width: 480px) {
-  :root {
-    --ebtb20-container-flex-dir: column;
-    --ebtb20-container-gap: 0.6rem;
-    --ebtb20-padding: 0.6rem 1.25rem;
-    --ebtb20-icon-width: 28px;
-    --ebtb20-icon-height: 28px;
-  }
-  
-  /* (321px => 375px) small phone screen */
-  @media (max-width: 375px) {
-    :root {
-      --ebtb20-group-gap: 0.5rem;
-      --ebtb20-link-size: 0.8rem;
-    }
-  }
-  /* (376px => 425px) medium phone screen */
-  @media (min-width: 376px) and (max-width: 425px) {
-    :root {
-      --ebtb20-group-gap: 0.75rem;
-      --ebtb20-link-size: 0.85rem;
-    }
-  }
-  /* (426px => 480px) large phone screen */
-  @media (min-width: 426px) {
-    :root {
-      --ebtb20-group-gap: 1rem;
-      --ebtb20-link-size: 0.88rem;
-    }
-  }
-}
-
-/* 3. (481 px => 1024 px) (small, medium, large tablet screen) */
-@media (min-width: 481px) and (max-width: 1024px) {
-  :root {
-    --ebtb20-container-flex-dir: row;
-    --ebtb20-padding: 0.7rem 1.5rem;
-  }
-  /* (481px => 600px) small tablet screen */
-  @media (max-width: 600px) {
-    :root {
-      --ebtb20-group-gap: 0.8rem;
-      --ebtb20-link-size: 0.88rem;
-    }
-  }
-  /* (601px => 768px) medium tablet screen */
-  @media (min-width: 601px) and (max-width: 768px) {
-    :root {
-      --ebtb20-group-gap: 1rem;
-      --ebtb20-link-size: 0.9rem;
-    }
-  }
-  /* (769px => 1024px) large tablet screen */
-  @media (min-width: 769px) {
-    :root {
-      --ebtb20-group-gap: 1.2rem;
-      --ebtb20-link-size: 0.92rem;
-    }
-  }
-}
-
-/* 4. (1025 px => 1280 px) (small desktop screen) */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  :root {
-    --ebtb20-padding: 0.8rem 1.75rem;
-  }
-}
-
-/* 5. (1281 px => 1440 px) (medium desktop screen) */
-@media (min-width: 1281px) and (max-width: 1440px) {
-  :root {
-    --ebtb20-padding: 0.9rem 2rem;
-  }
-}
-
-/* 6. (1441 px => 1920 px) (large desktop screen) */
-@media (min-width: 1441px) and (max-width: 1920px) {
-  :root {
-    --ebtb20-padding: 1rem 2.5rem;
-  }
-}
-
-/* 7. (+1920 px) (extra Large screens) */
-@media (min-width: 1921px) {
-  :root {
-    --ebtb20-padding: 1.1rem 3rem;
-  }
-}
-
-/* ==========================================================================
-   Top Bar Layout Styling (100% Variables)
-   ========================================================================= */
-
+/* ============================================
+   TOP BAR
+   ============================================ */
 .ebtb20-top-bar {
-  display: var(--ebtb20-display);
-  justify-content: var(--ebtb20-justify);
-  align-items: var(--ebtb20-align);
-  width: var(--ebtb20-width);
-  background-color: var(--ebtb20-bg);
-  border-bottom: var(--ebtb20-border-width) var(--ebtb20-border-style) var(--ebtb20-border);
-  box-shadow: var(--ebtb20-shadow);
-  border-radius: var(--ebtb20-radius);
-  margin: var(--ebtb20-margin);
-  max-width: var(--ebtb20-max-width);
-  padding: var(--ebtb20-padding);
-  font-family: var(--ebtb20-font-sans);
-  transition: var(--ebtb20-transition);
-  backdrop-filter: var(--ebtb20-backdrop-blur);
-  -webkit-backdrop-filter: var(--ebtb20-backdrop-blur);
+  background-color: var(--ebtb20-topbar-background-color);
+  border-bottom: 1px solid var(--ebtb20-topbar-border-color);
+  padding: 0.6rem 2rem;
+  font-size: 0.8rem;
 }
 
 .ebtb20-top-bar-container {
-  display: var(--ebtb20-container-display);
-  justify-content: var(--ebtb20-container-justify);
-  align-items: var(--ebtb20-container-align);
-  width: var(--ebtb20-container-width);
-  max-width: var(--ebtb20-container-max-width);
-  gap: var(--ebtb20-container-gap);
-  flex-direction: var(--ebtb20-container-flex-dir);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.ebtb20-social-icons-top-bar {
-  display: var(--ebtb20-group-display);
-  align-items: var(--ebtb20-group-align);
-  gap: var(--ebtb20-group-gap);
+.ebtb20-social-icons {
+  display: flex;
+  gap: 1.25rem;
 }
 
-/* Specific selector to allow hiding on watches screen sizes */
-.ebtb20-social-icons-top-bar:last-child {
-  display: var(--ebtb20-watch-hide);
+.ebtb20-social-icon {
+  color: var(--ebtb20-topbar-social-icon-color);
+  transition: color 0.3s var(--ebtb20-ease);
 }
 
-.ebtb20-social-icon-top-bar {
-  display: var(--ebtb20-icon-display);
-  align-items: var(--ebtb20-icon-align);
-  justify-content: var(--ebtb20-icon-justify);
-  width: var(--ebtb20-icon-width);
-  height: var(--ebtb20-icon-height);
-  border-radius: var(--ebtb20-icon-radius);
-  color: var(--ebtb20-link-color);
-  opacity: var(--ebtb20-link-opacity);
-  background: var(--ebtb20-icon-bg);
-  font-size: var(--ebtb20-link-size);
-  font-weight: var(--ebtb20-link-weight);
-  transition: var(--ebtb20-transition);
+.ebtb20-social-icon:hover {
+  color: var(--ebtb20-topbar-social-icon-hover-color);
 }
 
-.ebtb20-social-icon-top-bar:hover {
-  opacity: 1;
-  color: var(--ebtb20-icon-hover-color);
-  background: var(--ebtb20-icon-hover-bg);
-  transform: var(--ebtb20-icon-hover-transform);
-  box-shadow: var(--ebtb20-icon-hover-shadow);
+.ebtb20-contact-info {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ebtb20-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ebtb20-topbar-contact-text-color);
+  font-weight: 600;
+  transition: color 0.3s var(--ebtb20-ease);
+  text-decoration: none;
+}
+
+.ebtb20-contact-link i {
+  color: var(--ebtb20-topbar-contact-icon-color);
+}
+
+.ebtb20-contact-link:hover {
+  color: var(--ebtb20-topbar-contact-hover-text-color);
+}
+
+/* ============================================
+   TOPBAR RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+  .ebtb20-top-bar-container {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .ebtb20-social-icons {
+    justify-content: center;
+  }
+
+  .ebtb20-contact-info {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .ebtb20-contact-link span {
+    display: none;
+  }
 }

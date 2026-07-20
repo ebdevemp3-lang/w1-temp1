@@ -1,27 +1,33 @@
 /* ============================================
-   TOP BAR — THEME 4: SAGE GREEN & CORAL (LIGHT)
+   TOPBAR — THEME 4: SAGE GREEN & CORAL (LIGHT)
    ============================================ */
 
 :root {
-  --ebtb20-primary: #2d6a4f;
-  --ebtb20-primary-rgb: 45, 106, 79;
-  --ebtb20-secondary: #1b4332;
-  --ebtb20-accent: #e76f51;
-  
-  --ebtb20-bg: #edf2ee;
-  --ebtb20-surface: #ffffff;
-  --ebtb20-text: #1b4332;
-  --ebtb20-text-muted: #52796f;
-  --ebtb20-border: rgba(45, 106, 79, 0.12);
-  
+  /* ===============================
+     TOPBAR COLORS (SAGE GREEN & CORAL)
+  =============================== */
+  --ebtb20-topbar-background-color: #edf2ee;
+  --ebtb20-topbar-border-color: rgba(45, 106, 79, 0.12);
+  --ebtb20-topbar-social-icon-color: #52796f;
+  --ebtb20-topbar-social-icon-hover-color: #2d6a4f;
+  --ebtb20-topbar-contact-text-color: #52796f;
+  --ebtb20-topbar-contact-icon-color: #2d6a4f;
+  --ebtb20-topbar-contact-hover-text-color: #2d6a4f;
+
+  /* ===============================
+     TOPBAR LAYOUT & TIMINGS
+  =============================== */
   --ebtb20-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ============================================
+   TOP BAR
+   ============================================ */
 .ebtb20-top-bar {
-  background-color: var(--ebtb20-bg);
-  border-bottom: 1px solid var(--ebtb20-border);
+  background-color: var(--ebtb20-topbar-background-color);
+  border-bottom: 1px solid var(--ebtb20-topbar-border-color);
   padding: 0.6rem 2rem;
-  transition: all 0.3s var(--ebtb20-ease);
+  font-size: 0.8rem;
 }
 
 .ebtb20-top-bar-container {
@@ -32,32 +38,66 @@
   align-items: center;
 }
 
-/* Social icons column */
-.ebtb20-social-icons-top-bar {
+.ebtb20-social-icons {
   display: flex;
   gap: 1.25rem;
 }
 
-.ebtb20-social-icon-top-bar {
-  color: var(--ebtb20-text-muted);
-  font-size: 0.9rem;
-  display: inline-flex;
-  justify-content: center;
+.ebtb20-social-icon {
+  color: var(--ebtb20-topbar-social-icon-color);
+  transition: color 0.3s var(--ebtb20-ease);
+}
+
+.ebtb20-social-icon:hover {
+  color: var(--ebtb20-topbar-social-icon-hover-color);
+}
+
+.ebtb20-contact-info {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ebtb20-contact-link {
+  display: flex;
   align-items: center;
-  transition: all 0.3s var(--ebtb20-ease);
+  gap: 0.5rem;
+  color: var(--ebtb20-topbar-contact-text-color);
+  font-weight: 600;
+  transition: color 0.3s var(--ebtb20-ease);
   text-decoration: none;
 }
 
-.ebtb20-social-icon-top-bar:hover {
-  color: var(--ebtb20-primary);
-  transform: translateY(-2px);
+.ebtb20-contact-link i {
+  color: var(--ebtb20-topbar-contact-icon-color);
 }
 
-/* Contact info icons styling */
-.ebtb20-social-icons-top-bar a[href^="tel"]:hover {
-  color: var(--ebtb20-accent);
+.ebtb20-contact-link:hover {
+  color: var(--ebtb20-topbar-contact-hover-text-color);
 }
 
-.ebtb20-social-icons-top-bar a[href*="wa.me"]:hover {
-  color: #25d366;
+/* ============================================
+   TOPBAR RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+  .ebtb20-top-bar-container {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .ebtb20-social-icons {
+    justify-content: center;
+  }
+
+  .ebtb20-contact-info {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .ebtb20-contact-link span {
+    display: none;
+  }
 }

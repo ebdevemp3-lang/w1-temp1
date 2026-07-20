@@ -3,19 +3,45 @@
    ============================================ */
 
 :root {
-  --ebsrv20-primary: #c2410c;
-  --ebsrv20-primary-rgb: 194, 65, 12;
-  --ebsrv20-secondary: #d97706;
-  --ebsrv20-secondary-rgb: 217, 119, 6;
-  --ebsrv20-accent: #e85d04;
-  --ebsrv20-accent-rgb: 232, 93, 4;
+  /* ===============================
+     SERVICES COLORS (WARM SAND)
+  =============================== */
+  --ebsrv20-section-background-color: #faf6f0;
+  --ebsrv20-orb-1-color: rgba(194, 65, 12, 0.12);
+  --ebsrv20-orb-2-color: rgba(232, 93, 4, 0.08);
 
-  --ebsrv20-bg: #faf6f0;
-  --ebsrv20-surface: #ffffff;
-  --ebsrv20-text: #2d2219;
-  --ebsrv20-text-muted: #7c624d;
-  --ebsrv20-border: #ecdcc8;
+  --ebsrv20-badge-background-color: rgba(194, 65, 12, 0.08);
+  --ebsrv20-badge-border-color: rgba(194, 65, 12, 0.2);
+  --ebsrv20-badge-text-color: #c2410c;
+  
+  --ebsrv20-title-text-color: #2d2219;
+  --ebsrv20-title-highlight-text-color: #c2410c;
+  --ebsrv20-title-underline-color: rgba(194, 65, 12, 0.15);
+  --ebsrv20-subtitle-text-color: #7c624d;
 
+  --ebsrv20-card-background-color: #ffffff;
+  --ebsrv20-card-border-color: #ecdcc8;
+  --ebsrv20-card-top-stripe-color: linear-gradient(90deg, #c2410c, #d97706);
+  --ebsrv20-card-hover-border-color: #c2410c;
+  --ebsrv20-card-hover-shadow: 0 12px 30px rgba(194, 65, 12, 0.06);
+
+  --ebsrv20-card-number-background-color: #c2410c;
+  --ebsrv20-card-number-text-color: #ffffff;
+  --ebsrv20-card-number-shadow: 0 4px 10px rgba(194, 65, 12, 0.2);
+
+  --ebsrv20-card-title-text-color: #2d2219;
+  --ebsrv20-card-title-prefix-color: #c2410c;
+  --ebsrv20-card-description-text-color: #7c624d;
+
+  --ebsrv20-card-button-text-color: #c2410c;
+  --ebsrv20-card-button-border-color: #ecdcc8;
+  --ebsrv20-card-button-hover-background-color: #c2410c;
+  --ebsrv20-card-button-hover-border-color: #c2410c;
+  --ebsrv20-card-button-hover-text-color: #ffffff;
+
+  /* ===============================
+     SERVICES LAYOUT & TIMINGS
+  =============================== */
   --ebsrv20-radius: 32px;
   --ebsrv20-img-radius: 50%;
   --ebsrv20-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -23,7 +49,7 @@
 
 .ebsrv20-section {
   position: relative;
-  background-color: var(--ebsrv20-bg);
+  background-color: var(--ebsrv20-section-background-color);
   padding: 8rem 0;
   overflow: hidden;
 }
@@ -39,22 +65,22 @@
 .ebsrv20-bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.15;
+  filter: blur(120px);
+  opacity: 0.25;
 }
 
 .ebsrv20-orb-1 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(var(--ebsrv20-primary-rgb), 0.3), transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--ebsrv20-orb-1-color), transparent 70%);
   top: -10%;
   right: -5%;
 }
 
 .ebsrv20-orb-2 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(var(--ebsrv20-secondary-rgb), 0.25), transparent 70%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--ebsrv20-orb-2-color), transparent 70%);
   bottom: -10%;
   left: -5%;
 }
@@ -70,36 +96,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .ebsrv20-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(var(--ebsrv20-primary-rgb), 0.06);
-  border: 1px solid rgba(var(--ebsrv20-primary-rgb), 0.15);
-  color: var(--ebsrv20-primary);
-  padding: 0.45rem 1.15rem;
+  background: var(--ebsrv20-badge-background-color);
+  border: 1px solid var(--ebsrv20-badge-border-color);
+  color: var(--ebsrv20-badge-text-color);
+  padding: 0.5rem 1.5rem;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .ebsrv20-title {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ebsrv20-text);
-  line-height: 1.3;
+  color: var(--ebsrv20-title-text-color);
+  line-height: 1.2;
 }
 
 .ebsrv20-title-highlight {
-  color: var(--ebsrv20-primary);
+  color: var(--ebsrv20-title-highlight-text-color);
+  position: relative;
+}
+
+.ebsrv20-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--ebsrv20-title-underline-color);
+  border-radius: 3px;
 }
 
 .ebsrv20-subtitle {
   font-size: 1.05rem;
-  color: var(--ebsrv20-text-muted);
+  color: var(--ebsrv20-subtitle-text-color);
   line-height: 1.7;
 }
 
@@ -115,123 +155,127 @@
 
 .ebsrv20-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3rem 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
 }
 
 @media (max-width: 480px) {
   .ebsrv20-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 }
 
-/* Card - Soft Scrapbook Look with Tilt */
+/* Card */
 .ebsrv20-card {
-  background-color: var(--ebsrv20-surface);
-  border: 2px dashed var(--ebsrv20-border);
+  background-color: var(--ebsrv20-card-background-color);
+  border: 2px dashed var(--ebsrv20-card-border-color);
   border-radius: var(--ebsrv20-radius);
-  padding: 2.25rem;
+  overflow: hidden;
   transition: transform 0.4s var(--ebsrv20-ease), border-color 0.4s var(--ebsrv20-ease), box-shadow 0.4s var(--ebsrv20-ease);
   display: flex;
   flex-direction: column;
-  text-align: right;
   position: relative;
 }
 
-/* Creative tilts */
-.ebsrv20-grid > div:nth-child(odd) {
-  transform: rotate(-1.5deg);
-}
-
-.ebsrv20-grid > div:nth-child(even) {
-  transform: rotate(1.5deg);
+.ebsrv20-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--ebsrv20-card-top-stripe-color);
+  opacity: 0;
+  transition: opacity 0.3s var(--ebsrv20-ease);
 }
 
 .ebsrv20-card:hover {
-  border-color: var(--ebsrv20-primary);
-  box-shadow: 0 15px 35px rgba(194, 65, 12, 0.08);
+  transform: translateY(-6px);
+  border-color: var(--ebsrv20-card-hover-border-color);
+  box-shadow: var(--ebsrv20-card-hover-shadow);
 }
 
-.ebsrv20-grid > div:nth-child(odd):hover {
-  transform: translateY(-8px) rotate(-0.5deg) scale(1.02);
+.ebsrv20-card:hover::before {
+  opacity: 1;
 }
 
-.ebsrv20-grid > div:nth-child(even):hover {
-  transform: translateY(-8px) rotate(0.5deg) scale(1.02);
-}
-
-/* Circular Image wrapper */
+/* Image wrapper */
 .ebsrv20-card-img-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.5rem auto;
+  width: 150px;
+  height: 150px;
+  margin: 2rem auto 0.75rem auto;
   border-radius: var(--ebsrv20-img-radius);
-  border: 3px solid var(--ebsrv20-border);
   overflow: hidden;
-  transition: border-color 0.3s var(--ebsrv20-ease);
-}
-
-.ebsrv20-card:hover .ebsrv20-card-img-wrapper {
-  border-color: var(--ebsrv20-primary);
+  border: 2px dashed var(--ebsrv20-card-border-color);
+  padding: 6px;
 }
 
 .ebsrv20-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   transition: transform 0.6s var(--ebsrv20-ease);
 }
 
 .ebsrv20-card:hover .ebsrv20-card-img {
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
 .ebsrv20-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(194, 65, 12, 0.05);
+  display: none;
 }
 
 .ebsrv20-card-number {
   position: absolute;
-  bottom: 1.5rem;
-  left: 2rem;
-  background: rgba(194, 65, 12, 0.08);
-  color: var(--ebsrv20-primary);
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--ebsrv20-card-number-background-color);
+  color: var(--ebsrv20-card-number-text-color);
   font-weight: 700;
   font-size: 0.85rem;
   width: 32px;
   height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--ebsrv20-card-number-shadow);
 }
 
 /* Card body */
 .ebsrv20-card-body {
+  padding: 1.5rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: center;
 }
 
 .ebsrv20-card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--ebsrv20-text);
+  color: var(--ebsrv20-card-title-text-color);
   margin-bottom: 0.75rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.ebsrv20-card-title::before {
+  content: '//';
+  color: var(--ebsrv20-card-title-prefix-color);
+  font-weight: 400;
 }
 
 .ebsrv20-card-desc {
-  font-size: 0.95rem;
-  color: var(--ebsrv20-text-muted);
+  font-size: 0.92rem;
+  color: var(--ebsrv20-card-description-text-color);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   flex-grow: 1;
-  text-align: center;
 }
 
 .ebsrv20-card-link {
@@ -239,15 +283,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  color: var(--ebsrv20-primary);
+  color: var(--ebsrv20-card-button-text-color);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
-  align-self: center;
-  background: rgba(194, 65, 12, 0.05);
-  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--ebsrv20-card-button-border-color);
+  padding: 0.6rem 1.5rem;
   border-radius: 50px;
   transition: all 0.3s var(--ebsrv20-ease);
+  width: 100%;
 }
 
 .ebsrv20-card-link i {
@@ -255,8 +299,9 @@
 }
 
 .ebsrv20-card:hover .ebsrv20-card-link {
-  background: var(--ebsrv20-primary);
-  color: #ffffff;
+  background-color: var(--ebsrv20-card-button-hover-background-color);
+  border-color: var(--ebsrv20-card-button-hover-border-color);
+  color: var(--ebsrv20-card-button-hover-text-color);
 }
 
 .ebsrv20-card:hover .ebsrv20-card-link i {
@@ -275,9 +320,9 @@
   transform: translateY(0);
 }
 
-.ebsrv20-delay-1 { transition-delay: 0.12s; }
-.ebsrv20-delay-2 { transition-delay: 0.24s; }
-.ebsrv20-delay-3 { transition-delay: 0.36s; }
-.ebsrv20-delay-4 { transition-delay: 0.48s; }
-.ebsrv20-delay-5 { transition-delay: 0.6s; }
-.ebsrv20-delay-6 { transition-delay: 0.72s; }
+.ebsrv20-delay-1 { transition-delay: 0.1s; }
+.ebsrv20-delay-2 { transition-delay: 0.2s; }
+.ebsrv20-delay-3 { transition-delay: 0.3s; }
+.ebsrv20-delay-4 { transition-delay: 0.4s; }
+.ebsrv20-delay-5 { transition-delay: 0.5s; }
+.ebsrv20-delay-6 { transition-delay: 0.6s; }

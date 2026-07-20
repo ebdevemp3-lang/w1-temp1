@@ -3,24 +3,49 @@
    ============================================ */
 
 :root {
-  --ebci20-primary: #b89020;
-  --ebci20-primary-rgb: 184, 144, 32;
-  --ebci20-secondary: #8c6d1d;
-  --ebci20-accent: #c5a059;
+  /* ===============================
+     CONTACT COLORS (OBSIDIAN GOLD)
+  =============================== */
+  --ebci20-section-background-color: #faf9f5;
+  --ebci20-orb-1-color: rgba(184, 144, 32, 0.15);
+  --ebci20-orb-2-color: rgba(197, 160, 89, 0.08);
 
-  --ebci20-bg: #faf9f5;
-  --ebci20-surface: #ffffff;
-  --ebci20-text: #1c1917;
-  --ebci20-text-muted: #57534e;
-  --ebci20-border: #e7e2d8;
+  --ebci20-badge-background-color: rgba(184, 144, 32, 0.08);
+  --ebci20-badge-border-color: rgba(184, 144, 32, 0.2);
+  --ebci20-badge-text-color: #b89020;
+  
+  --ebci20-title-text-color: #1c1917;
+  --ebci20-title-highlight-text-color: #b89020;
+  --ebci20-subtitle-text-color: #57534e;
 
+  --ebci20-card-background-color: #ffffff;
+  --ebci20-card-border-color: #e7e2d8;
+  --ebci20-card-top-stripe-color: linear-gradient(90deg, #b89020, #8c6d1d);
+  --ebci20-card-hover-border-color: #b89020;
+  --ebci20-card-hover-shadow: 0 15px 30px rgba(184, 144, 32, 0.08);
+
+  --ebci20-card-icon-background-color: rgba(184, 144, 32, 0.05);
+  --ebci20-card-icon-border-color: #e7e2d8;
+  --ebci20-card-icon-color: #b89020;
+  --ebci20-card-icon-hover-background-color: #b89020;
+  --ebci20-card-icon-hover-border-color: #b89020;
+  --ebci20-card-icon-hover-color: #ffffff;
+
+  --ebci20-card-title-text-color: #1c1917;
+  --ebci20-card-description-text-color: #57534e;
+  --ebci20-card-value-text-color: #b89020;
+  --ebci20-card-value-hover-text-color: #8c6d1d;
+
+  /* ===============================
+     CONTACT LAYOUT & TIMINGS
+  =============================== */
   --ebci20-radius: 0px;
   --ebci20-ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .ebci20-section {
   position: relative;
-  background-color: var(--ebci20-bg);
+  background-color: var(--ebci20-section-background-color);
   padding: 8rem 0;
   overflow: hidden;
 }
@@ -43,7 +68,7 @@
 .ebci20-orb-1 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(var(--ebci20-primary-rgb), 0.3), transparent 70%);
+  background: radial-gradient(circle, var(--ebci20-orb-1-color), transparent 70%);
   top: -10%;
   right: -5%;
 }
@@ -51,7 +76,7 @@
 .ebci20-orb-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(var(--ebci20-accent-rgb), 0.2), transparent 70%);
+  background: radial-gradient(circle, var(--ebci20-orb-2-color), transparent 70%);
   bottom: -10%;
   left: -5%;
 }
@@ -72,37 +97,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .ebci20-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border-bottom: 1px solid var(--ebci20-primary);
-  color: var(--ebci20-primary);
-  padding: 0.25rem 0.5rem;
+  background: var(--ebci20-badge-background-color);
+  border: 1px solid var(--ebci20-badge-border-color);
+  color: var(--ebci20-badge-text-color);
+  padding: 0.5rem 1.25rem;
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .ebci20-title {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ebci20-text);
+  color: var(--ebci20-title-text-color);
   line-height: 1.2;
+  font-family: serif;
 }
 
 .ebci20-title-highlight {
-  color: var(--ebci20-primary);
-  font-style: italic;
+  color: var(--ebci20-title-highlight-text-color);
 }
 
 .ebci20-subtitle {
-  font-size: 1rem;
-  color: var(--ebci20-text-muted);
-  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--ebci20-subtitle-text-color);
+  line-height: 1.7;
 }
 
 /* Grid Layout */
@@ -118,10 +144,10 @@
   }
 }
 
-/* Card - Luxury Frame with solid gold offset shadow */
+/* Card */
 .ebci20-card {
-  background: var(--ebci20-surface);
-  border: 1px solid var(--ebci20-border);
+  background: var(--ebci20-card-background-color);
+  border: 1px solid var(--ebci20-card-border-color);
   border-radius: var(--ebci20-radius);
   padding: 3rem 2rem;
   display: flex;
@@ -129,77 +155,82 @@
   align-items: center;
   text-align: center;
   text-decoration: none;
-  box-shadow: 6px 6px 0px rgba(184, 144, 32, 0.12);
   transition: all 0.4s var(--ebci20-ease);
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(28, 25, 23, 0.02);
 }
 
-.ebci20-card::after {
+.ebci20-card::before {
   content: '';
   position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(184, 144, 32, 0.1);
-  pointer-events: none;
-  transition: inset 0.3s var(--ebci20-ease), border-color 0.3s var(--ebci20-ease);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--ebci20-card-top-stripe-color);
+  opacity: 0;
+  transition: opacity 0.3s var(--ebci20-ease);
 }
 
 .ebci20-card:hover {
   transform: translateY(-6px);
-  border-color: var(--ebci20-primary);
-  box-shadow: 8px 8px 0px var(--ebci20-primary);
+  border-color: var(--ebci20-card-hover-border-color);
+  box-shadow: var(--ebci20-card-hover-shadow);
 }
 
-.ebci20-card:hover::after {
-  inset: 5px;
-  border-color: var(--ebci20-primary);
+.ebci20-card:hover::before {
+  opacity: 1;
 }
 
 /* Icon wrapper */
 .ebci20-icon-wrapper {
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--ebci20-card-icon-background-color);
+  border: 1px solid var(--ebci20-card-icon-border-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
-  color: var(--ebci20-primary);
-  border: 1px solid var(--ebci20-primary);
+  font-size: 1.6rem;
+  color: var(--ebci20-card-icon-color);
   margin-bottom: 1.5rem;
   transition: all 0.3s var(--ebci20-ease);
 }
 
 .ebci20-card:hover .ebci20-icon-wrapper {
-  background: var(--ebci20-primary);
-  color: var(--ebci20-surface);
+  background: var(--ebci20-card-icon-hover-background-color);
+  color: var(--ebci20-card-icon-hover-color);
+  border-color: var(--ebci20-card-icon-hover-border-color);
   transform: scale(1.05);
 }
 
 .ebci20-card-title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--ebci20-text);
+  color: var(--ebci20-card-title-text-color);
   margin-bottom: 0.5rem;
-  letter-spacing: 0.02em;
+  font-family: serif;
 }
 
 .ebci20-card-desc {
-  font-size: 0.92rem;
-  color: var(--ebci20-text-muted);
-  line-height: 1.6;
+  font-size: 0.9rem;
+  color: var(--ebci20-card-description-text-color);
+  line-height: 1.5;
   margin-bottom: 1.25rem;
 }
 
 .ebci20-card-value {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--ebci20-text);
-  border-bottom: 1px solid var(--ebci20-primary);
-  padding-bottom: 2px;
-  transition: all 0.3s var(--ebci20-ease);
+  color: var(--ebci20-card-value-text-color);
+  letter-spacing: 0.02em;
+  transition: color 0.3s var(--ebci20-ease);
 }
 
 .ebci20-card:hover .ebci20-card-value {
-  color: var(--ebci20-primary);
+  color: var(--ebci20-card-value-hover-text-color);
 }
 
 /* Animations */
@@ -214,6 +245,6 @@
   transform: translateY(0);
 }
 
-.ebci20-delay-1 { transition-delay: 0.15s; }
-.ebci20-delay-2 { transition-delay: 0.3s; }
-.ebci20-delay-3 { transition-delay: 0.45s; }
+.ebci20-delay-1 { transition-delay: 0.1s; }
+.ebci20-delay-2 { transition-delay: 0.25s; }
+.ebci20-delay-3 { transition-delay: 0.4s; }

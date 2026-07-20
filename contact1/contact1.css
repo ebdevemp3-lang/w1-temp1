@@ -3,24 +3,49 @@
    ============================================ */
 
 :root {
-  --ebci20-primary: #00b4d8;
-  --ebci20-primary-rgb: 0, 180, 216;
-  --ebci20-secondary: #0077b6;
-  --ebci20-accent: #7209b7;
-  
-  --ebci20-bg: #f8fafc;
-  --ebci20-surface: #ffffff;
-  --ebci20-text: #0f172a;
-  --ebci20-text-muted: #64748b;
-  --ebci20-border: rgba(0, 180, 216, 0.15);
+  /* ===============================
+     CONTACT COLORS (TECH NEON)
+  =============================== */
+  --ebci20-section-background-color: #f8fafc;
+  --ebci20-orb-1-color: rgba(0, 180, 216, 0.4);
+  --ebci20-orb-2-color: rgba(0, 180, 216, 0.2);
 
+  --ebci20-badge-background-color: rgba(0, 180, 216, 0.08);
+  --ebci20-badge-border-color: rgba(0, 180, 216, 0.2);
+  --ebci20-badge-text-color: #00b4d8;
+  
+  --ebci20-title-text-color: #0f172a;
+  --ebci20-title-highlight-text-color: #00b4d8;
+  --ebci20-subtitle-text-color: #64748b;
+
+  --ebci20-card-background-color: #ffffff;
+  --ebci20-card-border-color: rgba(0, 180, 216, 0.15);
+  --ebci20-card-top-stripe-color: linear-gradient(90deg, #00b4d8, #0077b6);
+  --ebci20-card-hover-border-color: rgba(0, 180, 216, 0.4);
+  --ebci20-card-hover-shadow: 0 15px 30px rgba(0, 180, 216, 0.1);
+
+  --ebci20-card-icon-background-color: rgba(0, 180, 216, 0.05);
+  --ebci20-card-icon-border-color: rgba(0, 180, 216, 0.15);
+  --ebci20-card-icon-color: #00b4d8;
+  --ebci20-card-icon-hover-background-color: #00b4d8;
+  --ebci20-card-icon-hover-border-color: #00b4d8;
+  --ebci20-card-icon-hover-color: #ffffff;
+
+  --ebci20-card-title-text-color: #0f172a;
+  --ebci20-card-description-text-color: #64748b;
+  --ebci20-card-value-text-color: #00b4d8;
+  --ebci20-card-value-hover-text-color: #0077b6;
+
+  /* ===============================
+     CONTACT LAYOUT & TIMINGS
+  =============================== */
   --ebci20-radius: 16px;
   --ebci20-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ebci20-section {
   position: relative;
-  background-color: var(--ebci20-bg);
+  background-color: var(--ebci20-section-background-color);
   padding: 7rem 0;
   overflow: hidden;
 }
@@ -43,7 +68,7 @@
 .ebci20-orb-1 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(var(--ebci20-primary-rgb), 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--ebci20-orb-1-color), transparent 70%);
   top: -10%;
   right: -5%;
 }
@@ -51,7 +76,7 @@
 .ebci20-orb-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(var(--ebci20-primary-rgb), 0.2), transparent 70%);
+  background: radial-gradient(circle, var(--ebci20-orb-2-color), transparent 70%);
   bottom: -10%;
   left: -5%;
 }
@@ -79,9 +104,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(var(--ebci20-primary-rgb), 0.08);
-  border: 1px solid rgba(var(--ebci20-primary-rgb), 0.2);
-  color: var(--ebci20-primary);
+  background: var(--ebci20-badge-background-color);
+  border: 1px solid var(--ebci20-badge-border-color);
+  color: var(--ebci20-badge-text-color);
   padding: 0.4rem 1.1rem;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -91,17 +116,17 @@
 .ebci20-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ebci20-text);
+  color: var(--ebci20-title-text-color);
   line-height: 1.2;
 }
 
 .ebci20-title-highlight {
-  color: var(--ebci20-primary);
+  color: var(--ebci20-title-highlight-text-color);
 }
 
 .ebci20-subtitle {
   font-size: 1.05rem;
-  color: var(--ebci20-text-muted);
+  color: var(--ebci20-subtitle-text-color);
   line-height: 1.7;
 }
 
@@ -120,8 +145,8 @@
 
 /* Card - Glassmorphism style */
 .ebci20-card {
-  background: var(--ebci20-surface);
-  border: 1px solid var(--ebci20-border);
+  background: var(--ebci20-card-background-color);
+  border: 1px solid var(--ebci20-card-border-color);
   border-radius: var(--ebci20-radius);
   padding: 2.5rem 2rem;
   display: flex;
@@ -142,15 +167,15 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--ebci20-primary), var(--ebci20-secondary));
+  background: var(--ebci20-card-top-stripe-color);
   opacity: 0;
   transition: opacity 0.3s var(--ebci20-ease);
 }
 
 .ebci20-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(var(--ebci20-primary-rgb), 0.4);
-  box-shadow: 0 15px 30px rgba(0, 180, 216, 0.1);
+  border-color: var(--ebci20-card-hover-border-color);
+  box-shadow: var(--ebci20-card-hover-shadow);
 }
 
 .ebci20-card:hover::before {
@@ -162,34 +187,34 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(var(--ebci20-primary-rgb), 0.05);
-  border: 1px solid var(--ebci20-border);
+  background: var(--ebci20-card-icon-background-color);
+  border: 1px solid var(--ebci20-card-icon-border-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  color: var(--ebci20-primary);
+  color: var(--ebci20-card-icon-color);
   margin-bottom: 1.5rem;
   transition: all 0.3s var(--ebci20-ease);
 }
 
 .ebci20-card:hover .ebci20-icon-wrapper {
-  background: var(--ebci20-primary);
-  color: #ffffff;
-  border-color: var(--ebci20-primary);
+  background: var(--ebci20-card-icon-hover-background-color);
+  color: var(--ebci20-card-icon-hover-color);
+  border-color: var(--ebci20-card-icon-hover-border-color);
   transform: scale(1.05);
 }
 
 .ebci20-card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--ebci20-text);
+  color: var(--ebci20-card-title-text-color);
   margin-bottom: 0.5rem;
 }
 
 .ebci20-card-desc {
   font-size: 0.9rem;
-  color: var(--ebci20-text-muted);
+  color: var(--ebci20-card-description-text-color);
   line-height: 1.5;
   margin-bottom: 1.25rem;
 }
@@ -197,13 +222,13 @@
 .ebci20-card-value {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--ebci20-primary);
+  color: var(--ebci20-card-value-text-color);
   letter-spacing: 0.02em;
   transition: color 0.3s var(--ebci20-ease);
 }
 
 .ebci20-card:hover .ebci20-card-value {
-  color: var(--ebci20-secondary);
+  color: var(--ebci20-card-value-hover-text-color);
 }
 
 /* Animations */

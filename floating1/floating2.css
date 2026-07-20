@@ -3,11 +3,24 @@
    ============================================ */
 
 :root {
-  --ebctad20-primary: #b89020;
-  --ebctad20-primary-rgb: 184, 144, 32;
-  --ebctad20-whatsapp: #25d366;
-  --ebctad20-bg-light: #ffffff;
-  
+  /* ===============================
+     FLOATING COLORS (OBSIDIAN GOLD)
+  =============================== */
+  --ebctad20-button-background-color: #ffffff;
+  --ebctad20-button-border-color: #b89020;
+  --ebctad20-button-text-color: #1c1917;
+  --ebctad20-button-shadow: 0 4px 15px rgba(28, 25, 23, 0.05);
+  --ebctad20-inner-border-color: rgba(184, 144, 32, 0.15);
+  --ebctad20-icon-color: #b89020;
+
+  --ebctad20-button-hover-background-color: #1c1917;
+  --ebctad20-button-hover-border-color: #1c1917;
+  --ebctad20-button-hover-text-color: #ffffff;
+  --ebctad20-button-hover-inner-border-color: #b89020;
+
+  /* ===============================
+     FLOATING LAYOUT & TIMINGS
+  =============================== */
   --ebctad20-radius: 0px;
   --ebctad20-ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -41,15 +54,15 @@
   gap: 0.75rem;
   padding: 0.5rem 1rem;
   border-radius: var(--ebctad20-radius);
-  background: var(--ebctad20-bg-light);
-  color: #1c1917;
-  border: 1px solid var(--ebctad20-primary);
+  background: var(--ebctad20-button-background-color);
+  color: var(--ebctad20-button-text-color);
+  border: 1px solid var(--ebctad20-button-border-color);
   text-decoration: none;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   position: relative;
-  box-shadow: 0 4px 15px rgba(28, 25, 23, 0.05);
+  box-shadow: var(--ebctad20-button-shadow);
   transition: all 0.3s var(--ebctad20-ease);
 }
 
@@ -58,7 +71,7 @@
   content: '';
   position: absolute;
   inset: 3px;
-  border: 1px solid rgba(184, 144, 32, 0.15);
+  border: 1px solid var(--ebctad20-inner-border-color);
   pointer-events: none;
   transition: border-color 0.3s var(--ebctad20-ease);
 }
@@ -69,34 +82,34 @@
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  color: var(--ebctad20-primary);
+  color: var(--ebctad20-icon-color);
   transition: transform 0.3s var(--ebctad20-ease);
 }
 
 /* Label styling */
 .ebctad20-label {
   font-size: 0.8rem;
-  color: #1c1917;
+  color: var(--ebctad20-button-text-color);
 }
 
 /* Hover effects */
 .ebctad20-btn:hover {
   transform: translateY(-3px);
-  background: #1c1917;
-  border-color: #1c1917;
+  background: var(--ebctad20-button-hover-background-color);
+  border-color: var(--ebctad20-button-hover-border-color);
 }
 
 .ebctad20-btn:hover .ebctad20-label {
-  color: #ffffff;
+  color: var(--ebctad20-button-hover-text-color);
 }
 
 .ebctad20-btn:hover .ebctad20-icon-wrapper {
-  color: var(--ebctad20-primary);
+  color: var(--ebctad20-icon-color);
   transform: scale(1.1);
 }
 
 .ebctad20-btn:hover::after {
-  border-color: var(--ebctad20-primary);
+  border-color: var(--ebctad20-button-hover-inner-border-color);
 }
 
 /* No pulsing animations for gold theme (maintains premium elegance) */

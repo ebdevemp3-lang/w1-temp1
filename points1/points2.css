@@ -3,24 +3,50 @@
    ============================================ */
 
 :root {
-  --ebpt20-primary: #b89020;
-  --ebpt20-primary-rgb: 184, 144, 32;
-  --ebpt20-secondary: #8c6d1d;
-  --ebpt20-accent: #c5a059;
+  /* ===============================
+     POINTS COLORS (OBSIDIAN GOLD)
+  =============================== */
+  --ebpt20-section-background-color: #faf9f5;
 
-  --ebpt20-bg: #faf9f5;
-  --ebpt20-surface: #ffffff;
-  --ebpt20-text: #1c1917;
-  --ebpt20-text-muted: #57534e;
-  --ebpt20-border: #e7e2d8;
+  --ebpt20-badge-background-color: rgba(184, 144, 32, 0.08);
+  --ebpt20-badge-border-color: rgba(184, 144, 32, 0.2);
+  --ebpt20-badge-text-color: #b89020;
+  
+  --ebpt20-title-text-color: #1c1917;
+  --ebpt20-title-highlight-text-color: #b89020;
+  --ebpt20-subtitle-text-color: #57534e;
 
+  --ebpt20-timeline-line-color: linear-gradient(90deg, rgba(184, 144, 32, 0.1) 0%, #b89020 50%, rgba(184, 144, 32, 0.1) 100%);
+
+  --ebpt20-card-background-color: #ffffff;
+  --ebpt20-card-border-color: #e7e2d8;
+  --ebpt20-card-hover-border-color: #b89020;
+  --ebpt20-card-hover-shadow: 0 12px 30px rgba(184, 144, 32, 0.08);
+
+  --ebpt20-card-icon-background-color: #ffffff;
+  --ebpt20-card-icon-border-color: #b89020;
+  --ebpt20-card-icon-color: #b89020;
+  --ebpt20-card-icon-shadow: 0 0 15px rgba(184, 144, 32, 0.15);
+  --ebpt20-card-icon-hover-background-color: #b89020;
+  --ebpt20-card-icon-hover-color: #ffffff;
+  --ebpt20-card-icon-hover-shadow: 0 0 25px rgba(184, 144, 32, 0.3);
+
+  --ebpt20-card-number-background-color: #1c1917;
+  --ebpt20-card-number-text-color: #ffffff;
+
+  --ebpt20-card-title-text-color: #1c1917;
+  --ebpt20-card-description-text-color: #57534e;
+
+  /* ===============================
+     POINTS LAYOUT & TIMINGS
+  =============================== */
   --ebpt20-radius: 0px;
   --ebpt20-ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .ebpt20-section {
   position: relative;
-  background-color: var(--ebpt20-bg);
+  background-color: var(--ebpt20-section-background-color);
   padding: 8rem 0;
   overflow: hidden;
 }
@@ -38,166 +64,161 @@
 .ebpt20-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 6rem auto;
+  margin: 0 auto 5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .ebpt20-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border-bottom: 1px solid var(--ebpt20-primary);
-  color: var(--ebpt20-primary);
-  padding: 0.25rem 0.5rem;
+  background: var(--ebpt20-badge-background-color);
+  border: 1px solid var(--ebpt20-badge-border-color);
+  color: var(--ebpt20-badge-text-color);
+  padding: 0.5rem 1.25rem;
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .ebpt20-title {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ebpt20-text);
+  color: var(--ebpt20-title-text-color);
   line-height: 1.2;
+  font-family: serif;
 }
 
 .ebpt20-title-highlight {
-  color: var(--ebpt20-primary);
-  font-style: italic;
+  color: var(--ebpt20-title-highlight-text-color);
 }
 
 .ebpt20-subtitle {
-  font-size: 1rem;
-  color: var(--ebpt20-text-muted);
-  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--ebpt20-subtitle-text-color);
+  line-height: 1.7;
 }
 
-/* Staggered Vertical Stepper Layout */
+/* Timeline Layout wrapper */
 .ebpt20-steps-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  justify-content: space-between;
   position: relative;
+  gap: 1.5rem;
 }
 
-/* Central decorative vertical axis line */
+/* Desktop Connecting Timeline Line */
 .ebpt20-steps-wrapper::before {
   content: '';
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  background-color: var(--ebpt20-border);
+  top: 40px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: var(--ebpt20-timeline-line-color);
+  z-index: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .ebpt20-steps-wrapper {
+    flex-direction: column;
     gap: 3rem;
   }
   .ebpt20-steps-wrapper::before {
-    left: 20px;
-    transform: none;
+    top: 5%;
+    bottom: 5%;
+    left: 40px;
+    right: auto;
+    width: 2px;
+    height: 90%;
   }
 }
 
-/* Step Card - Alternating Columns (Staggered Layout) */
+/* Step Card */
 .ebpt20-step-card {
-  width: 45%;
-  background: var(--ebpt20-surface);
-  border: 1px solid var(--ebpt20-border);
+  flex: 1;
+  background: var(--ebpt20-card-background-color);
+  border: 1px solid var(--ebpt20-card-border-color);
   border-radius: var(--ebpt20-radius);
-  padding: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
   z-index: 2;
-  box-shadow: 0 10px 30px rgba(28, 25, 23, 0.02);
+  box-shadow: 0 8px 24px rgba(28, 25, 23, 0.02);
   transition: transform 0.4s var(--ebpt20-ease), border-color 0.4s var(--ebpt20-ease), box-shadow 0.4s var(--ebpt20-ease);
 }
 
-/* Luxury corner accent */
-.ebpt20-step-card::after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 20px;
-  height: 20px;
-  border-top: 2px solid var(--ebpt20-primary);
-  border-left: 2px solid var(--ebpt20-primary);
-  transition: all 0.3s var(--ebpt20-ease);
-}
-
-.ebpt20-step-card:hover::after {
-  width: 35px;
-  height: 35px;
-}
-
-/* Stagger right side for odd steps, left side for even steps */
-.ebpt20-steps-wrapper > div:nth-child(odd) {
-  align-self: flex-start;
-}
-
-.ebpt20-steps-wrapper > div:nth-child(even) {
-  align-self: flex-end;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .ebpt20-step-card {
-    width: calc(100% - 50px);
-    align-self: flex-end !important;
-    padding: 2rem;
+    flex-direction: row;
+    text-align: right;
+    align-items: flex-start;
+    padding: 2.5rem;
+    gap: 1.5rem;
   }
 }
 
 .ebpt20-step-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--ebpt20-primary);
-  box-shadow: 0 15px 35px rgba(28, 25, 23, 0.05);
+  transform: translateY(-6px);
+  border-color: var(--ebpt20-card-hover-border-color);
+  box-shadow: var(--ebpt20-card-hover-shadow);
 }
 
 /* Step Header */
 .ebpt20-step-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Big Gold Number acting as watermark */
-.ebpt20-step-number {
-  color: rgba(184, 144, 32, 0.15);
-  font-family: serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  line-height: 1;
-  transition: color 0.3s var(--ebpt20-ease);
+@media (max-width: 1024px) {
+  .ebpt20-step-header {
+    margin-bottom: 0;
+  }
 }
 
-.ebpt20-step-card:hover .ebpt20-step-number {
-  color: var(--ebpt20-primary);
-}
-
-/* Minimal Luxury Gold Stepper Icons */
+/* Step Icon container */
 .ebpt20-step-icon {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--ebpt20-card-icon-background-color);
+  border: 1px solid var(--ebpt20-card-icon-border-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
-  color: var(--ebpt20-primary);
-  border: 1px solid var(--ebpt20-primary);
-  background: transparent;
+  font-size: 1.8rem;
+  color: var(--ebpt20-card-icon-color);
+  box-shadow: var(--ebpt20-card-icon-shadow);
   transition: all 0.3s var(--ebpt20-ease);
 }
 
 .ebpt20-step-card:hover .ebpt20-step-icon {
-  background: var(--ebpt20-primary);
-  color: var(--ebpt20-surface);
+  background: var(--ebpt20-card-icon-hover-background-color);
+  color: var(--ebpt20-card-icon-hover-color);
+  box-shadow: var(--ebpt20-card-icon-hover-shadow);
+}
+
+/* Step Number indicator */
+.ebpt20-step-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--ebpt20-card-number-background-color);
+  color: var(--ebpt20-card-number-text-color);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0px;
+  letter-spacing: 0.05em;
 }
 
 /* Step Body */
@@ -208,18 +229,16 @@
 }
 
 .ebpt20-step-title {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--ebpt20-text);
-  border-bottom: 1px solid var(--ebpt20-border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.25rem;
+  color: var(--ebpt20-card-title-text-color);
+  font-family: serif;
 }
 
 .ebpt20-step-desc {
-  font-size: 0.92rem;
-  color: var(--ebpt20-text-muted);
-  line-height: 1.7;
+  font-size: 0.9rem;
+  color: var(--ebpt20-card-description-text-color);
+  line-height: 1.6;
 }
 
 /* Animations */
@@ -234,7 +253,7 @@
   transform: translateY(0);
 }
 
-.ebpt20-delay-1 { transition-delay: 0.15s; }
-.ebpt20-delay-2 { transition-delay: 0.3s; }
-.ebpt20-delay-3 { transition-delay: 0.45s; }
-.ebpt20-delay-4 { transition-delay: 0.6s; }
+.ebpt20-delay-1 { transition-delay: 0.1s; }
+.ebpt20-delay-2 { transition-delay: 0.25s; }
+.ebpt20-delay-3 { transition-delay: 0.4s; }
+.ebpt20-delay-4 { transition-delay: 0.55s; }

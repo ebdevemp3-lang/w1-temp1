@@ -1,34 +1,63 @@
 /* ============================================
-   HERO — THEME 1: TECH NEON
+   HERO — THEME 1: TECH LIGHT
    ============================================ */
 
 :root {
-  --ebhro20-primary: #0284c7;
-  --ebhro20-primary-rgb: 2, 132, 199;
-  --ebhro20-secondary: #4f46e5;
-  --ebhro20-secondary-rgb: 79, 70, 229;
-  --ebhro20-accent: #7c3aed;
-  --ebhro20-accent-rgb: 124, 58, 237;
+  /* ===============================
+     HERO COLORS (TECH LIGHT)
+  =============================== */
+  --ebhro20-hero-background-color: linear-gradient(135deg, #f0f4f8 0%, #f8fafc 100%);
+  --ebhro20-title-text-color: #0f172a;
+  --ebhro20-title-highlight-gradient: linear-gradient(135deg, #0284c7, #4f46e5, #7c3aed);
+  --ebhro20-description-text-color: #475569;
+  
+  --ebhro20-badge-background-color: rgba(2, 132, 199, 0.08);
+  --ebhro20-badge-border-color: rgba(2, 132, 199, 0.2);
+  --ebhro20-badge-text-color: #0284c7;
 
-  --ebhro20-bg: linear-gradient(135deg, #f0f4f8 0%, #f8fafc 100%);
-  --ebhro20-surface: rgba(255, 255, 255, 0.85);
-  --ebhro20-text: #0f172a;
-  --ebhro20-text-muted: #475569;
-  --ebhro20-border: rgba(2, 132, 199, 0.12);
-  --ebhro20-glow: 0 10px 30px rgba(2, 132, 199, 0.05);
-  --ebhro20-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  --ebhro20-stats-background-color: rgba(255, 255, 255, 0.85);
+  --ebhro20-stats-border-color: rgba(2, 132, 199, 0.12);
+  --ebhro20-stats-number-color: #0284c7;
+  --ebhro20-stats-label-color: #475569;
+  --ebhro20-stats-divider-color: rgba(2, 132, 199, 0.12);
 
+  --ebhro20-visual-circle-border-color: rgba(2, 132, 199, 0.1);
+  --ebhro20-visual-circle-glow-1: rgba(2, 132, 199, 0.12);
+  --ebhro20-visual-circle-glow-2: rgba(2, 132, 199, 0.25);
+  --ebhro20-orbit-dot-1-color: #0284c7;
+  --ebhro20-orbit-dot-2-color: #4f46e5;
+  --ebhro20-orbit-dot-3-color: #7c3aed;
+
+  --ebhro20-float-card-background-color: rgba(255, 255, 255, 0.85);
+  --ebhro20-float-card-border-color: rgba(2, 132, 199, 0.12);
+  --ebhro20-float-card-text-color: #0f172a;
+  --ebhro20-float-card-icon-color: #0284c7;
+  --ebhro20-float-card-hover-border-color: #0284c7;
+  --ebhro20-float-card-hover-glow: 0 10px 30px rgba(2, 132, 199, 0.05);
+  --ebhro20-float-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+
+  --ebhro20-gradient-orb-1-color: rgba(2, 132, 199, 0.4);
+  --ebhro20-gradient-orb-2-color: rgba(79, 70, 229, 0.35);
+  --ebhro20-gradient-orb-3-color: rgba(124, 58, 237, 0.25);
+  --ebhro20-grid-line-color: rgba(2, 132, 199, 0.03);
+  --ebhro20-particle-color: #0284c7;
+
+  --ebhro20-scroll-text-color: #475569;
+  --ebhro20-scroll-mouse-border-color: #475569;
+  --ebhro20-scroll-wheel-color: #0284c7;
+
+  /* ===============================
+     HERO LAYOUT & DIMENSIONS
+  =============================== */
   --ebhro20-radius: 12px;
-  --ebhro20-btn-radius: 10px;
   --ebhro20-card-radius: 14px;
-
   --ebhro20-title-size: 3.25rem;
   --ebhro20-visual-size: 340px;
   --ebhro20-ring-size: 280px;
   --ebhro20-core-size: 110px;
 }
 
-/* ---- Responsive ---- */
+/* ---- Responsive Breakpoints ---- */
 @media (max-width: 320px) {
   :root { --ebhro20-title-size: 1.65rem; --ebhro20-visual-size: 220px; --ebhro20-ring-size: 170px; --ebhro20-core-size: 70px; }
 }
@@ -46,7 +75,7 @@
 .ebhro20-hero {
   position: relative;
   min-height: 100vh;
-  background: var(--ebhro20-bg);
+  background: var(--ebhro20-hero-background-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,21 +102,21 @@
 
 .ebhro20-orb-1 {
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(var(--ebhro20-primary-rgb), 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--ebhro20-gradient-orb-1-color), transparent 70%);
   top: -10%; right: -5%;
   animation: ebhroOrb1 12s ease-in-out infinite;
 }
 
 .ebhro20-orb-2 {
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(var(--ebhro20-secondary-rgb), 0.35), transparent 70%);
+  background: radial-gradient(circle, var(--ebhro20-gradient-orb-2-color), transparent 70%);
   bottom: -15%; left: -10%;
   animation: ebhroOrb2 15s ease-in-out infinite;
 }
 
 .ebhro20-orb-3 {
   width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(var(--ebhro20-accent-rgb), 0.25), transparent 70%);
+  background: radial-gradient(circle, var(--ebhro20-gradient-orb-3-color), transparent 70%);
   top: 40%; left: 50%;
   animation: ebhroOrb3 18s ease-in-out infinite;
 }
@@ -111,18 +140,18 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(var(--ebhro20-primary-rgb), 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--ebhro20-primary-rgb), 0.03) 1px, transparent 1px);
+    linear-gradient(var(--ebhro20-grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ebhro20-grid-line-color) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 100%);
 }
 
-/* Particles — positions via classes */
+/* Particles */
 .ebhro20-particle {
   position: absolute;
   width: 4px; height: 4px;
-  background: var(--ebhro20-primary);
+  background: var(--ebhro20-particle-color);
   border-radius: 50%;
   opacity: 0;
   animation: ebhroParticle 6s ease-in-out infinite;
@@ -173,7 +202,7 @@
   .ebhro20-text-block { align-items: center; }
 }
 
-/* ---- Slide-up delays via classes ---- */
+/* Slide-up animations */
 .ebhro20-anim-up {
   opacity: 0;
   transform: translateY(35px);
@@ -191,9 +220,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(var(--ebhro20-primary-rgb), 0.08);
-  border: 1px solid rgba(var(--ebhro20-primary-rgb), 0.2);
-  color: var(--ebhro20-primary);
+  background: var(--ebhro20-badge-background-color);
+  border: 1px solid var(--ebhro20-badge-border-color);
+  color: var(--ebhro20-badge-text-color);
   padding: 0.45rem 1.15rem;
   border-radius: 50px;
   font-size: 0.82rem;
@@ -201,19 +230,18 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-
 .ebhro20-badge i { font-size: 0.75rem; }
 
 /* Title */
 .ebhro20-title {
   font-size: var(--ebhro20-title-size);
   font-weight: 700;
-  color: var(--ebhro20-text);
+  color: var(--ebhro20-title-text-color);
   line-height: 1.3;
 }
 
 .ebhro20-title-highlight {
-  background: linear-gradient(135deg, var(--ebhro20-primary), var(--ebhro20-secondary), var(--ebhro20-accent));
+  background: var(--ebhro20-title-highlight-gradient);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -229,7 +257,7 @@
 /* Description */
 .ebhro20-description {
   font-size: 1.1rem;
-  color: var(--ebhro20-text-muted);
+  color: var(--ebhro20-description-text-color);
   line-height: 1.8;
   max-width: 560px;
 }
@@ -240,8 +268,8 @@
   align-items: center;
   gap: 2rem;
   padding: 1.25rem 1.75rem;
-  background: var(--ebhro20-surface);
-  border: 1px solid var(--ebhro20-border);
+  background: var(--ebhro20-stats-background-color);
+  border: 1px solid var(--ebhro20-stats-border-color);
   border-radius: var(--ebhro20-radius);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -258,10 +286,30 @@
   gap: 0.2rem;
 }
 
-.ebhro20-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--ebhro20-primary); }
-.ebhro20-stat-plus { font-size: 1.25rem; font-weight: 700; color: var(--ebhro20-primary); }
-.ebhro20-stat-label { font-size: 0.78rem; color: var(--ebhro20-text-muted); font-weight: 500; white-space: nowrap; }
-.ebhro20-stat-divider { width: 1px; height: 40px; background: var(--ebhro20-border); }
+.ebhro20-stat-number {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--ebhro20-stats-number-color);
+}
+
+.ebhro20-stat-plus {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ebhro20-stats-number-color);
+}
+
+.ebhro20-stat-label {
+  font-size: 0.78rem;
+  color: var(--ebhro20-stats-label-color);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ebhro20-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--ebhro20-stats-divider-color);
+}
 
 /* ============== VISUAL BLOCK ============== */
 .ebhro20-visual-block {
@@ -278,45 +326,36 @@
   .ebhro20-visual-block { order: -1; }
 }
 
-.ebhro20-main-visual {
-  position: relative;
-  width: 100%; height: 100%;
+/* Radar orbits */
+.ebhro20-radar-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Rings */
-.ebhro20-visual-ring { position: absolute; border-radius: 50%; border: 1px solid; }
-
-.ebhro20-ring-outer {
-  width: var(--ebhro20-ring-size); height: var(--ebhro20-ring-size);
-  border-color: rgba(var(--ebhro20-primary-rgb), 0.15);
-  border-style: dashed;
-  animation: ebhroSpin 30s linear infinite;
-}
-
-.ebhro20-ring-inner {
-  width: calc(var(--ebhro20-ring-size) * 0.7); height: calc(var(--ebhro20-ring-size) * 0.7);
-  border-color: rgba(var(--ebhro20-secondary-rgb), 0.2);
-  animation: ebhroSpin 20s linear infinite reverse;
-}
-
-@keyframes ebhroSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-/* Core */
-.ebhro20-visual-core {
-  width: var(--ebhro20-core-size); height: var(--ebhro20-core-size);
+.ebhro20-radar-circle {
+  position: absolute;
+  border: 1px solid var(--ebhro20-visual-circle-border-color);
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(var(--ebhro20-primary-rgb), 0.15), rgba(var(--ebhro20-secondary-rgb), 0.15));
-  border: 1px solid rgba(var(--ebhro20-primary-rgb), 0.25);
+}
+
+.ebhro20-rc-1 { width: var(--ebhro20-ring-size); height: var(--ebhro20-ring-size); }
+.ebhro20-rc-2 { width: calc(var(--ebhro20-ring-size) * 0.7); height: calc(var(--ebhro20-ring-size) * 0.7); }
+.ebhro20-rc-3 { width: calc(var(--ebhro20-ring-size) * 0.4); height: calc(var(--ebhro20-ring-size) * 0.4); }
+
+.ebhro20-radar-core {
+  position: absolute;
+  width: var(--ebhro20-core-size);
+  height: var(--ebhro20-core-size);
+  background: #ffffff;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 0 40px rgba(var(--ebhro20-primary-rgb), 0.12), inset 0 0 30px rgba(var(--ebhro20-primary-rgb), 0.05);
   animation: ebhroPulse 4s ease-in-out infinite;
 }
 
@@ -328,23 +367,32 @@
 }
 
 @keyframes ebhroPulse {
-  0%, 100% { box-shadow: 0 0 40px rgba(var(--ebhro20-primary-rgb), 0.12), inset 0 0 30px rgba(var(--ebhro20-primary-rgb), 0.05); }
-  50% { box-shadow: 0 0 60px rgba(var(--ebhro20-primary-rgb), 0.25), inset 0 0 40px rgba(var(--ebhro20-primary-rgb), 0.1); }
+  0%, 100% { box-shadow: 0 0 40px var(--ebhro20-visual-circle-glow-1), inset 0 0 30px var(--ebhro20-visual-circle-glow-1); }
+  50% { box-shadow: 0 0 60px var(--ebhro20-visual-circle-glow-2), inset 0 0 40px var(--ebhro20-visual-circle-glow-2); }
 }
 
 /* Orbit Dots */
-.ebhro20-orbit-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; z-index: 4; }
+.ebhro20-orbit-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 4;
+}
 
 .ebhro20-od-1 {
-  background: var(--ebhro20-primary); box-shadow: 0 0 10px var(--ebhro20-primary);
+  background: var(--ebhro20-orbit-dot-1-color);
+  box-shadow: 0 0 10px var(--ebhro20-orbit-dot-1-color);
   animation: ebhroOrbit1 8s linear infinite;
 }
 .ebhro20-od-2 {
-  background: var(--ebhro20-secondary); box-shadow: 0 0 10px var(--ebhro20-secondary);
+  background: var(--ebhro20-orbit-dot-2-color);
+  box-shadow: 0 0 10px var(--ebhro20-orbit-dot-2-color);
   animation: ebhroOrbit2 12s linear infinite;
 }
 .ebhro20-od-3 {
-  background: var(--ebhro20-accent); box-shadow: 0 0 10px var(--ebhro20-accent);
+  background: var(--ebhro20-orbit-dot-3-color);
+  box-shadow: 0 0 10px var(--ebhro20-orbit-dot-3-color);
   animation: ebhroOrbit3 10s linear infinite;
 }
 
@@ -368,23 +416,30 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  background: var(--ebhro20-surface);
-  border: 1px solid var(--ebhro20-border);
+  background: var(--ebhro20-float-card-background-color);
+  border: 1px solid var(--ebhro20-float-card-border-color);
   border-radius: var(--ebhro20-card-radius);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 5;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--ebhro20-text);
+  color: var(--ebhro20-float-card-text-color);
   white-space: nowrap;
-  box-shadow: var(--ebhro20-card-shadow);
+  box-shadow: var(--ebhro20-float-card-shadow);
   transition: all 0.4s ease;
   animation: ebhroFloat 5s ease-in-out infinite;
 }
 
-.ebhro20-float-card:hover { border-color: var(--ebhro20-primary); box-shadow: var(--ebhro20-glow); }
-.ebhro20-float-card i { font-size: 0.9rem; color: var(--ebhro20-primary); }
+.ebhro20-float-card:hover {
+  border-color: var(--ebhro20-float-card-hover-border-color);
+  box-shadow: var(--ebhro20-float-card-hover-glow);
+}
+
+.ebhro20-float-card i {
+  font-size: 0.9rem;
+  color: var(--ebhro20-float-card-icon-color);
+}
 
 .ebhro20-fc-1 { top: 5%; right: 75%; animation-delay: 0s; }
 .ebhro20-fc-2 { top: 5%; left: 75%; animation-delay: 1s; }
@@ -414,16 +469,20 @@
   z-index: 5; opacity: 0;
   animation: ebhroFadeUp 1s 2s ease forwards;
 }
-.ebhro20-scroll-indicator span { font-size: 0.7rem; color: var(--ebhro20-text-muted); }
+.ebhro20-scroll-indicator span {
+  font-size: 0.7rem;
+  color: var(--ebhro20-scroll-text-color);
+}
 
 .ebhro20-mouse {
   width: 22px; height: 34px;
-  border: 2px solid var(--ebhro20-text-muted);
+  border: 2px solid var(--ebhro20-scroll-mouse-border-color);
   border-radius: 12px; position: relative;
 }
+
 .ebhro20-mouse-wheel {
   width: 3px; height: 8px;
-  background: var(--ebhro20-primary);
+  background: var(--ebhro20-scroll-wheel-color);
   border-radius: 3px;
   position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
   animation: ebhroScrollWheel 2s ease-in-out infinite;
@@ -435,4 +494,6 @@
   to { opacity: 0.5; transform: translateX(-50%) translateY(0); }
 }
 
-@media (max-width: 768px) { .ebhro20-scroll-indicator { display: none; } }
+@media (max-width: 768px) {
+  .ebhro20-scroll-indicator { display: none; }
+}

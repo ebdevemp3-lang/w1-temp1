@@ -3,13 +3,25 @@
    ============================================ */
 
 :root {
-  --ebctaf20-primary: #2d6a4f;
-  --ebctaf20-primary-rgb: 45, 106, 79;
-  --ebctaf20-secondary: #52796f;
-  --ebctaf20-accent: #e76f51;
-  --ebctaf20-accent-rgb: 231, 111, 81;
-  --ebctaf20-text: #1b4332;
-  --ebctaf20-border: rgba(45, 106, 79, 0.12);
+  /* ===============================
+     CTA COLORS (SAGE GREEN & CORAL)
+  =============================== */
+  --ebctaf20-primary-btn-background-color: #e76f51;
+  --ebctaf20-primary-btn-text-color: #ffffff;
+  --ebctaf20-primary-btn-shadow: 0 4px 15px rgba(231, 111, 81, 0.2);
+  --ebctaf20-primary-btn-hover-background-color: #d65a3d;
+  --ebctaf20-primary-btn-hover-shadow: 0 8px 25px rgba(231, 111, 81, 0.35);
+
+  --ebctaf20-outline-btn-background-color: transparent;
+  --ebctaf20-outline-btn-text-color: #2d6a4f;
+  --ebctaf20-outline-btn-border-color: #2d6a4f;
+  --ebctaf20-outline-btn-hover-background-color: #2d6a4f;
+  --ebctaf20-outline-btn-hover-text-color: #ffffff;
+  --ebctaf20-outline-btn-hover-shadow: 0 4px 15px rgba(45, 106, 79, 0.15);
+
+  /* ===============================
+     CTA LAYOUT & TIMINGS
+  =============================== */
   --ebctaf20-radius: 50px;
   --ebctaf20-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -36,15 +48,15 @@
 }
 
 .ebctaf20-btn-primary {
-  background: var(--ebctaf20-accent);
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(var(--ebctaf20-accent-rgb), 0.2);
+  background: var(--ebctaf20-primary-btn-background-color);
+  color: var(--ebctaf20-primary-btn-text-color);
+  box-shadow: var(--ebctaf20-primary-btn-shadow);
 }
 
 .ebctaf20-btn-primary:hover {
   transform: translateY(-3px);
-  background: #d65a3d;
-  box-shadow: 0 8px 25px rgba(var(--ebctaf20-accent-rgb), 0.35);
+  background: var(--ebctaf20-primary-btn-hover-background-color);
+  box-shadow: var(--ebctaf20-primary-btn-hover-shadow);
 }
 
 .ebctaf20-btn-shimmer {
@@ -63,14 +75,14 @@
 }
 
 .ebctaf20-btn-outline {
-  background: transparent;
-  color: var(--ebctaf20-primary);
-  border: 2px solid var(--ebctaf20-primary);
+  background: var(--ebctaf20-outline-btn-background-color);
+  color: var(--ebctaf20-outline-btn-text-color);
+  border: 2px solid var(--ebctaf20-outline-btn-border-color);
 }
 
 .ebctaf20-btn-outline:hover {
-  background: var(--ebctaf20-primary);
-  color: #ffffff;
+  background: var(--ebctaf20-outline-btn-hover-background-color);
+  color: var(--ebctaf20-outline-btn-hover-text-color);
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(var(--ebctaf20-primary-rgb), 0.15);
+  box-shadow: var(--ebctaf20-outline-btn-hover-shadow);
 }

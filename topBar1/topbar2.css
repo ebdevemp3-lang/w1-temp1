@@ -1,252 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* ============================================
+   TOPBAR — THEME 2: OBSIDIAN GOLD (LIGHT)
+   ============================================ */
 
 :root {
-  /* Colors - Obsidian Black & Rich Brushed Gold */
-  --ebtb20-primary: #d4af37; /* Warm Gold */
-  --ebtb20-secondary: #c5a880; /* Champagne Gold */
-  --ebtb20-bg: rgba(13, 13, 16, 0.96); /* Obsidian dark surface */
-  --ebtb20-surface: rgba(22, 22, 28, 0.95);
-  --ebtb20-text: #f4f4f5; /* Off-white */
-  --ebtb20-text-secondary: #94a3b8; /* Muted gold-grey */
-  --ebtb20-border: rgba(212, 175, 55, 0.22); /* Semi-translucent gold border */
-  --ebtb20-border-width: 1px;
-  --ebtb20-border-style: solid;
-  
-  /* Shadows - Heavy dark shadow with a gold-tinted glow */
-  --ebtb20-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(212, 175, 55, 0.05);
-  
-  /* Typography & Layout - High luxury font pairing */
-  --ebtb20-font-sans: 'Playfair Display', 'Montserrat', system-ui, sans-serif;
-  --ebtb20-link-size: 0.9rem;
-  --ebtb20-link-weight: 500;
-  --ebtb20-link-color: #f4f4f5;
-  --ebtb20-link-opacity: 0.8;
-  
-  /* Global Properties */
-  --ebtb20-radius: 0px; /* Luxury sharp edge look */
-  --ebtb20-padding: 1rem 2.5rem;
-  --ebtb20-margin: 0px;
-  --ebtb20-max-width: 100%;
-  --ebtb20-backdrop-blur: blur(20px);
-  --ebtb20-transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  /* ===============================
+     TOPBAR COLORS (LUXURY GOLD)
+  =============================== */
+  --ebtb20-topbar-background-color: #faf9f5;
+  --ebtb20-topbar-border-color: #e7e2d8;
+  --ebtb20-topbar-social-icon-color: #57534e;
+  --ebtb20-topbar-social-icon-hover-color: #b89020;
+  --ebtb20-topbar-contact-text-color: #57534e;
+  --ebtb20-topbar-contact-icon-color: #b89020;
+  --ebtb20-topbar-contact-hover-text-color: #b89020;
 
-  /* Layout Specific Variables (100% Parameterized) */
-  --ebtb20-display: flex;
-  --ebtb20-justify: center;
-  --ebtb20-align: center;
-  --ebtb20-width: 100%;
-  --ebtb20-container-display: flex;
-  --ebtb20-container-justify: space-between;
-  --ebtb20-container-align: center;
-  --ebtb20-container-width: 100%;
-  --ebtb20-container-max-width: 100%;
-  --ebtb20-container-gap: 2rem;
-  --ebtb20-container-flex-dir: row;
-  
-  --ebtb20-group-display: flex;
-  --ebtb20-group-align: center;
-  --ebtb20-group-gap: 1.5rem;
-  
-  --ebtb20-icon-display: inline-flex;
-  --ebtb20-icon-align: center;
-  --ebtb20-icon-justify: center;
-  --ebtb20-icon-width: 36px;
-  --ebtb20-icon-height: 36px;
-  --ebtb20-icon-radius: 0px; /* Luxury sharp icon buttons */
-  --ebtb20-icon-bg: transparent;
-  --ebtb20-icon-hover-bg: var(--ebtb20-primary);
-  --ebtb20-icon-hover-color: #0d0d10; /* Gold contrast text color */
-  --ebtb20-icon-hover-transform: translateY(-2px);
-  --ebtb20-icon-hover-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
-  
-  --ebtb20-watch-hide: flex;
+  /* ===============================
+     TOPBAR LAYOUT & TIMINGS
+  =============================== */
+  --ebtb20-ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Extra Luxury Theme Accent - Overriding body styles for premium presentation */
-body.theme-topbar2 {
-  letter-spacing: 0.04em;
-}
-
-/* ==========================================================================
-   Responsive Breakpoints - Media Queries overrides (Variables Only)
-   ========================================================================== */
-
-/* 1. (0 px => 320 px) (mini screen [Watches]) */
-@media (max-width: 320px) {
-  :root {
-    --ebtb20-padding: 0.5rem 0.6rem;
-    --ebtb20-margin: 0;
-    --ebtb20-radius: 0px;
-    --ebtb20-max-width: 100%;
-    --ebtb20-container-flex-dir: column;
-    --ebtb20-container-gap: 0.5rem;
-    --ebtb20-group-gap: 0.5rem;
-    --ebtb20-icon-width: 26px;
-    --ebtb20-icon-height: 26px;
-    --ebtb20-link-size: 0.78rem;
-    --ebtb20-watch-hide: none; /* Hide contacts to fit on watches */
-  }
-}
-
-/* 2. (321 px => 480 px) (small, medium, large phone screen) */
-@media (min-width: 321px) and (max-width: 480px) {
-  :root {
-    --ebtb20-margin: 0px;
-    --ebtb20-radius: 0px;
-    --ebtb20-max-width: 100%;
-    --ebtb20-container-flex-dir: column;
-    --ebtb20-container-gap: 0.75rem;
-    --ebtb20-padding: 0.75rem 1.25rem;
-    --ebtb20-icon-width: 30px;
-    --ebtb20-icon-height: 30px;
-  }
-  
-  /* (321px => 375px) small phone screen */
-  @media (max-width: 375px) {
-    :root {
-      --ebtb20-group-gap: 0.6rem;
-      --ebtb20-link-size: 0.82rem;
-    }
-  }
-  /* (376px => 425px) medium phone screen */
-  @media (min-width: 376px) and (max-width: 425px) {
-    :root {
-      --ebtb20-group-gap: 0.85rem;
-      --ebtb20-link-size: 0.86rem;
-    }
-  }
-  /* (426px => 480px) large phone screen */
-  @media (min-width: 426px) {
-    :root {
-      --ebtb20-group-gap: 1.1rem;
-      --ebtb20-link-size: 0.9rem;
-    }
-  }
-}
-
-/* 3. (481 px => 1024 px) (small, medium, large tablet screen) */
-@media (min-width: 481px) and (max-width: 1024px) {
-  :root {
-    --ebtb20-margin: 0px;
-    --ebtb20-radius: 0px;
-    --ebtb20-max-width: 100%;
-    --ebtb20-container-flex-dir: row;
-    --ebtb20-padding: 0.85rem 1.75rem;
-  }
-  /* (481px => 600px) small tablet screen */
-  @media (max-width: 600px) {
-    :root {
-      --ebtb20-group-gap: 1rem;
-      --ebtb20-link-size: 0.88rem;
-    }
-  }
-  /* (601px => 768px) medium tablet screen */
-  @media (min-width: 601px) and (max-width: 768px) {
-    :root {
-      --ebtb20-group-gap: 1.25rem;
-      --ebtb20-link-size: 0.9rem;
-    }
-  }
-  /* (769px => 1024px) large tablet screen */
-  @media (min-width: 769px) {
-    :root {
-      --ebtb20-group-gap: 1.4rem;
-      --ebtb20-link-size: 0.92rem;
-    }
-  }
-}
-
-/* 4. (1025 px => 1280 px) (small desktop screen) */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  :root {
-    --ebtb20-padding: 1rem 2rem;
-  }
-}
-
-/* 5. (1281 px => 1440 px) (medium desktop screen) */
-@media (min-width: 1281px) and (max-width: 1440px) {
-  :root {
-    --ebtb20-padding: 1rem 2.25rem;
-  }
-}
-
-/* 6. (1441 px => 1920 px) (large desktop screen) */
-@media (min-width: 1441px) and (max-width: 1920px) {
-  :root {
-    --ebtb20-padding: 1.1rem 2.5rem;
-  }
-}
-
-/* 7. (+1920 px) (extra Large screens) */
-@media (min-width: 1921px) {
-  :root {
-    --ebtb20-padding: 1.25rem 3rem;
-  }
-}
-
-/* ==========================================================================
-   Top Bar Layout Styling (100% Variables)
-   ========================================================================= */
-
+/* ============================================
+   TOP BAR
+   ============================================ */
 .ebtb20-top-bar {
-  display: var(--ebtb20-display);
-  justify-content: var(--ebtb20-justify);
-  align-items: var(--ebtb20-align);
-  width: var(--ebtb20-width);
-  background-color: var(--ebtb20-bg);
-  border-bottom: var(--ebtb20-border-width) var(--ebtb20-border-style) var(--ebtb20-border);
-  box-shadow: var(--ebtb20-shadow);
-  border-radius: var(--ebtb20-radius);
-  margin: var(--ebtb20-margin);
-  max-width: var(--ebtb20-max-width);
-  padding: var(--ebtb20-padding);
-  font-family: var(--ebtb20-font-sans);
-  transition: var(--ebtb20-transition);
-  backdrop-filter: var(--ebtb20-backdrop-blur);
-  -webkit-backdrop-filter: var(--ebtb20-backdrop-blur);
+  background-color: var(--ebtb20-topbar-background-color);
+  border-bottom: 1px solid var(--ebtb20-topbar-border-color);
+  padding: 0.6rem 2rem;
+  font-size: 0.8rem;
 }
 
 .ebtb20-top-bar-container {
-  display: var(--ebtb20-container-display);
-  justify-content: var(--ebtb20-container-justify);
-  align-items: var(--ebtb20-container-align);
-  width: var(--ebtb20-container-width);
-  max-width: var(--ebtb20-container-max-width);
-  gap: var(--ebtb20-container-gap);
-  flex-direction: var(--ebtb20-container-flex-dir);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.ebtb20-social-icons-top-bar {
-  display: var(--ebtb20-group-display);
-  align-items: var(--ebtb20-group-align);
-  gap: var(--ebtb20-group-gap);
+.ebtb20-social-icons {
+  display: flex;
+  gap: 1.25rem;
 }
 
-.ebtb20-social-icons-top-bar:last-child {
-  display: var(--ebtb20-watch-hide);
+.ebtb20-social-icon {
+  color: var(--ebtb20-topbar-social-icon-color);
+  transition: color 0.3s var(--ebtb20-ease);
 }
 
-.ebtb20-social-icon-top-bar {
-  display: var(--ebtb20-icon-display);
-  align-items: var(--ebtb20-icon-align);
-  justify-content: var(--ebtb20-icon-justify);
-  width: var(--ebtb20-icon-width);
-  height: var(--ebtb20-icon-height);
-  border-radius: var(--ebtb20-icon-radius);
-  color: var(--ebtb20-link-color);
-  opacity: var(--ebtb20-link-opacity);
-  background: var(--ebtb20-icon-bg);
-  font-size: var(--ebtb20-link-size);
-  font-weight: var(--ebtb20-link-weight);
-  transition: var(--ebtb20-transition);
-  border: 1px solid rgba(212, 175, 55, 0.15); /* Delicate gold outline */
+.ebtb20-social-icon:hover {
+  color: var(--ebtb20-topbar-social-icon-hover-color);
 }
 
-.ebtb20-social-icon-top-bar:hover {
-  opacity: 1;
-  color: var(--ebtb20-icon-hover-color);
-  background: var(--ebtb20-icon-hover-bg);
-  transform: var(--ebtb20-icon-hover-transform);
-  box-shadow: var(--ebtb20-icon-hover-shadow);
-  border-color: var(--ebtb20-primary);
+.ebtb20-contact-info {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ebtb20-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ebtb20-topbar-contact-text-color);
+  font-weight: 600;
+  transition: color 0.3s var(--ebtb20-ease);
+  text-decoration: none;
+}
+
+.ebtb20-contact-link i {
+  color: var(--ebtb20-topbar-contact-icon-color);
+}
+
+.ebtb20-contact-link:hover {
+  color: var(--ebtb20-topbar-contact-hover-text-color);
+}
+
+/* ============================================
+   TOPBAR RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+  .ebtb20-top-bar-container {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .ebtb20-social-icons {
+    justify-content: center;
+  }
+
+  .ebtb20-contact-info {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .ebtb20-contact-link span {
+    display: none;
+  }
 }

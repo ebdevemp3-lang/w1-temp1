@@ -3,11 +3,23 @@
    ============================================ */
 
 :root {
-  --ebctaf20-primary: #b89020;
-  --ebctaf20-primary-rgb: 184, 144, 32;
-  --ebctaf20-accent: #c5a059;
-  --ebctaf20-text: #1c1917;
-  --ebctaf20-border: rgba(184, 144, 32, 0.25);
+  /* ===============================
+     CTA COLORS (OBSIDIAN GOLD)
+  =============================== */
+  --ebctaf20-primary-btn-background-color: linear-gradient(135deg, #b89020, #c5a059);
+  --ebctaf20-primary-btn-text-color: #ffffff;
+  --ebctaf20-primary-btn-shadow: 0 4px 15px rgba(184, 144, 32, 0.2);
+  --ebctaf20-primary-btn-hover-shadow: 0 8px 25px rgba(184, 144, 32, 0.35);
+
+  --ebctaf20-outline-btn-background-color: transparent;
+  --ebctaf20-outline-btn-text-color: #1c1917;
+  --ebctaf20-outline-btn-border-color: rgba(184, 144, 32, 0.25);
+  --ebctaf20-outline-btn-hover-border-color: #b89020;
+  --ebctaf20-outline-btn-hover-text-color: #b89020;
+
+  /* ===============================
+     CTA LAYOUT & TIMINGS
+  =============================== */
   --ebctaf20-radius: 0px;
   --ebctaf20-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -34,14 +46,14 @@
 }
 
 .ebctaf20-btn-primary {
-  background: linear-gradient(135deg, var(--ebctaf20-primary), var(--ebctaf20-accent));
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(var(--ebctaf20-primary-rgb), 0.2);
+  background: var(--ebctaf20-primary-btn-background-color);
+  color: var(--ebctaf20-primary-btn-text-color);
+  box-shadow: var(--ebctaf20-primary-btn-shadow);
 }
 
 .ebctaf20-btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(var(--ebctaf20-primary-rgb), 0.35);
+  box-shadow: var(--ebctaf20-primary-btn-hover-shadow);
 }
 
 .ebctaf20-btn-shimmer {
@@ -60,15 +72,15 @@
 }
 
 .ebctaf20-btn-outline {
-  background: transparent;
-  color: var(--ebctaf20-text);
-  border: 1px solid var(--ebctaf20-border);
+  background: var(--ebctaf20-outline-btn-background-color);
+  color: var(--ebctaf20-outline-btn-text-color);
+  border: 1px solid var(--ebctaf20-outline-btn-border-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .ebctaf20-btn-outline:hover {
-  border-color: var(--ebctaf20-primary);
-  color: var(--ebctaf20-primary);
+  border-color: var(--ebctaf20-outline-btn-hover-border-color);
+  color: var(--ebctaf20-outline-btn-hover-text-color);
   transform: translateY(-3px);
 }

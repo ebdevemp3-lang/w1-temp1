@@ -3,25 +3,50 @@
    ============================================ */
 
 :root {
-  --ebpt20-primary: #2d6a4f;
-  --ebpt20-primary-rgb: 45, 106, 79;
-  --ebpt20-secondary: #52796f;
-  --ebpt20-accent: #e76f51;
-  --ebpt20-accent-rgb: 231, 111, 81;
-  
-  --ebpt20-bg: #f4f8f5;
-  --ebpt20-surface: #ffffff;
-  --ebpt20-text: #1b4332;
-  --ebpt20-text-muted: #52796f;
-  --ebpt20-border: rgba(45, 106, 79, 0.12);
+  /* ===============================
+     POINTS COLORS (SAGE GREEN & CORAL)
+  =============================== */
+  --ebpt20-section-background-color: #f4f8f5;
 
+  --ebpt20-badge-background-color: rgba(45, 106, 79, 0.08);
+  --ebpt20-badge-border-color: rgba(45, 106, 79, 0.2);
+  --ebpt20-badge-text-color: #2d6a4f;
+  
+  --ebpt20-title-text-color: #1b4332;
+  --ebpt20-title-highlight-text-color: #2d6a4f;
+  --ebpt20-subtitle-text-color: #52796f;
+
+  --ebpt20-timeline-line-color: linear-gradient(90deg, rgba(45, 106, 79, 0.1) 0%, #2d6a4f 50%, rgba(45, 106, 79, 0.1) 100%);
+
+  --ebpt20-card-background-color: #ffffff;
+  --ebpt20-card-border-color: rgba(45, 106, 79, 0.12);
+  --ebpt20-card-hover-border-color: #2d6a4f;
+  --ebpt20-card-hover-shadow: 0 12px 30px rgba(45, 106, 79, 0.08);
+
+  --ebpt20-card-icon-background-color: #ffffff;
+  --ebpt20-card-icon-border-color: #2d6a4f;
+  --ebpt20-card-icon-color: #2d6a4f;
+  --ebpt20-card-icon-shadow: 0 0 15px rgba(45, 106, 79, 0.15);
+  --ebpt20-card-icon-hover-background-color: #2d6a4f;
+  --ebpt20-card-icon-hover-color: #ffffff;
+  --ebpt20-card-icon-hover-shadow: 0 0 25px rgba(45, 106, 79, 0.3);
+
+  --ebpt20-card-number-background-color: #1b4332;
+  --ebpt20-card-number-text-color: #ffffff;
+
+  --ebpt20-card-title-text-color: #1b4332;
+  --ebpt20-card-description-text-color: #52796f;
+
+  /* ===============================
+     POINTS LAYOUT & TIMINGS
+  =============================== */
   --ebpt20-radius: 20px;
   --ebpt20-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ebpt20-section {
   position: relative;
-  background-color: var(--ebpt20-bg);
+  background-color: var(--ebpt20-section-background-color);
   padding: 7rem 0;
   overflow: hidden;
 }
@@ -50,29 +75,30 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(var(--ebpt20-primary-rgb), 0.08);
-  border: 1px solid rgba(var(--ebpt20-primary-rgb), 0.15);
-  color: var(--ebpt20-primary);
-  padding: 0.4rem 1.1rem;
-  border-radius: 50px;
+  background: var(--ebpt20-badge-background-color);
+  border: 1px solid var(--ebpt20-badge-border-color);
+  color: var(--ebpt20-badge-text-color);
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--ebpt20-radius);
   font-size: 0.8rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .ebpt20-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ebpt20-text);
+  color: var(--ebpt20-title-text-color);
   line-height: 1.2;
 }
 
 .ebpt20-title-highlight {
-  color: var(--ebpt20-accent);
+  color: var(--ebpt20-title-highlight-text-color);
 }
 
 .ebpt20-subtitle {
   font-size: 1.05rem;
-  color: var(--ebpt20-text-muted);
+  color: var(--ebpt20-subtitle-text-color);
   line-height: 1.7;
 }
 
@@ -84,7 +110,7 @@
   gap: 1.5rem;
 }
 
-/* Desktop Connecting Line */
+/* Desktop Connecting Timeline Line */
 .ebpt20-steps-wrapper::before {
   content: '';
   position: absolute;
@@ -92,7 +118,7 @@
   left: 5%;
   right: 5%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(var(--ebpt20-primary-rgb), 0.1) 0%, var(--ebpt20-primary) 50%, rgba(var(--ebpt20-primary-rgb), 0.1) 100%);
+  background: var(--ebpt20-timeline-line-color);
   z-index: 1;
 }
 
@@ -114,8 +140,8 @@
 /* Step Card */
 .ebpt20-step-card {
   flex: 1;
-  background: var(--ebpt20-surface);
-  border: 1px solid var(--ebpt20-border);
+  background: var(--ebpt20-card-background-color);
+  border: 1px solid var(--ebpt20-card-border-color);
   border-radius: var(--ebpt20-radius);
   padding: 2rem 1.5rem;
   display: flex;
@@ -140,8 +166,8 @@
 
 .ebpt20-step-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(var(--ebpt20-primary-rgb), 0.3);
-  box-shadow: 0 12px 30px rgba(45, 106, 79, 0.08);
+  border-color: var(--ebpt20-card-hover-border-color);
+  box-shadow: var(--ebpt20-card-hover-shadow);
 }
 
 /* Step Header */
@@ -164,21 +190,21 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: var(--ebpt20-surface);
-  border: 2px solid var(--ebpt20-primary);
+  background: var(--ebpt20-card-icon-background-color);
+  border: 2px solid var(--ebpt20-card-icon-border-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.8rem;
-  color: var(--ebpt20-primary);
-  box-shadow: 0 0 15px rgba(45, 106, 79, 0.05);
+  color: var(--ebpt20-card-icon-color);
+  box-shadow: var(--ebpt20-card-icon-shadow);
   transition: all 0.3s var(--ebpt20-ease);
 }
 
 .ebpt20-step-card:hover .ebpt20-step-icon {
-  background: var(--ebpt20-primary);
-  color: #ffffff;
-  box-shadow: 0 0 25px rgba(45, 106, 79, 0.2);
+  background: var(--ebpt20-card-icon-hover-background-color);
+  color: var(--ebpt20-card-icon-hover-color);
+  box-shadow: var(--ebpt20-card-icon-hover-shadow);
 }
 
 /* Step Number indicator */
@@ -186,13 +212,12 @@
   position: absolute;
   top: -10px;
   right: -10px;
-  background: var(--ebpt20-accent);
-  color: #ffffff;
+  background: var(--ebpt20-card-number-background-color);
+  color: var(--ebpt20-card-number-text-color);
   font-weight: 700;
   font-size: 0.75rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(var(--ebpt20-accent-rgb), 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--ebpt20-radius);
 }
 
 /* Step Body */
@@ -205,12 +230,12 @@
 .ebpt20-step-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--ebpt20-text);
+  color: var(--ebpt20-card-title-text-color);
 }
 
 .ebpt20-step-desc {
   font-size: 0.9rem;
-  color: var(--ebpt20-text-muted);
+  color: var(--ebpt20-card-description-text-color);
   line-height: 1.6;
 }
 

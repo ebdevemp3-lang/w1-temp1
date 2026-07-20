@@ -3,19 +3,45 @@
    ============================================ */
 
 :root {
-  --ebsrv20-primary: #00b4d8;
-  --ebsrv20-primary-rgb: 0, 180, 216;
-  --ebsrv20-secondary: #0077b6;
-  --ebsrv20-secondary-rgb: 0, 119, 182;
-  --ebsrv20-accent: #7209b7;
-  --ebsrv20-accent-rgb: 114, 9, 183;
+  /* ===============================
+     SERVICES COLORS (TECH NEON)
+  =============================== */
+  --ebsrv20-section-background-color: #f8fafc;
+  --ebsrv20-orb-1-color: rgba(0, 180, 216, 0.4);
+  --ebsrv20-orb-2-color: rgba(114, 9, 183, 0.3);
 
-  --ebsrv20-bg: #f8fafc;
-  --ebsrv20-surface: rgba(255, 255, 255, 0.8);
-  --ebsrv20-text: #0f172a;
-  --ebsrv20-text-muted: #64748b;
-  --ebsrv20-border: rgba(0, 180, 216, 0.15);
+  --ebsrv20-badge-background-color: rgba(0, 180, 216, 0.08);
+  --ebsrv20-badge-border-color: rgba(0, 180, 216, 0.2);
+  --ebsrv20-badge-text-color: #00b4d8;
   
+  --ebsrv20-title-text-color: #0f172a;
+  --ebsrv20-title-highlight-text-color: #00b4d8;
+  --ebsrv20-title-underline-color: rgba(0, 180, 216, 0.2);
+  --ebsrv20-subtitle-text-color: #64748b;
+
+  --ebsrv20-card-background-color: rgba(255, 255, 255, 0.8);
+  --ebsrv20-card-border-color: rgba(0, 180, 216, 0.15);
+  --ebsrv20-card-top-stripe-color: linear-gradient(90deg, #00b4d8, #0077b6);
+  --ebsrv20-card-hover-border-color: rgba(0, 180, 216, 0.4);
+  --ebsrv20-card-hover-shadow: 0 12px 30px rgba(0, 180, 216, 0.1);
+
+  --ebsrv20-card-number-background-color: #00b4d8;
+  --ebsrv20-card-number-text-color: #ffffff;
+  --ebsrv20-card-number-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+
+  --ebsrv20-card-title-text-color: #0f172a;
+  --ebsrv20-card-title-prefix-color: #00b4d8;
+  --ebsrv20-card-description-text-color: #64748b;
+
+  --ebsrv20-card-button-text-color: #00b4d8;
+  --ebsrv20-card-button-border-color: rgba(0, 180, 216, 0.15);
+  --ebsrv20-card-button-hover-background-color: #00b4d8;
+  --ebsrv20-card-button-hover-border-color: #00b4d8;
+  --ebsrv20-card-button-hover-text-color: #ffffff;
+
+  /* ===============================
+     SERVICES LAYOUT & TIMINGS
+  =============================== */
   --ebsrv20-radius: 12px;
   --ebsrv20-img-radius: 8px;
   --ebsrv20-ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -23,7 +49,7 @@
 
 .ebsrv20-section {
   position: relative;
-  background-color: var(--ebsrv20-bg);
+  background-color: var(--ebsrv20-section-background-color);
   padding: 7rem 0;
   overflow: hidden;
 }
@@ -46,7 +72,7 @@
 .ebsrv20-orb-1 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(var(--ebsrv20-primary-rgb), 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--ebsrv20-orb-1-color), transparent 70%);
   top: -10%;
   right: -5%;
 }
@@ -54,7 +80,7 @@
 .ebsrv20-orb-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(var(--ebsrv20-accent-rgb), 0.3), transparent 70%);
+  background: radial-gradient(circle, var(--ebsrv20-orb-2-color), transparent 70%);
   bottom: -10%;
   left: -5%;
 }
@@ -77,9 +103,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(var(--ebsrv20-primary-rgb), 0.08);
-  border: 1px solid rgba(var(--ebsrv20-primary-rgb), 0.2);
-  color: var(--ebsrv20-primary);
+  background: var(--ebsrv20-badge-background-color);
+  border: 1px solid var(--ebsrv20-badge-border-color);
+  color: var(--ebsrv20-badge-text-color);
   padding: 0.4rem 1.1rem;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -90,12 +116,12 @@
 .ebsrv20-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ebsrv20-text);
+  color: var(--ebsrv20-title-text-color);
   line-height: 1.2;
 }
 
 .ebsrv20-title-highlight {
-  color: var(--ebsrv20-primary);
+  color: var(--ebsrv20-title-highlight-text-color);
   position: relative;
 }
 
@@ -106,13 +132,13 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: rgba(var(--ebsrv20-primary-rgb), 0.2);
+  background: var(--ebsrv20-title-underline-color);
   border-radius: 2px;
 }
 
 .ebsrv20-subtitle {
   font-size: 1.05rem;
-  color: var(--ebsrv20-text-muted);
+  color: var(--ebsrv20-subtitle-text-color);
   line-height: 1.7;
 }
 
@@ -140,8 +166,8 @@
 
 /* Card - Tech/Glassmorphism Look */
 .ebsrv20-card {
-  background-color: var(--ebsrv20-surface);
-  border: 1px solid var(--ebsrv20-border);
+  background-color: var(--ebsrv20-card-background-color);
+  border: 1px solid var(--ebsrv20-card-border-color);
   border-radius: var(--ebsrv20-radius);
   overflow: hidden;
   backdrop-filter: blur(12px);
@@ -159,15 +185,15 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--ebsrv20-primary), var(--ebsrv20-secondary));
+  background: var(--ebsrv20-card-top-stripe-color);
   opacity: 0;
   transition: opacity 0.3s var(--ebsrv20-ease);
 }
 
 .ebsrv20-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(var(--ebsrv20-primary-rgb), 0.4);
-  box-shadow: 0 12px 30px rgba(0, 180, 216, 0.1);
+  border-color: var(--ebsrv20-card-hover-border-color);
+  box-shadow: var(--ebsrv20-card-hover-shadow);
 }
 
 .ebsrv20-card:hover::before {
@@ -204,13 +230,13 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: var(--ebsrv20-primary);
-  color: #ffffff;
+  background: var(--ebsrv20-card-number-background-color);
+  color: var(--ebsrv20-card-number-text-color);
   font-weight: 700;
   font-size: 0.85rem;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+  box-shadow: var(--ebsrv20-card-number-shadow);
 }
 
 /* Card body */
@@ -224,7 +250,7 @@
 .ebsrv20-card-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--ebsrv20-text);
+  color: var(--ebsrv20-card-title-text-color);
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -233,13 +259,13 @@
 
 .ebsrv20-card-title::before {
   content: '//';
-  color: var(--ebsrv20-primary);
+  color: var(--ebsrv20-card-title-prefix-color);
   font-weight: 400;
 }
 
 .ebsrv20-card-desc {
   font-size: 0.92rem;
-  color: var(--ebsrv20-text-muted);
+  color: var(--ebsrv20-card-description-text-color);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   flex-grow: 1;
@@ -250,11 +276,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  color: var(--ebsrv20-primary);
+  color: var(--ebsrv20-card-button-text-color);
   font-weight: 700;
   font-size: 0.85rem;
   text-decoration: none;
-  border: 1px solid var(--ebsrv20-border);
+  border: 1px solid var(--ebsrv20-card-button-border-color);
   padding: 0.5rem 1.25rem;
   border-radius: 6px;
   transition: all 0.3s var(--ebsrv20-ease);
@@ -266,9 +292,9 @@
 }
 
 .ebsrv20-card:hover .ebsrv20-card-link {
-  background-color: var(--ebsrv20-primary);
-  border-color: var(--ebsrv20-primary);
-  color: #ffffff;
+  background-color: var(--ebsrv20-card-button-hover-background-color);
+  border-color: var(--ebsrv20-card-button-hover-border-color);
+  color: var(--ebsrv20-card-button-hover-text-color);
 }
 
 .ebsrv20-card:hover .ebsrv20-card-link i {

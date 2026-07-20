@@ -3,12 +3,28 @@
    ============================================ */
 
 :root {
-  --ebctad20-primary: #00b4d8;
-  --ebctad20-primary-rgb: 0, 180, 216;
-  --ebctad20-whatsapp: #25d366;
-  --ebctad20-whatsapp-rgb: 37, 211, 102;
-  --ebctad20-bg-light: #ffffff;
-  
+  /* ===============================
+     FLOATING COLORS (TECH LIGHT)
+  =============================== */
+  --ebctad20-button-background-color: #ffffff;
+  --ebctad20-button-text-color: #0f172a;
+  --ebctad20-button-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.1);
+
+  --ebctad20-phone-icon-background-color: #00b4d8;
+  --ebctad20-phone-icon-color: #ffffff;
+  --ebctad20-phone-icon-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  --ebctad20-phone-hover-shadow: 0 12px 30px rgba(0, 180, 216, 0.2);
+  --ebctad20-phone-pulse-glow: rgba(0, 180, 216, 0.4);
+
+  --ebctad20-whatsapp-icon-background-color: #25d366;
+  --ebctad20-whatsapp-icon-color: #ffffff;
+  --ebctad20-whatsapp-icon-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  --ebctad20-whatsapp-hover-shadow: 0 12px 30px rgba(37, 211, 102, 0.2);
+  --ebctad20-whatsapp-pulse-glow: rgba(37, 211, 102, 0.4);
+
+  /* ===============================
+     FLOATING LAYOUT & TIMINGS
+  =============================== */
   --ebctad20-radius: 50px;
   --ebctad20-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -42,9 +58,9 @@
   gap: 0.75rem;
   padding: 0.6rem;
   border-radius: var(--ebctad20-radius);
-  background: var(--ebctad20-bg-light);
-  color: #0f172a;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.1);
+  background: var(--ebctad20-button-background-color);
+  color: var(--ebctad20-button-text-color);
+  box-shadow: var(--ebctad20-button-shadow);
   text-decoration: none;
   font-weight: 700;
   font-size: 0.85rem;
@@ -61,26 +77,27 @@
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
-  color: #ffffff;
+  color: var(--ebctad20-phone-icon-color);
   z-index: 2;
   transition: transform 0.3s var(--ebctad20-ease);
 }
 
 .ebctad20-phone-btn .ebctad20-icon-wrapper {
-  background: var(--ebctad20-primary);
-  box-shadow: 0 4px 12px rgba(var(--ebctad20-primary-rgb), 0.3);
+  background: var(--ebctad20-phone-icon-background-color);
+  box-shadow: var(--ebctad20-phone-icon-shadow);
 }
 
 .ebctad20-whatsapp-btn .ebctad20-icon-wrapper {
-  background: var(--ebctad20-whatsapp);
-  box-shadow: 0 4px 12px rgba(var(--ebctad20-whatsapp-rgb), 0.3);
+  background: var(--ebctad20-whatsapp-icon-background-color);
+  color: var(--ebctad20-whatsapp-icon-color);
+  box-shadow: var(--ebctad20-whatsapp-icon-shadow);
 }
 
 /* Label - hides on desktop and slides out on hover */
 .ebctad20-label {
   padding-left: 0.75rem;
   font-size: 0.85rem;
-  color: #0f172a;
+  color: var(--ebctad20-button-text-color);
   z-index: 2;
 }
 
@@ -94,11 +111,11 @@
 }
 
 .ebctad20-phone-btn:hover {
-  box-shadow: 0 12px 30px rgba(var(--ebctad20-primary-rgb), 0.2);
+  box-shadow: var(--ebctad20-phone-hover-shadow);
 }
 
 .ebctad20-whatsapp-btn:hover {
-  box-shadow: 0 12px 30px rgba(var(--ebctad20-whatsapp-rgb), 0.2);
+  box-shadow: var(--ebctad20-whatsapp-hover-shadow);
 }
 
 /* Pulse animation effect */
@@ -111,25 +128,25 @@
 }
 
 .ebctad20-phone-btn .ebctad20-pulse {
-  box-shadow: 0 0 0 0 rgba(var(--ebctad20-primary-rgb), 0.4);
+  box-shadow: 0 0 0 0 var(--ebctad20-phone-pulse-glow);
   animation: ebflPulsePhone 2s infinite;
 }
 
 .ebctad20-whatsapp-btn .ebctad20-pulse {
-  box-shadow: 0 0 0 0 rgba(var(--ebctad20-whatsapp-rgb), 0.4);
+  box-shadow: 0 0 0 0 var(--ebctad20-whatsapp-pulse-glow);
   animation: ebflPulseWhatsapp 2s infinite;
 }
 
 @keyframes ebflPulsePhone {
-  0% { box-shadow: 0 0 0 0 rgba(var(--ebctad20-primary-rgb), 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(var(--ebctad20-primary-rgb), 0); }
-  100% { box-shadow: 0 0 0 0 rgba(var(--ebctad20-primary-rgb), 0); }
+  0% { box-shadow: 0 0 0 0 var(--ebctad20-phone-pulse-glow); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 180, 216, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
 }
 
 @keyframes ebflPulseWhatsapp {
-  0% { box-shadow: 0 0 0 0 rgba(var(--ebctad20-whatsapp-rgb), 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(var(--ebctad20-whatsapp-rgb), 0); }
-  100% { box-shadow: 0 0 0 0 rgba(var(--ebctad20-whatsapp-rgb), 0); }
+  0% { box-shadow: 0 0 0 0 var(--ebctad20-whatsapp-pulse-glow); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 @media (max-width: 768px) {
