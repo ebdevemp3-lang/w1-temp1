@@ -47,7 +47,6 @@
 .ebfq20-section {
   position: relative;
   background-color: var(--ebfq20-section-background-color);
-  padding: 7rem 0;
   overflow: hidden;
 }
 

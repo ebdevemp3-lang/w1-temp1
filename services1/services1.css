@@ -25,10 +25,6 @@
   --ebsrv20-card-hover-border-color: rgba(0, 180, 216, 0.4);
   --ebsrv20-card-hover-shadow: 0 12px 30px rgba(0, 180, 216, 0.1);
 
-  --ebsrv20-card-number-background-color: #00b4d8;
-  --ebsrv20-card-number-text-color: #ffffff;
-  --ebsrv20-card-number-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
-
   --ebsrv20-card-title-text-color: #0f172a;
   --ebsrv20-card-title-prefix-color: #00b4d8;
   --ebsrv20-card-description-text-color: #64748b;
@@ -50,7 +46,6 @@
 .ebsrv20-section {
   position: relative;
   background-color: var(--ebsrv20-section-background-color);
-  padding: 7rem 0;
   overflow: hidden;
 }
 
@@ -224,19 +219,6 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.7) 100%);
-}
-
-.ebsrv20-card-number {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background: var(--ebsrv20-card-number-background-color);
-  color: var(--ebsrv20-card-number-text-color);
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  box-shadow: var(--ebsrv20-card-number-shadow);
 }
 
 /* Card body */
