@@ -1,0 +1,63 @@
+/* ============================================
+   TOP BAR — THEME 4: SAGE GREEN & CORAL (LIGHT)
+   ============================================ */
+
+:root {
+  --ebtb20-primary: #2d6a4f;
+  --ebtb20-primary-rgb: 45, 106, 79;
+  --ebtb20-secondary: #1b4332;
+  --ebtb20-accent: #e76f51;
+  
+  --ebtb20-bg: #edf2ee;
+  --ebtb20-surface: #ffffff;
+  --ebtb20-text: #1b4332;
+  --ebtb20-text-muted: #52796f;
+  --ebtb20-border: rgba(45, 106, 79, 0.12);
+  
+  --ebtb20-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ebtb20-top-bar {
+  background-color: var(--ebtb20-bg);
+  border-bottom: 1px solid var(--ebtb20-border);
+  padding: 0.6rem 2rem;
+  transition: all 0.3s var(--ebtb20-ease);
+}
+
+.ebtb20-top-bar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Social icons column */
+.ebtb20-social-icons-top-bar {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.ebtb20-social-icon-top-bar {
+  color: var(--ebtb20-text-muted);
+  font-size: 0.9rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s var(--ebtb20-ease);
+  text-decoration: none;
+}
+
+.ebtb20-social-icon-top-bar:hover {
+  color: var(--ebtb20-primary);
+  transform: translateY(-2px);
+}
+
+/* Contact info icons styling */
+.ebtb20-social-icons-top-bar a[href^="tel"]:hover {
+  color: var(--ebtb20-accent);
+}
+
+.ebtb20-social-icons-top-bar a[href*="wa.me"]:hover {
+  color: #25d366;
+}

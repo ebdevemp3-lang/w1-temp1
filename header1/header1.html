@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مكون الهيدر والشريط العلوي</title>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Reset styling -->
+  <link rel="stylesheet" href="./main.css">
+
+  <!-- Active Theme Style -->
+  <!-- <link rel="stylesheet" href="./header1.css" /> -->
+  <!-- <link rel="stylesheet" href="./header2.css" /> -->
+  <!-- <link rel="stylesheet" href="./header3.css" /> -->
+  <link rel="stylesheet" href="./header4.css" />
+
+  <!-- JavaScript -->
+  <script src="./header1.js" defer></script>
+</head>
+
+<body>
+
+  <!-- *********************** -->
+  <!-- TOP BAR COMPONENT -->
+  <!-- *********************** -->
+  <section class="ebtb20-top-bar">
+    <div class="ebtb20-top-bar-container">
+
+      <!-- Right Side (Social Icons) -->
+      <div class="ebtb20-social-icons">
+        <a href="#" target="_blank" class="ebtb20-social-icon">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" target="_blank" class="ebtb20-social-icon">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" target="_blank" class="ebtb20-social-icon">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="#" target="_blank" class="ebtb20-social-icon">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <!-- Left Side (Contact Details) -->
+      <div class="ebtb20-contact-info">
+        <a href="tel:966566706775" class="ebtb20-contact-link">
+          <i class="fa-solid fa-phone"></i>
+          <span>966566706775</span>
+        </a>
+        <a href="https://wa.me/966566706775?text=مرحباً" target="_blank" class="ebtb20-contact-link">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>تواصل واتساب</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- *********************** -->
+  <!-- HEADER COMPONENT -->
+  <!-- *********************** -->
+  <header class="ebhdr20-hdr" id="ebhdr20-hdr">
+    <div class="ebhdr20-container">
+      
+      <!-- Logo -->
+      <a href="#" class="ebhdr20-logo">
+        <img src="./img/logo.webp" alt="" onerror="this.style.display='none';" />
+        <span class="ebhdr20-site-name">إنجز الرقمية</span>
+      </a>
+
+      <!-- Navigation Menu -->
+      <div class="ebhdr20-nav-menu" id="ebhdr20-navMenu">
+        <div class="ebhdr20-nav-menu-container">
+
+          <!-- Close button (Mobile Drawer only) -->
+          <div class="ebhdr20-nav-menu-upper">
+            <span class="ebhdr20-menu-title">القائمة</span>
+            <div id="ebhdr20-navClose" class="ebhdr20-nav-close">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+
+          <nav class="ebhdr20-nav-menu-pages">
+            <ul class="ebhdr20-nav-list">
+              <li class="ebhdr20-nav-item">
+                <a href="#" class="ebhdr20-nav-link active">الرئيسية</a>
+              </li>
+
+              <!-- ========= SERVICES DROPDOWN ========= -->
+              <li class="ebhdr20-nav-dropdown">
+                <button class="ebhdr20-nav-link ebhdr20-dropdown-toggle">
+                  <span>خدماتنا</span>
+                  <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <ul class="ebhdr20-dropdown">
+                  <li class="ebhdr20-dropdown-item">
+                    <a href="#">تطوير المواقع</a>
+                  </li>
+                  <li class="ebhdr20-dropdown-item">
+                    <a href="#">تطبيقات الهواتف</a>
+                  </li>
+                  <li class="ebhdr20-dropdown-item">
+                    <a href="#">التصميم الإبداعي</a>
+                  </li>
+                  <li class="ebhdr20-dropdown-item">
+                    <a href="#">التسويق الرقمي</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="ebhdr20-nav-item">
+                <a href="#" class="ebhdr20-nav-link">آلية العمل</a>
+              </li>
+
+              <li class="ebhdr20-nav-item">
+                <a href="#" class="ebhdr20-nav-link">تواصل معنا</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+
+      <!-- Hamburger Menu Toggle (Mobile only) -->
+      <button class="ebhdr20-nav-toggle" id="ebhdr20-navToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+</body>
+
+</html>

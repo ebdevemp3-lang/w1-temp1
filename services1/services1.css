@@ -1,0 +1,295 @@
+/* ============================================
+   SERVICES — THEME 1: TECH NEON (LIGHT)
+   ============================================ */
+
+:root {
+  --ebsrv20-primary: #00b4d8;
+  --ebsrv20-primary-rgb: 0, 180, 216;
+  --ebsrv20-secondary: #0077b6;
+  --ebsrv20-secondary-rgb: 0, 119, 182;
+  --ebsrv20-accent: #7209b7;
+  --ebsrv20-accent-rgb: 114, 9, 183;
+
+  --ebsrv20-bg: #f8fafc;
+  --ebsrv20-surface: rgba(255, 255, 255, 0.8);
+  --ebsrv20-text: #0f172a;
+  --ebsrv20-text-muted: #64748b;
+  --ebsrv20-border: rgba(0, 180, 216, 0.15);
+  
+  --ebsrv20-radius: 12px;
+  --ebsrv20-img-radius: 8px;
+  --ebsrv20-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ebsrv20-section {
+  position: relative;
+  background-color: var(--ebsrv20-bg);
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+/* Orbs Background */
+.ebsrv20-bg-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ebsrv20-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+}
+
+.ebsrv20-orb-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(var(--ebsrv20-primary-rgb), 0.4), transparent 70%);
+  top: -10%;
+  right: -5%;
+}
+
+.ebsrv20-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(var(--ebsrv20-accent-rgb), 0.3), transparent 70%);
+  bottom: -10%;
+  left: -5%;
+}
+
+/* Header */
+.ebsrv20-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ebsrv20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(var(--ebsrv20-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--ebsrv20-primary-rgb), 0.2);
+  color: var(--ebsrv20-primary);
+  padding: 0.4rem 1.1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ebsrv20-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ebsrv20-text);
+  line-height: 1.2;
+}
+
+.ebsrv20-title-highlight {
+  color: var(--ebsrv20-primary);
+  position: relative;
+}
+
+.ebsrv20-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(var(--ebsrv20-primary-rgb), 0.2);
+  border-radius: 2px;
+}
+
+.ebsrv20-subtitle {
+  font-size: 1.05rem;
+  color: var(--ebsrv20-text-muted);
+  line-height: 1.7;
+}
+
+/* Grid Layout */
+.ebsrv20-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.ebsrv20-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .ebsrv20-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card - Tech/Glassmorphism Look */
+.ebsrv20-card {
+  background-color: var(--ebsrv20-surface);
+  border: 1px solid var(--ebsrv20-border);
+  border-radius: var(--ebsrv20-radius);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.4s var(--ebsrv20-ease), border-color 0.4s var(--ebsrv20-ease), box-shadow 0.4s var(--ebsrv20-ease);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ebsrv20-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ebsrv20-primary), var(--ebsrv20-secondary));
+  opacity: 0;
+  transition: opacity 0.3s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--ebsrv20-primary-rgb), 0.4);
+  box-shadow: 0 12px 30px rgba(0, 180, 216, 0.1);
+}
+
+.ebsrv20-card:hover::before {
+  opacity: 1;
+}
+
+/* Image wrapper */
+.ebsrv20-card-img-wrapper {
+  position: relative;
+  height: 220px;
+  margin: 0.75rem;
+  border-radius: var(--ebsrv20-img-radius);
+  overflow: hidden;
+}
+
+.ebsrv20-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card:hover .ebsrv20-card-img {
+  transform: scale(1.06);
+}
+
+.ebsrv20-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.7) 100%);
+}
+
+.ebsrv20-card-number {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--ebsrv20-primary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+}
+
+/* Card body */
+.ebsrv20-card-body {
+  padding: 1.25rem 1.75rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ebsrv20-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ebsrv20-text);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ebsrv20-card-title::before {
+  content: '//';
+  color: var(--ebsrv20-primary);
+  font-weight: 400;
+}
+
+.ebsrv20-card-desc {
+  font-size: 0.92rem;
+  color: var(--ebsrv20-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.ebsrv20-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--ebsrv20-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid var(--ebsrv20-border);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s var(--ebsrv20-ease);
+  width: 100%;
+}
+
+.ebsrv20-card-link i {
+  transition: transform 0.3s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card:hover .ebsrv20-card-link {
+  background-color: var(--ebsrv20-primary);
+  border-color: var(--ebsrv20-primary);
+  color: #ffffff;
+}
+
+.ebsrv20-card:hover .ebsrv20-card-link i {
+  transform: translateX(-5px);
+}
+
+/* Animations */
+.ebsrv20-anim-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ebsrv20-ease), transform 0.8s var(--ebsrv20-ease);
+}
+
+.ebsrv20-anim-up.ebsrv20-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ebsrv20-delay-1 { transition-delay: 0.1s; }
+.ebsrv20-delay-2 { transition-delay: 0.2s; }
+.ebsrv20-delay-3 { transition-delay: 0.3s; }
+.ebsrv20-delay-4 { transition-delay: 0.4s; }
+.ebsrv20-delay-5 { transition-delay: 0.5s; }
+.ebsrv20-delay-6 { transition-delay: 0.6s; }

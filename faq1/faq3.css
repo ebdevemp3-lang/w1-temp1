@@ -1,0 +1,210 @@
+/* ============================================
+   FAQ — THEME 3: WARM SAND
+   ============================================ */
+
+:root {
+  --ebfq20-primary: #c2410c;
+  --ebfq20-primary-rgb: 194, 65, 12;
+  --ebfq20-secondary: #d97706;
+  --ebfq20-accent: #e85d04;
+  
+  --ebfq20-bg: #faf6f0;
+  --ebfq20-surface: #ffffff;
+  --ebfq20-text: #2d2219;
+  --ebfq20-text-muted: #7c624d;
+  --ebfq20-border: #ecdcc8;
+
+  --ebfq20-radius: 24px;
+  --ebfq20-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ebfq20-section {
+  position: relative;
+  background-color: var(--ebfq20-bg);
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+/* Background effects */
+.ebfq20-bg-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ebfq20-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+}
+
+.ebfq20-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(var(--ebfq20-primary-rgb), 0.25), transparent 70%);
+  top: -10%;
+  right: -5%;
+}
+
+.ebfq20-orb-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(var(--ebfq20-secondary-rgb), 0.2), transparent 70%);
+  bottom: -10%;
+  left: -5%;
+}
+
+.ebfq20-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.ebfq20-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ebfq20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(var(--ebfq20-primary-rgb), 0.06);
+  border: 1px solid rgba(var(--ebfq20-primary-rgb), 0.15);
+  color: var(--ebfq20-primary);
+  padding: 0.45rem 1.15rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ebfq20-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ebfq20-text);
+  line-height: 1.3;
+}
+
+.ebfq20-title-highlight {
+  color: var(--ebfq20-primary);
+}
+
+.ebfq20-subtitle {
+  font-size: 1.05rem;
+  color: var(--ebfq20-text-muted);
+  line-height: 1.7;
+}
+
+/* List wrapper */
+.ebfq20-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Item - Soft Rounded Dashed Card */
+.ebfq20-item {
+  background: var(--ebfq20-surface);
+  border: 2px dashed var(--ebfq20-border);
+  border-radius: var(--ebfq20-radius);
+  padding: 1.75rem 2.25rem;
+  transition: all 0.4s var(--ebfq20-ease);
+}
+
+.ebfq20-item:hover {
+  border-color: var(--ebfq20-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(194, 65, 12, 0.04);
+}
+
+.ebfq20-item.ebfq20-active {
+  border-color: var(--ebfq20-primary);
+  border-style: solid;
+  box-shadow: 0 15px 30px rgba(194, 65, 12, 0.08);
+}
+
+/* Question Row */
+.ebfq20-question-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 1.5rem;
+}
+
+.ebfq20-question {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ebfq20-text);
+  line-height: 1.5;
+}
+
+.ebfq20-item:hover .ebfq20-question {
+  color: var(--ebfq20-primary);
+}
+
+/* Soft friendly round toggle */
+.ebfq20-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(var(--ebfq20-primary-rgb), 0.05);
+  border: 1px solid var(--ebfq20-border);
+  color: var(--ebfq20-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s var(--ebfq20-ease);
+  flex-shrink: 0;
+}
+
+.ebfq20-toggle .fa-xmark {
+  display: none;
+}
+
+.ebfq20-item.ebfq20-active .ebfq20-toggle {
+  background: var(--ebfq20-primary);
+  color: #ffffff;
+  border-color: var(--ebfq20-primary);
+  transform: rotate(180deg);
+}
+
+.ebfq20-item.ebfq20-active .ebfq20-toggle .fa-chevron-down {
+  display: none;
+}
+
+.ebfq20-item.ebfq20-active .ebfq20-toggle .fa-xmark {
+  display: inline-block;
+}
+
+/* Answer block height slide animation */
+.ebfq20-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ebfq20-ease);
+}
+
+.ebfq20-item.ebfq20-active .ebfq20-answer-wrapper {
+  max-height: 250px;
+}
+
+.ebfq20-answer {
+  font-size: 0.95rem;
+  color: var(--ebfq20-text-muted);
+  line-height: 1.7;
+  padding-top: 1.25rem;
+  border-top: 2px dashed var(--ebfq20-border);
+  margin-top: 1.25rem;
+}

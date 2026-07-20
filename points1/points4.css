@@ -1,0 +1,232 @@
+/* ============================================
+   POINTS — THEME 4: SAGE GREEN & CORAL (LIGHT)
+   ============================================ */
+
+:root {
+  --ebpt20-primary: #2d6a4f;
+  --ebpt20-primary-rgb: 45, 106, 79;
+  --ebpt20-secondary: #52796f;
+  --ebpt20-accent: #e76f51;
+  --ebpt20-accent-rgb: 231, 111, 81;
+  
+  --ebpt20-bg: #f4f8f5;
+  --ebpt20-surface: #ffffff;
+  --ebpt20-text: #1b4332;
+  --ebpt20-text-muted: #52796f;
+  --ebpt20-border: rgba(45, 106, 79, 0.12);
+
+  --ebpt20-radius: 20px;
+  --ebpt20-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ebpt20-section {
+  position: relative;
+  background-color: var(--ebpt20-bg);
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+.ebpt20-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.ebpt20-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ebpt20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(var(--ebpt20-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--ebpt20-primary-rgb), 0.15);
+  color: var(--ebpt20-primary);
+  padding: 0.4rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ebpt20-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ebpt20-text);
+  line-height: 1.2;
+}
+
+.ebpt20-title-highlight {
+  color: var(--ebpt20-accent);
+}
+
+.ebpt20-subtitle {
+  font-size: 1.05rem;
+  color: var(--ebpt20-text-muted);
+  line-height: 1.7;
+}
+
+/* Timeline Layout wrapper */
+.ebpt20-steps-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 1.5rem;
+}
+
+/* Desktop Connecting Line */
+.ebpt20-steps-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(var(--ebpt20-primary-rgb), 0.1) 0%, var(--ebpt20-primary) 50%, rgba(var(--ebpt20-primary-rgb), 0.1) 100%);
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .ebpt20-steps-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .ebpt20-steps-wrapper::before {
+    top: 5%;
+    bottom: 5%;
+    left: 40px;
+    right: auto;
+    width: 2px;
+    height: 90%;
+  }
+}
+
+/* Step Card */
+.ebpt20-step-card {
+  flex: 1;
+  background: var(--ebpt20-surface);
+  border: 1px solid var(--ebpt20-border);
+  border-radius: var(--ebpt20-radius);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+  transition: transform 0.4s var(--ebpt20-ease), border-color 0.4s var(--ebpt20-ease), box-shadow 0.4s var(--ebpt20-ease);
+}
+
+@media (max-width: 1024px) {
+  .ebpt20-step-card {
+    flex-direction: row;
+    text-align: right;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+}
+
+.ebpt20-step-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--ebpt20-primary-rgb), 0.3);
+  box-shadow: 0 12px 30px rgba(45, 106, 79, 0.08);
+}
+
+/* Step Header */
+.ebpt20-step-header {
+  position: relative;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .ebpt20-step-header {
+    margin-bottom: 0;
+  }
+}
+
+/* Step Icon container */
+.ebpt20-step-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--ebpt20-surface);
+  border: 2px solid var(--ebpt20-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: var(--ebpt20-primary);
+  box-shadow: 0 0 15px rgba(45, 106, 79, 0.05);
+  transition: all 0.3s var(--ebpt20-ease);
+}
+
+.ebpt20-step-card:hover .ebpt20-step-icon {
+  background: var(--ebpt20-primary);
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(45, 106, 79, 0.2);
+}
+
+/* Step Number indicator */
+.ebpt20-step-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--ebpt20-accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(var(--ebpt20-accent-rgb), 0.2);
+}
+
+/* Step Body */
+.ebpt20-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ebpt20-step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ebpt20-text);
+}
+
+.ebpt20-step-desc {
+  font-size: 0.9rem;
+  color: var(--ebpt20-text-muted);
+  line-height: 1.6;
+}
+
+/* Animations */
+.ebpt20-anim-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ebpt20-ease), transform 0.8s var(--ebpt20-ease);
+}
+
+.ebpt20-anim-up.ebpt20-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ebpt20-delay-1 { transition-delay: 0.1s; }
+.ebpt20-delay-2 { transition-delay: 0.25s; }
+.ebpt20-delay-3 { transition-delay: 0.4s; }
+.ebpt20-delay-4 { transition-delay: 0.55s; }

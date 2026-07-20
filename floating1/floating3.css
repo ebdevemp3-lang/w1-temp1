@@ -1,0 +1,126 @@
+/* ============================================
+   FLOATING BUTTONS — THEME 3: WARM SAND
+   ============================================ */
+
+:root {
+  --ebctad20-primary: #c2410c;
+  --ebctad20-primary-rgb: 194, 65, 12;
+  --ebctad20-secondary: #d97706;
+  --ebctad20-bg-light: #ffffff;
+  
+  --ebctad20-radius: 30px;
+  --ebctad20-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ebctad20-wrapper {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 9999;
+  transition: opacity 0.4s var(--ebctad20-ease), transform 0.4s var(--ebctad20-ease);
+}
+
+.ebctad20-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.ebctad20-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Base button style - Organic soft pill */
+.ebctad20-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+  border-radius: var(--ebctad20-radius);
+  background: var(--ebctad20-bg-light);
+  color: #2d2219;
+  border: 2px dashed #ecdcc8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  position: relative;
+  box-shadow: 0 8px 20px -6px rgba(194, 65, 12, 0.04);
+  transition: all 0.3s var(--ebctad20-ease);
+}
+
+/* Icon container - round circle */
+.ebctad20-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(var(--ebctad20-primary-rgb), 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--ebctad20-primary);
+  transition: all 0.3s var(--ebctad20-ease);
+  order: 2; /* Move icon to left/after text in RTL */
+}
+
+/* Label styling */
+.ebctad20-label {
+  font-size: 0.85rem;
+  color: #2d2219;
+  order: 1;
+}
+
+/* Hover effects */
+.ebctad20-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: var(--ebctad20-primary);
+  border-style: dashed;
+  box-shadow: 0 12px 24px rgba(194, 65, 12, 0.08);
+}
+
+.ebctad20-btn:hover .ebctad20-icon-wrapper {
+  background: var(--ebctad20-primary);
+  color: #ffffff;
+}
+
+/* Pulse animation - soft terracotta */
+.ebctad20-pulse {
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--ebctad20-radius);
+  pointer-events: none;
+  z-index: 1;
+  border: 2px solid var(--ebctad20-primary);
+  opacity: 0;
+  animation: ebflPulseWarm 2s infinite;
+}
+
+@keyframes ebflPulseWarm {
+  0% { transform: scale(1); opacity: 0.3; }
+  70% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .ebctad20-wrapper {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    gap: 0.75rem;
+  }
+  .ebctad20-label {
+    display: none;
+  }
+  .ebctad20-btn {
+    padding: 0;
+    border-radius: 50%;
+  }
+}
+
+body[dir="rtl"] .ebctad20-label {
+  padding-left: 0;
+  padding-right: 0.75rem;
+}

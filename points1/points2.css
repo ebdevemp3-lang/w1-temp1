@@ -1,0 +1,240 @@
+/* ============================================
+   POINTS — THEME 2: OBSIDIAN GOLD (LIGHT)
+   ============================================ */
+
+:root {
+  --ebpt20-primary: #b89020;
+  --ebpt20-primary-rgb: 184, 144, 32;
+  --ebpt20-secondary: #8c6d1d;
+  --ebpt20-accent: #c5a059;
+
+  --ebpt20-bg: #faf9f5;
+  --ebpt20-surface: #ffffff;
+  --ebpt20-text: #1c1917;
+  --ebpt20-text-muted: #57534e;
+  --ebpt20-border: #e7e2d8;
+
+  --ebpt20-radius: 0px;
+  --ebpt20-ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ebpt20-section {
+  position: relative;
+  background-color: var(--ebpt20-bg);
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+.ebpt20-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.ebpt20-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 6rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ebpt20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--ebpt20-primary);
+  color: var(--ebpt20-primary);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.ebpt20-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--ebpt20-text);
+  line-height: 1.2;
+}
+
+.ebpt20-title-highlight {
+  color: var(--ebpt20-primary);
+  font-style: italic;
+}
+
+.ebpt20-subtitle {
+  font-size: 1rem;
+  color: var(--ebpt20-text-muted);
+  line-height: 1.8;
+}
+
+/* Staggered Vertical Stepper Layout */
+.ebpt20-steps-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+}
+
+/* Central decorative vertical axis line */
+.ebpt20-steps-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: var(--ebpt20-border);
+}
+
+@media (max-width: 768px) {
+  .ebpt20-steps-wrapper {
+    gap: 3rem;
+  }
+  .ebpt20-steps-wrapper::before {
+    left: 20px;
+    transform: none;
+  }
+}
+
+/* Step Card - Alternating Columns (Staggered Layout) */
+.ebpt20-step-card {
+  width: 45%;
+  background: var(--ebpt20-surface);
+  border: 1px solid var(--ebpt20-border);
+  border-radius: var(--ebpt20-radius);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(28, 25, 23, 0.02);
+  transition: transform 0.4s var(--ebpt20-ease), border-color 0.4s var(--ebpt20-ease), box-shadow 0.4s var(--ebpt20-ease);
+}
+
+/* Luxury corner accent */
+.ebpt20-step-card::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--ebpt20-primary);
+  border-left: 2px solid var(--ebpt20-primary);
+  transition: all 0.3s var(--ebpt20-ease);
+}
+
+.ebpt20-step-card:hover::after {
+  width: 35px;
+  height: 35px;
+}
+
+/* Stagger right side for odd steps, left side for even steps */
+.ebpt20-steps-wrapper > div:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.ebpt20-steps-wrapper > div:nth-child(even) {
+  align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .ebpt20-step-card {
+    width: calc(100% - 50px);
+    align-self: flex-end !important;
+    padding: 2rem;
+  }
+}
+
+.ebpt20-step-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--ebpt20-primary);
+  box-shadow: 0 15px 35px rgba(28, 25, 23, 0.05);
+}
+
+/* Step Header */
+.ebpt20-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+/* Big Gold Number acting as watermark */
+.ebpt20-step-number {
+  color: rgba(184, 144, 32, 0.15);
+  font-family: serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: color 0.3s var(--ebpt20-ease);
+}
+
+.ebpt20-step-card:hover .ebpt20-step-number {
+  color: var(--ebpt20-primary);
+}
+
+/* Minimal Luxury Gold Stepper Icons */
+.ebpt20-step-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--ebpt20-primary);
+  border: 1px solid var(--ebpt20-primary);
+  background: transparent;
+  transition: all 0.3s var(--ebpt20-ease);
+}
+
+.ebpt20-step-card:hover .ebpt20-step-icon {
+  background: var(--ebpt20-primary);
+  color: var(--ebpt20-surface);
+}
+
+/* Step Body */
+.ebpt20-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ebpt20-step-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ebpt20-text);
+  border-bottom: 1px solid var(--ebpt20-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.ebpt20-step-desc {
+  font-size: 0.92rem;
+  color: var(--ebpt20-text-muted);
+  line-height: 1.7;
+}
+
+/* Animations */
+.ebpt20-anim-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ebpt20-ease), transform 0.8s var(--ebpt20-ease);
+}
+
+.ebpt20-anim-up.ebpt20-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ebpt20-delay-1 { transition-delay: 0.15s; }
+.ebpt20-delay-2 { transition-delay: 0.3s; }
+.ebpt20-delay-3 { transition-delay: 0.45s; }
+.ebpt20-delay-4 { transition-delay: 0.6s; }

@@ -1,0 +1,298 @@
+/* ============================================
+   SERVICES — THEME 2: OBSIDIAN GOLD (LIGHT)
+   ============================================ */
+
+:root {
+  --ebsrv20-primary: #b89020;
+  --ebsrv20-primary-rgb: 184, 144, 32;
+  --ebsrv20-secondary: #8c6d1d;
+  --ebsrv20-secondary-rgb: 140, 109, 29;
+  --ebsrv20-accent: #c5a059;
+  --ebsrv20-accent-rgb: 197, 160, 89;
+
+  --ebsrv20-bg: #faf9f5;
+  --ebsrv20-surface: #ffffff;
+  --ebsrv20-text: #1c1917;
+  --ebsrv20-text-muted: #57534e;
+  --ebsrv20-border: #e7e2d8;
+
+  --ebsrv20-radius: 0px;
+  --ebsrv20-img-radius: 0px;
+  --ebsrv20-ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ebsrv20-section {
+  position: relative;
+  background-color: var(--ebsrv20-bg);
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+/* Background elements */
+.ebsrv20-bg-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ebsrv20-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.1;
+}
+
+.ebsrv20-orb-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(var(--ebsrv20-primary-rgb), 0.3), transparent 70%);
+  top: -10%;
+  right: -5%;
+}
+
+.ebsrv20-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(var(--ebsrv20-accent-rgb), 0.2), transparent 70%);
+  bottom: -10%;
+  left: -5%;
+}
+
+/* Header */
+.ebsrv20-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ebsrv20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--ebsrv20-primary);
+  color: var(--ebsrv20-primary);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.ebsrv20-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--ebsrv20-text);
+  line-height: 1.2;
+}
+
+.ebsrv20-title-highlight {
+  color: var(--ebsrv20-primary);
+  font-style: italic;
+}
+
+.ebsrv20-subtitle {
+  font-size: 1rem;
+  color: var(--ebsrv20-text-muted);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* Grid Layout */
+.ebsrv20-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.ebsrv20-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 3.5rem 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .ebsrv20-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Card - Luxury Frame Design */
+.ebsrv20-card {
+  background-color: var(--ebsrv20-surface);
+  border: 1px solid var(--ebsrv20-border);
+  border-radius: var(--ebsrv20-radius);
+  padding: 2.5rem 2rem 2rem 2rem;
+  transition: transform 0.4s var(--ebsrv20-ease), border-color 0.4s var(--ebsrv20-ease), box-shadow 0.4s var(--ebsrv20-ease);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Luxury Inner Frame border */
+.ebsrv20-card::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(184, 144, 32, 0.12);
+  pointer-events: none;
+  transition: inset 0.3s var(--ebsrv20-ease), border-color 0.3s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ebsrv20-primary);
+  box-shadow: 0 20px 40px rgba(28, 25, 23, 0.05);
+}
+
+.ebsrv20-card:hover::after {
+  inset: 6px;
+  border-color: var(--ebsrv20-primary);
+}
+
+/* Image wrapper - framed shadow */
+.ebsrv20-card-img-wrapper {
+  position: relative;
+  height: 180px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 6px 6px 0px rgba(184, 144, 32, 0.15);
+  transition: box-shadow 0.3s var(--ebsrv20-ease);
+  z-index: 2;
+}
+
+.ebsrv20-card:hover .ebsrv20-card-img-wrapper {
+  box-shadow: 8px 8px 0px var(--ebsrv20-primary);
+}
+
+.ebsrv20-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card:hover .ebsrv20-card-img {
+  transform: scale(1.04);
+}
+
+.ebsrv20-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.15);
+}
+
+/* Number watermark style */
+.ebsrv20-card-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: rgba(184, 144, 32, 0.2);
+  font-family: serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.ebsrv20-card:hover .ebsrv20-card-number {
+  color: var(--ebsrv20-primary);
+}
+
+/* Card body */
+.ebsrv20-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  z-index: 2;
+  text-align: center;
+}
+
+.ebsrv20-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ebsrv20-text);
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.ebsrv20-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: var(--ebsrv20-primary);
+  transition: width 0.3s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card:hover .ebsrv20-card-title::after {
+  width: 70px;
+}
+
+.ebsrv20-card-desc {
+  font-size: 0.92rem;
+  color: var(--ebsrv20-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.ebsrv20-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--ebsrv20-text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  align-self: center;
+  border-bottom: 1px solid var(--ebsrv20-primary);
+  padding-bottom: 2px;
+  transition: all 0.3s var(--ebsrv20-ease);
+}
+
+.ebsrv20-card-link i {
+  transition: transform 0.3s var(--ebsrv20-ease);
+  font-size: 0.8rem;
+}
+
+.ebsrv20-card:hover .ebsrv20-card-link {
+  color: var(--ebsrv20-primary);
+}
+
+.ebsrv20-card:hover .ebsrv20-card-link i {
+  transform: translateX(-4px);
+}
+
+/* Animations */
+.ebsrv20-anim-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ebsrv20-ease), transform 0.8s var(--ebsrv20-ease);
+}
+
+.ebsrv20-anim-up.ebsrv20-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ebsrv20-delay-1 { transition-delay: 0.1s; }
+.ebsrv20-delay-2 { transition-delay: 0.2s; }
+.ebsrv20-delay-3 { transition-delay: 0.3s; }
+.ebsrv20-delay-4 { transition-delay: 0.4s; }
+.ebsrv20-delay-5 { transition-delay: 0.5s; }
+.ebsrv20-delay-6 { transition-delay: 0.6s; }
