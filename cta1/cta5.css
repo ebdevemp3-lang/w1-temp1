@@ -1,0 +1,90 @@
+/* ============================================
+   CTA — THEME 5: NEON NIGHTS (STRUCTURAL)
+   ============================================ */
+
+:root {
+  --ebctaf20-primary-btn-background-color: transparent;
+  --ebctaf20-primary-btn-text-color: #00e5ff;
+  --ebctaf20-primary-btn-shadow: 0 0 0 2px #00e5ff;
+  --ebctaf20-primary-btn-hover-background-color: #00e5ff;
+  --ebctaf20-primary-btn-hover-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+  --ebctaf20-outline-btn-background-color: transparent;
+  --ebctaf20-outline-btn-text-color: #94a3b8;
+  --ebctaf20-outline-btn-border-color: rgba(255, 255, 255, 0.12);
+  --ebctaf20-outline-btn-hover-background-color: rgba(255, 255, 255, 0.06);
+  --ebctaf20-outline-btn-hover-text-color: #e2e8f0;
+  --ebctaf20-outline-btn-hover-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  --ebctaf20-radius: 8px;
+  --ebctaf20-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ebctaf20-buttons-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* STRUCTURAL: square-ish buttons with border-only style */
+.ebctaf20-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--ebctaf20-radius);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.35s var(--ebctaf20-ease);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* STRUCTURAL: primary = bordered, not filled */
+.ebctaf20-btn-primary {
+  background: var(--ebctaf20-primary-btn-background-color);
+  color: var(--ebctaf20-primary-btn-text-color);
+  border: 2px solid #00e5ff;
+  box-shadow: var(--ebctaf20-primary-btn-shadow);
+}
+
+/* STRUCTURAL: hover fills + rotates + glows */
+.ebctaf20-btn-primary:hover {
+  background: var(--ebctaf20-primary-btn-hover-background-color);
+  color: #070b16;
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: var(--ebctaf20-primary-btn-hover-shadow);
+}
+
+.ebctaf20-btn-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.15), transparent);
+  animation: ebctafShimmer 3s ease-in-out infinite;
+}
+
+@keyframes ebctafShimmer {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* STRUCTURAL: outline with dashed border */
+.ebctaf20-btn-outline {
+  background: var(--ebctaf20-outline-btn-background-color);
+  color: var(--ebctaf20-outline-btn-text-color);
+  border: 1.5px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* STRUCTURAL: hover changes to solid + scales up */
+.ebctaf20-btn-outline:hover {
+  background: var(--ebctaf20-outline-btn-hover-background-color);
+  color: var(--ebctaf20-outline-btn-hover-text-color);
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.06) rotate(1deg);
+  box-shadow: var(--ebctaf20-outline-btn-hover-shadow);
+}

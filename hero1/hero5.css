@@ -1,0 +1,515 @@
+/* ============================================
+   HERO — THEME 5: NEON NIGHTS (STRUCTURAL)
+   ============================================ */
+
+:root {
+  --ebhro20-hero-background-color: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 229, 255, 0.06), transparent 50%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(168, 85, 247, 0.05), transparent 50%), #070b16;
+  --ebhro20-title-text-color: #e2e8f0;
+  --ebhro20-title-highlight-gradient: linear-gradient(135deg, #00e5ff, #a855f7, #f472b6);
+  --ebhro20-description-text-color: #94a3b8;
+  --ebhro20-badge-background-color: rgba(0, 229, 255, 0.06);
+  --ebhro20-badge-border-color: rgba(0, 229, 255, 0.25);
+  --ebhro20-badge-text-color: #00e5ff;
+  --ebhro20-stats-background-color: rgba(15, 23, 52, 0.6);
+  --ebhro20-stats-border-color: rgba(168, 85, 247, 0.2);
+  --ebhro20-stats-number-color: #a855f7;
+  --ebhro20-stats-label-color: #94a3b8;
+  --ebhro20-stats-divider-color: rgba(0, 229, 255, 0.2);
+  --ebhro20-visual-circle-border-color: rgba(168, 85, 247, 0.3);
+  --ebhro20-visual-circle-glow-1: rgba(168, 85, 247, 0.12);
+  --ebhro20-visual-circle-glow-2: rgba(0, 229, 255, 0.2);
+  --ebhro20-orbit-dot-1-color: #00e5ff;
+  --ebhro20-orbit-dot-2-color: #a855f7;
+  --ebhro20-orbit-dot-3-color: #f472b6;
+  --ebhro20-float-card-background-color: rgba(15, 23, 52, 0.8);
+  --ebhro20-float-card-border-color: rgba(168, 85, 247, 0.2);
+  --ebhro20-float-card-text-color: #cbd5e1;
+  --ebhro20-float-card-icon-color: #a855f7;
+  --ebhro20-float-card-hover-border-color: #a855f7;
+  --ebhro20-float-card-hover-glow: 0 12px 35px rgba(168, 85, 247, 0.15);
+  --ebhro20-float-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --ebhro20-gradient-orb-1-color: rgba(0, 229, 255, 0.25);
+  --ebhro20-gradient-orb-2-color: rgba(168, 85, 247, 0.2);
+  --ebhro20-gradient-orb-3-color: rgba(244, 114, 182, 0.15);
+  --ebhro20-grid-line-color: rgba(0, 229, 255, 0.035);
+  --ebhro20-particle-color: #a855f7;
+  --ebhro20-scroll-text-color: #64748b;
+  --ebhro20-scroll-mouse-border-color: #475569;
+  --ebhro20-scroll-wheel-color: #a855f7;
+  --ebhro20-radius: 20px;
+  --ebhro20-card-radius: 12px;
+  --ebhro20-title-size: 3.8rem;
+  --ebhro20-visual-size: 360px;
+  --ebhro20-ring-size: 300px;
+  --ebhro20-core-size: 120px;
+}
+
+@media (max-width: 320px) {
+  :root { --ebhro20-title-size: 1.7rem; --ebhro20-visual-size: 220px; --ebhro20-ring-size: 170px; --ebhro20-core-size: 70px; }
+}
+@media (min-width: 321px) and (max-width: 480px) {
+  :root { --ebhro20-title-size: 2rem; --ebhro20-visual-size: 260px; --ebhro20-ring-size: 200px; --ebhro20-core-size: 80px; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  :root { --ebhro20-title-size: 2.4rem; --ebhro20-visual-size: 300px; --ebhro20-ring-size: 230px; --ebhro20-core-size: 90px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root { --ebhro20-title-size: 2.9rem; --ebhro20-visual-size: 320px; --ebhro20-ring-size: 250px; --ebhro20-core-size: 100px; }
+}
+
+.ebhro20-hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--ebhro20-hero-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 6rem 0 3rem 0;
+}
+
+.ebhro20-bg-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* STRUCTURAL: larger, slower orbs */
+.ebhro20-gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+}
+
+.ebhro20-orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--ebhro20-gradient-orb-1-color), transparent 70%);
+  top: -15%; right: -8%;
+  animation: ebhroOrb1 18s ease-in-out infinite;
+}
+
+.ebhro20-orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--ebhro20-gradient-orb-2-color), transparent 70%);
+  bottom: -20%; left: -12%;
+  animation: ebhroOrb2 22s ease-in-out infinite;
+}
+
+.ebhro20-orb-3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, var(--ebhro20-gradient-orb-3-color), transparent 70%);
+  top: 35%; left: 45%;
+  animation: ebhroOrb3 25s ease-in-out infinite;
+}
+
+@keyframes ebhroOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-60px, 40px) scale(1.15); }
+  66% { transform: translate(30px, -30px) scale(0.9); }
+}
+@keyframes ebhroOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, -50px) scale(1.2); }
+}
+@keyframes ebhroOrb3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, 30px) scale(1.1); }
+  75% { transform: translate(30px, -40px) scale(0.88); }
+}
+
+/* STRUCTURAL: diagonal grid overlay */
+.ebhro20-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, var(--ebhro20-grid-line-color) 1px, transparent 1px),
+    linear-gradient(-45deg, var(--ebhro20-grid-line-color) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 100%);
+}
+
+/* STRUCTURAL: larger particles with trail */
+.ebhro20-particle {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: var(--ebhro20-particle-color);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ebhroParticle 8s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--ebhro20-particle-color), 0 0 16px var(--ebhro20-particle-color);
+}
+.ebhro20-p1 { left: 10%; top: 20%; animation-delay: 0s; }
+.ebhro20-p2 { left: 85%; top: 15%; animation-delay: 2s; }
+.ebhro20-p3 { left: 70%; top: 75%; animation-delay: 4s; }
+.ebhro20-p4 { left: 25%; top: 80%; animation-delay: 5.5s; }
+.ebhro20-p5 { left: 50%; top: 50%; animation-delay: 2.5s; }
+.ebhro20-p6 { left: 15%; top: 55%; animation-delay: 4.5s; }
+
+@keyframes ebhroParticle {
+  0%, 100% { opacity: 0; transform: translateY(0) scale(0.3); }
+  30% { opacity: 0.9; }
+  50% { opacity: 0.9; transform: translateY(-50px) scale(1.2); }
+}
+
+.ebhro20-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.ebhro20-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .ebhro20-content { flex-direction: column; text-align: center; gap: 3rem; }
+}
+
+.ebhro20-text-block {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.75rem;
+}
+
+@media (max-width: 1024px) {
+  .ebhro20-text-block { align-items: center; }
+}
+
+.ebhro20-anim-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ebhro20-anim-up.ebhro20-visible { opacity: 1; transform: translateY(0); }
+.ebhro20-delay-1 { transition-delay: 0.12s; }
+.ebhro20-delay-2 { transition-delay: 0.24s; }
+.ebhro20-delay-3 { transition-delay: 0.36s; }
+.ebhro20-delay-4 { transition-delay: 0.48s; }
+.ebhro20-delay-5 { transition-delay: 0.60s; }
+
+/* STRUCTURAL: badge with pulsing glow */
+.ebhro20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ebhro20-badge-background-color);
+  border: 1px solid var(--ebhro20-badge-border-color);
+  color: var(--ebhro20-badge-text-color);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: ebhroBadgePulse 3s ease-in-out infinite;
+}
+.ebhro20-badge i { font-size: 0.7rem; }
+
+@keyframes ebhroBadgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 229, 255, 0); }
+}
+
+/* STRUCTURAL: bigger title */
+.ebhro20-title {
+  font-size: var(--ebhro20-title-size);
+  font-weight: 700;
+  color: var(--ebhro20-title-text-color);
+  line-height: 1.25;
+}
+
+.ebhro20-title-highlight {
+  background: var(--ebhro20-title-highlight-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: ebhroGradient 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.25));
+}
+
+@keyframes ebhroGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.ebhro20-description {
+  font-size: 1.15rem;
+  color: var(--ebhro20-description-text-color);
+  line-height: 1.85;
+  max-width: 560px;
+}
+
+/* STRUCTURAL: stats in vertical column layout */
+.ebhro20-stats-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 1.5rem 2rem;
+  background: var(--ebhro20-stats-background-color);
+  border: 1px solid var(--ebhro20-stats-border-color);
+  border-radius: var(--ebhro20-radius);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 3px solid #a855f7;
+}
+
+.ebhro20-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+}
+
+.ebhro20-stat + .ebhro20-stat {
+  border-top: 1px solid var(--ebhro20-stats-divider-color);
+}
+
+/* STRUCTURAL: divider is horizontal between stats */
+.ebhro20-stat-divider {
+  display: none;
+}
+
+.ebhro20-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ebhro20-stats-number-color);
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+  min-width: 60px;
+}
+
+.ebhro20-stat-plus {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ebhro20-stats-number-color);
+}
+
+.ebhro20-stat-label {
+  font-size: 0.82rem;
+  color: var(--ebhro20-stats-label-color);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ebhro20-visual-block {
+  flex: 1;
+  position: relative;
+  width: var(--ebhro20-visual-size);
+  height: var(--ebhro20-visual-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .ebhro20-visual-block { order: -1; }
+}
+
+.ebhro20-radar-container,
+.ebhro20-main-visual {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* STRUCTURAL: dashed rings instead of solid */
+.ebhro20-radar-circle,
+.ebhro20-visual-ring {
+  position: absolute;
+  border: 2px dashed var(--ebhro20-visual-circle-border-color);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--ebhro20-visual-circle-glow-1);
+}
+
+.ebhro20-rc-1,
+.ebhro20-ring-outer { width: var(--ebhro20-ring-size); height: var(--ebhro20-ring-size); animation: ebhroSpinSlow 40s linear infinite; }
+.ebhro20-rc-2,
+.ebhro20-ring-mid { width: calc(var(--ebhro20-ring-size) * 0.7); height: calc(var(--ebhro20-ring-size) * 0.7); border-style: solid; border-width: 1px; animation: ebhroSpinSlow 30s linear infinite reverse; }
+.ebhro20-rc-3,
+.ebhro20-ring-inner { width: calc(var(--ebhro20-ring-size) * 0.4); height: calc(var(--ebhro20-ring-size) * 0.4); }
+
+@keyframes ebhroSpinSlow {
+  to { transform: rotate(360deg); }
+}
+
+/* STRUCTURAL: core with pulsing ring */
+.ebhro20-radar-core,
+.ebhro20-visual-core {
+  position: absolute;
+  width: var(--ebhro20-core-size);
+  height: var(--ebhro20-core-size);
+  background: rgba(15, 23, 52, 0.95);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  animation: ebhroPulse 5s ease-in-out infinite;
+  border: 2px solid rgba(168, 85, 247, 0.35);
+}
+
+.ebhro20-core-logo {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@keyframes ebhroPulse {
+  0%, 100% { box-shadow: 0 0 30px var(--ebhro20-visual-circle-glow-1), 0 0 60px rgba(168, 85, 247, 0.05); }
+  50% { box-shadow: 0 0 50px var(--ebhro20-visual-circle-glow-2), 0 0 80px rgba(0, 229, 255, 0.08); }
+}
+
+.ebhro20-orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.ebhro20-od-1 {
+  background: var(--ebhro20-orbit-dot-1-color);
+  box-shadow: 0 0 14px var(--ebhro20-orbit-dot-1-color);
+  animation: ebhroOrbit1 8s linear infinite;
+}
+.ebhro20-od-2 {
+  background: var(--ebhro20-orbit-dot-2-color);
+  box-shadow: 0 0 14px var(--ebhro20-orbit-dot-2-color);
+  animation: ebhroOrbit2 12s linear infinite;
+}
+.ebhro20-od-3 {
+  background: var(--ebhro20-orbit-dot-3-color);
+  box-shadow: 0 0 14px var(--ebhro20-orbit-dot-3-color);
+  animation: ebhroOrbit3 10s linear infinite;
+}
+
+@keyframes ebhroOrbit1 {
+  from { transform: rotate(0deg) translateX(calc(var(--ebhro20-ring-size) / 2)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(calc(var(--ebhro20-ring-size) / 2)) rotate(-360deg); }
+}
+@keyframes ebhroOrbit2 {
+  from { transform: rotate(120deg) translateX(calc(var(--ebhro20-ring-size) * 0.35)) rotate(-120deg); }
+  to { transform: rotate(480deg) translateX(calc(var(--ebhro20-ring-size) * 0.35)) rotate(-480deg); }
+}
+@keyframes ebhroOrbit3 {
+  from { transform: rotate(240deg) translateX(calc(var(--ebhro20-ring-size) * 0.42)) rotate(-240deg); }
+  to { transform: rotate(600deg) translateX(calc(var(--ebhro20-ring-size) * 0.42)) rotate(-600deg); }
+}
+
+/* STRUCTURAL: float cards with square shape, different positions */
+.ebhro20-float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--ebhro20-float-card-background-color);
+  border: 1px solid var(--ebhro20-float-card-border-color);
+  border-radius: 8px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ebhro20-float-card-text-color);
+  white-space: nowrap;
+  box-shadow: var(--ebhro20-float-card-shadow);
+  transition: all 0.4s ease;
+  animation: ebhroFloat 6s ease-in-out infinite;
+}
+
+.ebhro20-float-card:hover {
+  border-color: var(--ebhro20-float-card-hover-border-color);
+  box-shadow: var(--ebhro20-float-card-hover-glow);
+  transform: scale(1.08);
+}
+
+.ebhro20-float-card i {
+  font-size: 0.85rem;
+  color: var(--ebhro20-float-card-icon-color);
+}
+
+/* STRUCTURAL: different positions - more spread out */
+.ebhro20-fc-1 { top: 0%; right: 80%; animation-delay: 0s; }
+.ebhro20-fc-2 { top: 0%; left: 80%; animation-delay: 1.2s; }
+.ebhro20-fc-3 { bottom: 5%; left: 80%; animation-delay: 2.4s; }
+.ebhro20-fc-4 { bottom: 5%; right: 80%; animation-delay: 3.6s; }
+
+@keyframes ebhroFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(1deg); }
+  75% { transform: translateY(4px) rotate(-1deg); }
+}
+
+@media (max-width: 480px) {
+  .ebhro20-float-card span { display: none; }
+  .ebhro20-float-card { padding: 0.45rem; border-radius: 8px; }
+  .ebhro20-float-card i { font-size: 0.9rem; }
+  .ebhro20-fc-1 { top: 0; right: 72%; }
+  .ebhro20-fc-2 { top: 0; left: 72%; }
+  .ebhro20-fc-3 { bottom: 5%; left: 72%; }
+  .ebhro20-fc-4 { bottom: 5%; right: 72%; }
+}
+
+/* STRUCTURAL: scroll = bouncing chevron instead of mouse */
+.ebhro20-scroll-indicator {
+  position: absolute;
+  bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  z-index: 5; opacity: 0;
+  animation: ebhroFadeUp 1s 2.5s ease forwards;
+}
+.ebhro20-scroll-indicator span {
+  font-size: 0.65rem;
+  color: var(--ebhro20-scroll-text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.ebhro20-mouse {
+  width: 28px; height: 28px;
+  border: 2px solid var(--ebhro20-scroll-mouse-border-color);
+  border-radius: 6px; position: relative;
+  animation: ebhroBounce 2s ease-in-out infinite;
+}
+
+.ebhro20-mouse-wheel {
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--ebhro20-scroll-wheel-color);
+  position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+  animation: none;
+}
+
+@keyframes ebhroBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes ebhroFadeUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to { opacity: 0.6; transform: translateX(-50%) translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .ebhro20-scroll-indicator { display: none; }
+}

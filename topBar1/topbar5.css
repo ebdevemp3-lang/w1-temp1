@@ -1,0 +1,123 @@
+/* ============================================
+   TOPBAR — THEME 5: NEON NIGHTS (STRUCTURAL)
+   ============================================ */
+
+:root {
+  --ebtb20-topbar-background-color: linear-gradient(135deg, #070b16 0%, #0f172a 100%);
+  --ebtb20-topbar-border-color: transparent;
+  --ebtb20-topbar-social-icon-color: #475569;
+  --ebtb20-topbar-social-icon-hover-color: #00e5ff;
+  --ebtb20-topbar-contact-text-color: #94a3b8;
+  --ebtb20-topbar-contact-icon-color: #f472b6;
+  --ebtb20-topbar-contact-hover-text-color: #00e5ff;
+  --ebtb20-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* STRUCTURAL: taller, centered, stacked layout */
+.ebtb20-top-bar {
+  background: var(--ebtb20-topbar-background-color);
+  border-bottom: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+}
+
+.ebtb20-top-bar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* STRUCTURAL: icons with background squares */
+.ebtb20-social-icons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.ebtb20-social-icon {
+  color: var(--ebtb20-topbar-social-icon-color);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.35s var(--ebtb20-ease);
+  font-size: 0.75rem;
+}
+
+.ebtb20-social-icon:hover {
+  color: var(--ebtb20-topbar-social-icon-hover-color);
+  background: rgba(0, 229, 255, 0.08);
+  border-color: rgba(0, 229, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.ebtb20-contact-info {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* STRUCTURAL: contact link with underline grow */
+.ebtb20-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ebtb20-topbar-contact-text-color);
+  font-weight: 600;
+  transition: all 0.3s var(--ebtb20-ease);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.ebtb20-contact-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ebtb20-topbar-contact-icon-color);
+  transition: width 0.3s var(--ebtb20-ease);
+}
+
+.ebtb20-contact-link:hover::after {
+  width: 100%;
+}
+
+.ebtb20-contact-link i {
+  color: var(--ebtb20-topbar-contact-icon-color);
+}
+
+.ebtb20-contact-link:hover {
+  color: var(--ebtb20-topbar-contact-hover-text-color);
+}
+
+@media (max-width: 768px) {
+  .ebtb20-top-bar-container {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .ebtb20-social-icons {
+    justify-content: center;
+  }
+
+  .ebtb20-contact-info {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .ebtb20-contact-link span {
+    display: none;
+  }
+}
