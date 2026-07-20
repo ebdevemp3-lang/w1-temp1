@@ -156,11 +156,19 @@
 
 @media (max-width: 1024px) {
   .ebpt20-step-card {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     text-align: right;
-    align-items: flex-start;
+    align-items: center;
     padding: 2rem;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ebpt20-step-card {
+    padding: 1.5rem;
+    gap: 1rem 1.25rem;
   }
 }
 
@@ -181,6 +189,8 @@
 
 @media (max-width: 1024px) {
   .ebpt20-step-header {
+    grid-column: 2;
+    grid-row: 1;
     margin-bottom: 0;
   }
 }
@@ -227,16 +237,37 @@
   gap: 0.75rem;
 }
 
+@media (max-width: 1024px) {
+  .ebpt20-step-body {
+    display: contents;
+  }
+}
+
 .ebpt20-step-title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ebpt20-card-title-text-color);
 }
 
+@media (max-width: 1024px) {
+  .ebpt20-step-title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+  }
+}
+
 .ebpt20-step-desc {
   font-size: 0.9rem;
   color: var(--ebpt20-card-description-text-color);
   line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .ebpt20-step-desc {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }
 
 /* Animations */
