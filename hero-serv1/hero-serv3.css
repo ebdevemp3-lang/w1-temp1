@@ -1,14 +1,12 @@
 /* ============================================================================
-   SERVICE HERO COMPONENT — THEME 3: WARM SAND & EMERALD ECO
+   SERVICE HERO COMPONENT — THEME 3: ARCHITECTURAL ARCH & STAGGERED BUBBLES
    Prefix: ebhro-serv20
    ============================================================================ */
 
 @import url('./hero-serv1.css');
 
 :root {
-  /* Colors - Theme 3 (Warm Sand & Emerald) */
-  --ebhro-serv20-bg: linear-gradient(135deg, #faf7f2 0%, #f4eee3 50%, #e9ded0 100%);
-
+  --ebhro-serv20-bg: linear-gradient(135deg, #fdfbf7 0%, #f6f1e9 50%, #eae2d5 100%);
   --ebhro-serv20-text-primary: #1c1917;
   --ebhro-serv20-text-secondary: #44403c;
   --ebhro-serv20-text-muted: #78716c;
@@ -16,58 +14,100 @@
   --ebhro-serv20-primary: #059669;
   --ebhro-serv20-primary-hover: #047857;
   --ebhro-serv20-primary-light: rgba(5, 150, 105, 0.1);
-  --ebhro-serv20-primary-border: rgba(5, 150, 105, 0.25);
 
   --ebhro-serv20-accent-gradient: linear-gradient(135deg, #059669 0%, #10b981 50%, #0d9488 100%);
   --ebhro-serv20-gold-accent: #d97706;
 
-  --ebhro-serv20-card-bg: rgba(255, 255, 255, 0.85);
+  --ebhro-serv20-card-bg: rgba(255, 255, 255, 0.92);
   --ebhro-serv20-card-border: rgba(231, 222, 210, 0.9);
-  --ebhro-serv20-card-shadow: 0 20px 40px -15px rgba(28, 25, 23, 0.08), 0 0 1px rgba(5, 150, 105, 0.15);
 
-  --ebhro-serv20-orb-1: rgba(5, 150, 105, 0.15);
-  --ebhro-serv20-orb-2: rgba(16, 185, 129, 0.12);
-  --ebhro-serv20-orb-3: rgba(217, 119, 6, 0.08);
+  --ebhro-serv20-radius-sm: 14px;
+  --ebhro-serv20-radius-md: 28px;
+  --ebhro-serv20-radius-lg: 40px;
+  --ebhro-serv20-radius-full: 9999px;
+
+  --ebhro-serv20-font-family: 'Tajawal', sans-serif;
 }
 
-.ebhro-serv20-grid-overlay {
-  background-image: radial-gradient(rgba(5, 150, 105, 0.1) 1px, transparent 1px);
+/* Architectural Arch Window Media Card */
+.ebhro-serv20-media-card {
+  border-radius: 200px 200px 32px 32px !important; /* Arch window shape! */
+  padding: 14px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 3px solid rgba(5, 150, 105, 0.2) !important;
+  box-shadow: 0 30px 60px -15px rgba(5, 150, 105, 0.15) !important;
 }
 
-.ebhro-serv20-breadcrumb {
-  background: rgba(255, 255, 255, 0.85);
+.ebhro-serv20-media-img-wrapper {
+  border-radius: 190px 190px 24px 24px !important; /* Arch image inner */
+  height: 440px !important;
+}
+
+/* Staggered Vertical Offset Feature Cards */
+.ebhro-serv20-features-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  padding: 10px 0 !important;
+}
+
+.ebhro-serv20-feat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+  border-radius: 32px !important;
+  background: #ffffff !important;
+  border: 2px solid rgba(231, 222, 210, 0.8) !important;
+  padding: 28px 22px !important;
+  box-shadow: 0 15px 35px rgba(28, 25, 23, 0.05) !important;
+}
+
+/* Stagger odd and even cards vertically */
+.ebhro-serv20-feat-card:nth-child(odd) {
+  transform: translateY(-12px);
+}
+
+.ebhro-serv20-feat-card:nth-child(even) {
+  transform: translateY(12px);
+}
+
+.ebhro-serv20-feat-card:hover {
+  transform: translateY(-20px) scale(1.02) !important;
+  border-color: #059669 !important;
+  box-shadow: 0 25px 50px rgba(5, 150, 105, 0.18) !important;
+}
+
+.ebhro-serv20-feat-icon-wrapper {
+  border-radius: 50% !important;
+  width: 52px !important;
+  height: 52px !important;
+  background: rgba(5, 150, 105, 0.1) !important;
+  color: #059669 !important;
+  margin-bottom: 16px !important;
+}
+
+.ebhro-serv20-feat-title {
+  width: 100% !important;
+  font-size: 1.15rem !important;
+  margin-bottom: 10px !important;
+}
+
+.ebhro-serv20-feat-desc {
+  width: 100% !important;
+  font-size: 0.92rem !important;
+  line-height: 1.65 !important;
+}
+
+.ebhro-serv20-btn {
+  border-radius: 9999px !important;
 }
 
 .ebhro-serv20-btn-primary {
-  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.4);
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
 }
 
-.ebhro-serv20-btn-secondary {
-  background: rgba(255, 255, 255, 0.95);
-  color: #1c1917;
-  border-color: rgba(5, 150, 105, 0.2);
-}
-
-.ebhro-serv20-btn-secondary:hover {
-  background: rgba(5, 150, 105, 0.08);
-  color: #059669;
-  border-color: #059669;
-}
-
-.ebhro-serv20-stat-divider {
-  background: rgba(231, 222, 210, 0.9);
-}
-
-.ebhro-serv20-play-btn {
-  background: #059669;
-  color: #ffffff;
-}
-
-.ebhro-serv20-play-btn:hover {
-  background: #10b981;
-  color: #ffffff;
-}
-
-.ebhro-serv20-cta-banner {
-  box-shadow: 0 20px 45px -10px rgba(5, 150, 105, 0.35);
+@media (max-width: 1024px) {
+  .ebhro-serv20-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }

@@ -1,14 +1,12 @@
 /* ============================================================================
-   SERVICE HERO COMPONENT — THEME 4: SAGE GREEN & SUNSET CORAL
+   SERVICE HERO COMPONENT — THEME 4: BOLD NEO-BRUTALIST STUDIO (RADICAL OUTLINE)
    Prefix: ebhro-serv20
    ============================================================================ */
 
 @import url('./hero-serv1.css');
 
 :root {
-  /* Colors - Theme 4 (Sage & Coral) */
   --ebhro-serv20-bg: linear-gradient(135deg, #f0fdf4 0%, #e6f4ea 50%, #dcfce7 100%);
-
   --ebhro-serv20-text-primary: #064e3b;
   --ebhro-serv20-text-secondary: #166534;
   --ebhro-serv20-text-muted: #374151;
@@ -16,56 +14,132 @@
   --ebhro-serv20-primary: #0f766e;
   --ebhro-serv20-primary-hover: #115e59;
   --ebhro-serv20-primary-light: rgba(15, 118, 110, 0.1);
-  --ebhro-serv20-primary-border: rgba(15, 118, 110, 0.25);
 
   --ebhro-serv20-accent-gradient: linear-gradient(135deg, #0f766e 0%, #14b8a6 40%, #f43f5e 100%);
   --ebhro-serv20-gold-accent: #f43f5e;
 
-  --ebhro-serv20-card-bg: rgba(255, 255, 255, 0.88);
-  --ebhro-serv20-card-border: rgba(187, 247, 208, 0.9);
-  --ebhro-serv20-card-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.08), 0 0 1px rgba(15, 118, 110, 0.15);
+  --ebhro-serv20-radius-sm: 6px;
+  --ebhro-serv20-radius-md: 10px;
+  --ebhro-serv20-radius-lg: 14px;
 
-  --ebhro-serv20-orb-1: rgba(15, 118, 110, 0.15);
-  --ebhro-serv20-orb-2: rgba(244, 63, 94, 0.12);
-  --ebhro-serv20-orb-3: rgba(20, 184, 166, 0.1);
+  --ebhro-serv20-font-family: 'Tajawal', sans-serif;
 }
 
-.ebhro-serv20-grid-overlay {
-  background-image: radial-gradient(rgba(15, 118, 110, 0.1) 1px, transparent 1px);
+/* ============================================================================
+   STRUCTURAL LAYOUT OVERRIDE — THEME 4 (BOLD NEO-BRUTALIST OUTLINES & SHADOWS)
+   ============================================================================ */
+
+/* Rotated Neo-Brutalist Badge */
+.ebhro-serv20-badge {
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  border: 3px solid #064e3b !important;
+  color: #064e3b !important;
+  box-shadow: 4px 4px 0px #064e3b !important;
+  transform: rotate(-1.5deg);
+  padding: 8px 22px !important;
 }
 
-.ebhro-serv20-breadcrumb {
-  background: rgba(255, 255, 255, 0.88);
+.ebhro-serv20-badge-pulse {
+  background: #f43f5e !important;
+}
+
+/* Bold Offset Shadow Buttons */
+.ebhro-serv20-btn {
+  border-radius: 12px !important;
+  border: 3px solid #064e3b !important;
+  font-weight: 900 !important;
 }
 
 .ebhro-serv20-btn-primary {
-  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
-  box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.4);
+  background: #0f766e !important;
+  color: #ffffff !important;
+  box-shadow: 6px 6px 0px #064e3b !important;
 }
 
-.ebhro-serv20-btn-secondary {
-  background: rgba(255, 255, 255, 0.95);
-  color: #064e3b;
-  border-color: rgba(15, 118, 110, 0.25);
+.ebhro-serv20-btn-primary:hover {
+  background: #f43f5e !important;
+  box-shadow: 8px 8px 0px #064e3b !important;
+  transform: translate(-3px, -3px) !important;
 }
 
-.ebhro-serv20-btn-secondary:hover {
-  background: rgba(15, 118, 110, 0.08);
-  color: #0f766e;
-  border-color: #0f766e;
+/* Bold Framed Box Image Media Card */
+.ebhro-serv20-media-card {
+  border-radius: 16px !important;
+  padding: 12px !important;
+  background: #ffffff !important;
+  border: 3px solid #064e3b !important;
+  box-shadow: 12px 12px 0px #064e3b !important;
 }
 
-.ebhro-serv20-play-btn {
-  background: #f43f5e;
-  color: #ffffff;
+.ebhro-serv20-media-img-wrapper {
+  border-radius: 10px !important;
+  border: 2px solid #064e3b;
 }
 
-.ebhro-serv20-play-btn:hover {
-  background: #e11d48;
-  color: #ffffff;
+.ebhro-serv20-float-card {
+  border-radius: 10px !important;
+  background: #ffffff !important;
+  border: 3px solid #064e3b !important;
+  box-shadow: 5px 5px 0px #064e3b !important;
 }
 
-.ebhro-serv20-cta-banner {
-  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #f43f5e 100%);
-  box-shadow: 0 20px 45px -10px rgba(15, 118, 110, 0.35);
+.ebhro-serv20-float-pill {
+  border-radius: 9999px !important;
+  background: #f43f5e !important;
+  border: 3px solid #064e3b !important;
+  box-shadow: 4px 4px 0px #064e3b !important;
+}
+
+/* Neo-Brutalist 2x2 Grid with Top Accent Header Bar & Full Text Width */
+.ebhro-serv20-features-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
+}
+
+.ebhro-serv20-feat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+  border: 3px solid #064e3b !important;
+  border-top: 8px solid #f43f5e !important; /* Coral top accent header bar */
+  box-shadow: 6px 6px 0px #064e3b !important;
+  padding: 28px 24px !important;
+}
+
+.ebhro-serv20-feat-card:hover {
+  border-color: #064e3b !important;
+  box-shadow: 10px 10px 0px #064e3b !important;
+  transform: translate(-4px, -4px) !important;
+}
+
+.ebhro-serv20-feat-icon-wrapper {
+  border-radius: 10px !important;
+  background: rgba(15, 118, 110, 0.12) !important;
+  color: #064e3b !important;
+  border: 2px solid #064e3b !important;
+  width: 52px !important;
+  height: 52px !important;
+  margin-bottom: 16px !important;
+}
+
+.ebhro-serv20-feat-title {
+  width: 100% !important;
+  font-size: 1.25rem !important;
+  font-weight: 900 !important;
+  color: #064e3b !important;
+  margin-bottom: 10px !important;
+  text-align: right !important;
+}
+
+.ebhro-serv20-feat-desc {
+  width: 100% !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+  color: #166534 !important;
+  text-align: right !important;
+  margin-bottom: 0 !important;
 }
