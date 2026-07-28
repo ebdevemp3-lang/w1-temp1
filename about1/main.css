@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+
+body {
+    direction: rtl;
+    font-family: "El Messiri", sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background-color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}

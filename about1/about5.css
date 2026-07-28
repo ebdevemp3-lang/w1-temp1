@@ -1,0 +1,511 @@
+/* ============================================
+   ABOUT — THEME 5: NEON NIGHTS (CYBER DARK)
+   ============================================ */
+
+:root {
+  /* Colors */
+  --ebabt20-bg-color: #07090e;
+  --ebabt20-card-bg: rgba(15, 23, 42, 0.75);
+  --ebabt20-primary: #00f0ff;
+  --ebabt20-primary-dark: #0088cc;
+  --ebabt20-secondary: #ff007f;
+  --ebabt20-primary-light: rgba(0, 240, 255, 0.12);
+  --ebabt20-text-dark: #f0f6fc;
+  --ebabt20-text-muted: #94a3b8;
+  --ebabt20-border-color: rgba(0, 240, 255, 0.25);
+  --ebabt20-border-hover: #00f0ff;
+  
+  /* Geometry & Styling */
+  --ebabt20-radius: 16px;
+  --ebabt20-badge-radius: 6px;
+  --ebabt20-shadow-neon: 0 0 25px rgba(0, 240, 255, 0.3);
+  --ebabt20-shadow-neon-magenta: 0 0 25px rgba(255, 0, 127, 0.3);
+  --ebabt20-font-heading: 'El Messiri', sans-serif;
+  --ebabt20-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ebabt20-section {
+  position: relative;
+  background-color: var(--ebabt20-bg-color);
+  color: var(--ebabt20-text-dark);
+  padding: 6.5rem 0;
+  overflow: hidden;
+}
+
+/* Background Cyber Grid & Orbs */
+.ebabt20-bg-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ebabt20-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.5;
+}
+
+.ebabt20-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+}
+
+.ebabt20-orb-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #ff007f 0%, transparent 70%);
+  bottom: -150px;
+  left: -150px;
+}
+
+.ebabt20-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 240, 255, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.ebabt20-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.ebabt20-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 4.8rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ebabt20-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 1.4rem;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid var(--ebabt20-primary);
+  border-radius: var(--ebabt20-badge-radius);
+  color: var(--ebabt20-primary);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+  letter-spacing: 1px;
+}
+
+.ebabt20-title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.ebabt20-title-highlight {
+  color: var(--ebabt20-primary);
+  background: linear-gradient(135deg, #00f0ff 0%, #ff007f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.4));
+}
+
+.ebabt20-subtitle {
+  font-size: 1.1rem;
+  color: var(--ebabt20-text-muted);
+  line-height: 1.8;
+}
+
+/* Grid Layout */
+.ebabt20-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Column 1: Cyber Holographic Showcase */
+.ebabt20-visual-col {
+  position: relative;
+}
+
+.ebabt20-img-wrapper {
+  position: relative;
+  border-radius: var(--ebabt20-radius);
+  overflow: hidden;
+  border: 1px solid var(--ebabt20-primary);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.25);
+  background: #0f172a;
+}
+
+.ebabt20-main-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(90%) contrast(110%);
+  transition: all 0.5s var(--ebabt20-ease);
+}
+
+.ebabt20-img-wrapper:hover .ebabt20-main-img {
+  transform: scale(1.04);
+  filter: brightness(100%) contrast(115%);
+}
+
+.ebabt20-decor-frame {
+  position: absolute;
+  inset: -10px;
+  border: 1px solid var(--ebabt20-secondary);
+  border-radius: calc(var(--ebabt20-radius) + 6px);
+  z-index: -1;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 10px #ff007f);
+}
+
+.ebabt20-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(7, 9, 14, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Floating Cyber Badges */
+.ebabt20-badge-experience {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(16px);
+  padding: 1.1rem 1.6rem;
+  border-radius: var(--ebabt20-radius);
+  border: 1px solid var(--ebabt20-primary);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  z-index: 3;
+}
+
+.ebabt20-exp-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #00f0ff, #0088cc);
+  color: #07090e;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.ebabt20-exp-num {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #00f0ff;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.ebabt20-exp-lbl {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.ebabt20-float-card {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(16px);
+  padding: 0.85rem 1.3rem;
+  border-radius: var(--ebabt20-radius);
+  border: 1px solid var(--ebabt20-secondary);
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 3;
+}
+
+.ebabt20-fc-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 0, 127, 0.15);
+  color: #ff007f;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.ebabt20-fc-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ebabt20-fc-sub {
+  font-size: 0.78rem;
+  color: #ff007f;
+  font-weight: 600;
+}
+
+/* Column 2: Info & Content */
+.ebabt20-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.ebabt20-lead-box {
+  background: var(--ebabt20-card-bg);
+  backdrop-filter: blur(16px);
+  padding: 1.5rem 1.8rem;
+  border-radius: var(--ebabt20-radius);
+  border: 1px solid var(--ebabt20-border-color);
+  border-right: 4px solid var(--ebabt20-primary);
+  box-shadow: var(--ebabt20-shadow-neon);
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.ebabt20-lead-icon {
+  font-size: 1.8rem;
+  color: var(--ebabt20-primary);
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px #00f0ff);
+}
+
+.ebabt20-lead-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* Cyber Glass Tabs */
+.ebabt20-tabs-wrapper {
+  background: var(--ebabt20-card-bg);
+  backdrop-filter: blur(16px);
+  border-radius: var(--ebabt20-radius);
+  padding: 1.6rem;
+  border: 1px solid var(--ebabt20-border-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.ebabt20-tabs-nav {
+  display: flex;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.ebabt20-tab-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ebabt20-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s var(--ebabt20-ease);
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.ebabt20-tab-btn:hover {
+  color: var(--ebabt20-primary);
+  border-color: var(--ebabt20-primary-light);
+}
+
+.ebabt20-tab-btn.ebabt20-tab-active {
+  background: rgba(0, 240, 255, 0.12);
+  color: #00f0ff;
+  border-color: var(--ebabt20-primary);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.ebabt20-tab-panel {
+  display: none;
+  animation: fadeInNeon 0.4s ease forwards;
+}
+
+.ebabt20-tab-panel.ebabt20-panel-active {
+  display: block;
+}
+
+@keyframes fadeInNeon {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ebabt20-panel-desc {
+  font-size: 0.98rem;
+  color: var(--ebabt20-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+}
+
+.ebabt20-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ebabt20-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.ebabt20-features-list li i {
+  color: var(--ebabt20-primary);
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 5px #00f0ff);
+}
+
+/* Glowing Cyber Stats Cards */
+.ebabt20-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.ebabt20-stat-card {
+  background: var(--ebabt20-card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--ebabt20-border-color);
+  border-radius: var(--ebabt20-radius);
+  padding: 1.3rem 1rem;
+  text-align: center;
+  transition: all 0.3s var(--ebabt20-ease);
+}
+
+.ebabt20-stat-card:hover {
+  border-color: var(--ebabt20-primary);
+  box-shadow: var(--ebabt20-shadow-neon);
+  transform: translateY(-5px);
+}
+
+.ebabt20-sc-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 0.6rem auto;
+  border-radius: 10px;
+  background: rgba(0, 240, 255, 0.1);
+  color: #00f0ff;
+  border: 1px solid var(--ebabt20-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.ebabt20-sc-num {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.ebabt20-sc-plus {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ebabt20-primary);
+}
+
+.ebabt20-sc-lbl {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ebabt20-text-muted);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* Action Bar Buttons */
+.ebabt20-action-bar {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.ebabt20-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(135deg, #00f0ff 0%, #0088cc 100%);
+  color: #07090e;
+  font-weight: 800;
+  border-radius: var(--ebabt20-badge-radius);
+  box-shadow: var(--ebabt20-shadow-neon);
+  transition: all 0.3s var(--ebabt20-ease);
+}
+
+.ebabt20-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.6);
+}
+
+.ebabt20-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.6rem;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: var(--ebabt20-badge-radius);
+  border: 1px solid var(--ebabt20-border-color);
+  transition: all 0.3s var(--ebabt20-ease);
+}
+
+.ebabt20-btn-outline:hover {
+  border-color: var(--ebabt20-secondary);
+  color: var(--ebabt20-secondary);
+  box-shadow: var(--ebabt20-shadow-neon-magenta);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .ebabt20-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ebabt20-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .ebabt20-action-bar {
+    flex-direction: column;
+  }
+  .ebabt20-btn-primary, .ebabt20-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
