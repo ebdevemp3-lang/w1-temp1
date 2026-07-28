@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================
      1. INTERACTIVE TABS SWITCHER
      ============================================ */
-  const tabBtns = document.querySelectorAll('.ebabt20-tab-btn');
-  const tabPanels = document.querySelectorAll('.ebabt20-tab-panel');
+  const tabBtns = document.querySelectorAll('.ebabo20-tab-btn');
+  const tabPanels = document.querySelectorAll('.ebabo20-tab-panel');
 
   if (tabBtns.length > 0 && tabPanels.length > 0) {
     tabBtns.forEach(btn => {
@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetTab = btn.getAttribute('data-tab');
 
         // Remove active state from all buttons
-        tabBtns.forEach(b => b.classList.remove('ebabt20-tab-active'));
+        tabBtns.forEach(b => b.classList.remove('ebabo20-tab-active'));
         // Hide all panels
-        tabPanels.forEach(p => p.classList.remove('ebabt20-panel-active'));
+        tabPanels.forEach(p => p.classList.remove('ebabo20-panel-active'));
 
         // Add active state to clicked button
-        btn.classList.add('ebabt20-tab-active');
+        btn.classList.add('ebabo20-tab-active');
 
         // Show target panel
-        const activePanel = document.getElementById(`ebabt20-tab-${targetTab}`);
+        const activePanel = document.getElementById(`ebabo20-tab-${targetTab}`);
         if (activePanel) {
-          activePanel.classList.add('ebabt20-panel-active');
+          activePanel.classList.add('ebabo20-panel-active');
         }
       });
     });
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================
      2. NUMERICAL STATS COUNTER ANIMATION
      ============================================ */
-  const statNumbers = document.querySelectorAll('.ebabt20-sc-num');
+  const statNumbers = document.querySelectorAll('.ebabo20-sc-num');
 
   if (statNumbers.length > 0) {
     const observerOptions = {
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================
      3. IMAGE HOVER TILT / PARALLAX MICRO-EFFECT
      ============================================ */
-  const imgContainer = document.querySelector('.ebabt20-img-wrapper');
+  const imgContainer = document.querySelector('.ebabo20-img-wrapper');
   if (imgContainer) {
     imgContainer.addEventListener('mousemove', (e) => {
       const rect = imgContainer.getBoundingClientRect();
