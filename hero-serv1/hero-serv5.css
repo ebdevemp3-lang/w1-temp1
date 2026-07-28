@@ -1,0 +1,102 @@
+/* ============================================================================
+   SERVICE HERO COMPONENT — THEME 5: CYBER NEON NIGHT & DEEP VIOLET
+   Prefix: ebhro-serv20
+   ============================================================================ */
+
+@import url('./hero-serv1.css');
+
+:root {
+  /* Colors - Theme 5 (Cyber Neon Night) */
+  --ebhro-serv20-bg: linear-gradient(135deg, #070714 0%, #0d0b21 50%, #15102a 100%);
+
+  --ebhro-serv20-text-primary: #ffffff;
+  --ebhro-serv20-text-secondary: #cbd5e1;
+  --ebhro-serv20-text-muted: #94a3b8;
+
+  --ebhro-serv20-primary: #00f2fe;
+  --ebhro-serv20-primary-hover: #4facfe;
+  --ebhro-serv20-primary-light: rgba(0, 242, 254, 0.12);
+  --ebhro-serv20-primary-border: rgba(0, 242, 254, 0.35);
+
+  --ebhro-serv20-accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 40%, #9d4edd 100%);
+  --ebhro-serv20-gold-accent: #ff007f;
+
+  --ebhro-serv20-card-bg: rgba(13, 11, 33, 0.8);
+  --ebhro-serv20-card-border: rgba(0, 242, 254, 0.25);
+  --ebhro-serv20-card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 242, 254, 0.15);
+
+  --ebhro-serv20-orb-1: rgba(0, 242, 254, 0.2);
+  --ebhro-serv20-orb-2: rgba(157, 78, 221, 0.2);
+  --ebhro-serv20-orb-3: rgba(255, 0, 127, 0.15);
+}
+
+.ebhro-serv20-grid-overlay {
+  background-image: radial-gradient(rgba(0, 242, 254, 0.15) 1px, transparent 1px);
+}
+
+.ebhro-serv20-breadcrumb {
+  background: rgba(13, 11, 33, 0.85);
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.ebhro-serv20-btn-primary {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #9d4edd 100%);
+  color: #070714;
+  font-weight: 800;
+  box-shadow: 0 10px 30px -5px rgba(0, 242, 254, 0.5);
+}
+
+.ebhro-serv20-btn-primary:hover {
+  box-shadow: 0 15px 40px -5px rgba(0, 242, 254, 0.7);
+}
+
+.ebhro-serv20-btn-secondary {
+  background: rgba(21, 16, 42, 0.85);
+  color: #ffffff;
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.ebhro-serv20-btn-secondary:hover {
+  background: rgba(0, 242, 254, 0.15);
+  color: #00f2fe;
+  border-color: #00f2fe;
+}
+
+.ebhro-serv20-stat-divider {
+  background: rgba(0, 242, 254, 0.2);
+}
+
+.ebhro-serv20-media-card {
+  background: rgba(13, 11, 33, 0.85);
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.ebhro-serv20-float-card {
+  background: rgba(13, 11, 33, 0.95);
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.ebhro-serv20-play-btn {
+  background: linear-gradient(135deg, #00f2fe, #9d4edd);
+  color: #070714;
+}
+
+.ebhro-serv20-play-btn:hover {
+  background: linear-gradient(135deg, #ff007f, #00f2fe);
+  color: #ffffff;
+}
+
+.ebhro-serv20-feat-footer {
+  border-top-color: rgba(0, 242, 254, 0.2);
+}
+
+.ebhro-serv20-cta-banner {
+  background: linear-gradient(135deg, #0d0b21 0%, #15102a 50%, #2a0b36 100%);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  box-shadow: 0 20px 45px -10px rgba(0, 242, 254, 0.3);
+}
+
+.ebhro-serv20-cta-banner .ebhro-serv20-btn-primary {
+  background: #00f2fe;
+  color: #070714;
+}

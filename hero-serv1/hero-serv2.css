@@ -1,0 +1,94 @@
+/* ============================================================================
+   SERVICE HERO COMPONENT — THEME 2: LUXURY GOLD & OBSIDIAN DARK
+   Prefix: ebhro-serv20
+   ============================================================================ */
+
+@import url('./hero-serv1.css');
+
+:root {
+  /* Colors - Theme 2 (Luxury Gold Dark) */
+  --ebhro-serv20-bg: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #171e2e 100%);
+
+  --ebhro-serv20-text-primary: #f8fafc;
+  --ebhro-serv20-text-secondary: #cbd5e1;
+  --ebhro-serv20-text-muted: #94a3b8;
+
+  --ebhro-serv20-primary: #f59e0b;
+  --ebhro-serv20-primary-hover: #d97706;
+  --ebhro-serv20-primary-light: rgba(245, 158, 11, 0.12);
+  --ebhro-serv20-primary-border: rgba(245, 158, 11, 0.3);
+
+  --ebhro-serv20-accent-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  --ebhro-serv20-gold-accent: #fbbf24;
+
+  --ebhro-serv20-card-bg: rgba(15, 23, 42, 0.75);
+  --ebhro-serv20-card-border: rgba(245, 158, 11, 0.2);
+  --ebhro-serv20-card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 1px rgba(245, 158, 11, 0.2);
+
+  --ebhro-serv20-orb-1: rgba(245, 158, 11, 0.15);
+  --ebhro-serv20-orb-2: rgba(217, 119, 6, 0.12);
+  --ebhro-serv20-orb-3: rgba(251, 191, 36, 0.1);
+}
+
+.ebhro-serv20-grid-overlay {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+}
+
+.ebhro-serv20-breadcrumb {
+  background: rgba(15, 23, 42, 0.75);
+}
+
+.ebhro-serv20-btn-secondary {
+  background: rgba(30, 41, 59, 0.8);
+  color: #f8fafc;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.ebhro-serv20-btn-secondary:hover {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border-color: #f59e0b;
+}
+
+.ebhro-serv20-stat-divider {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.ebhro-serv20-media-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.ebhro-serv20-float-card {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.ebhro-serv20-play-btn {
+  background: #f59e0b;
+  color: #0f172a;
+}
+
+.ebhro-serv20-play-btn:hover {
+  background: #fbbf24;
+  color: #0f172a;
+}
+
+.ebhro-serv20-feat-footer {
+  border-top-color: rgba(245, 158, 11, 0.15);
+}
+
+.ebhro-serv20-cta-banner {
+  box-shadow: 0 20px 45px -10px rgba(245, 158, 11, 0.3);
+}
+
+.ebhro-serv20-cta-banner .ebhro-serv20-btn-primary {
+  background: #0f172a;
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.ebhro-serv20-cta-banner .ebhro-serv20-btn-primary:hover {
+  background: #1e293b;
+  color: #ffffff;
+}

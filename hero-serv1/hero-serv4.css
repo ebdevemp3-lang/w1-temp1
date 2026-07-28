@@ -1,0 +1,71 @@
+/* ============================================================================
+   SERVICE HERO COMPONENT — THEME 4: SAGE GREEN & SUNSET CORAL
+   Prefix: ebhro-serv20
+   ============================================================================ */
+
+@import url('./hero-serv1.css');
+
+:root {
+  /* Colors - Theme 4 (Sage & Coral) */
+  --ebhro-serv20-bg: linear-gradient(135deg, #f0fdf4 0%, #e6f4ea 50%, #dcfce7 100%);
+
+  --ebhro-serv20-text-primary: #064e3b;
+  --ebhro-serv20-text-secondary: #166534;
+  --ebhro-serv20-text-muted: #374151;
+
+  --ebhro-serv20-primary: #0f766e;
+  --ebhro-serv20-primary-hover: #115e59;
+  --ebhro-serv20-primary-light: rgba(15, 118, 110, 0.1);
+  --ebhro-serv20-primary-border: rgba(15, 118, 110, 0.25);
+
+  --ebhro-serv20-accent-gradient: linear-gradient(135deg, #0f766e 0%, #14b8a6 40%, #f43f5e 100%);
+  --ebhro-serv20-gold-accent: #f43f5e;
+
+  --ebhro-serv20-card-bg: rgba(255, 255, 255, 0.88);
+  --ebhro-serv20-card-border: rgba(187, 247, 208, 0.9);
+  --ebhro-serv20-card-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.08), 0 0 1px rgba(15, 118, 110, 0.15);
+
+  --ebhro-serv20-orb-1: rgba(15, 118, 110, 0.15);
+  --ebhro-serv20-orb-2: rgba(244, 63, 94, 0.12);
+  --ebhro-serv20-orb-3: rgba(20, 184, 166, 0.1);
+}
+
+.ebhro-serv20-grid-overlay {
+  background-image: radial-gradient(rgba(15, 118, 110, 0.1) 1px, transparent 1px);
+}
+
+.ebhro-serv20-breadcrumb {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.ebhro-serv20-btn-primary {
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+  box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.4);
+}
+
+.ebhro-serv20-btn-secondary {
+  background: rgba(255, 255, 255, 0.95);
+  color: #064e3b;
+  border-color: rgba(15, 118, 110, 0.25);
+}
+
+.ebhro-serv20-btn-secondary:hover {
+  background: rgba(15, 118, 110, 0.08);
+  color: #0f766e;
+  border-color: #0f766e;
+}
+
+.ebhro-serv20-play-btn {
+  background: #f43f5e;
+  color: #ffffff;
+}
+
+.ebhro-serv20-play-btn:hover {
+  background: #e11d48;
+  color: #ffffff;
+}
+
+.ebhro-serv20-cta-banner {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #f43f5e 100%);
+  box-shadow: 0 20px 45px -10px rgba(15, 118, 110, 0.35);
+}
